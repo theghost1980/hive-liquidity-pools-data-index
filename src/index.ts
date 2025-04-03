@@ -19,6 +19,10 @@ app.use(
   serveIndex(path.join(__dirname, "public", "data"), { icons: true })
 ); //// Serve directory listings for the 'downloads' folder
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
 app.use(express.json());
 
 const initialize = () => {
