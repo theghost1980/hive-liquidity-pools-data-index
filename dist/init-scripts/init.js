@@ -21,7 +21,7 @@ const initScripts = () => {
                     const currentTimestampInSeconds = (0, moment_1.default)().unix();
                     file_utils_1.FileUtils.writeDataToFile(`ts_${currentTimestampInSeconds}.json`, element.tokenPair, element);
                 }
-                logger_utils_1.Logger.info(`Saved ${liquidityPoolList.length} records!`);
+                logger_utils_1.Logger.info(`Saved ${liquidityPoolList.length} records YAY!`);
             }
             else {
                 logger_utils_1.Logger.error("No Pools Fetched! Please Check!");

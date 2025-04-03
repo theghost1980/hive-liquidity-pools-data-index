@@ -16,6 +16,9 @@ const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
 app.use(express_1.default.static(path_1.default.join(__dirname, "public"))); // Serve static files from the 'public' directory
 app.use("/data", serveIndex(path_1.default.join(__dirname, "public", "data"), { icons: true })); //// Serve directory listings for the 'downloads' folder
+app.get("/", (req, res) => {
+    res.sendFile(path_1.default.join(__dirname, "index.html"));
+});
 app.use(express_1.default.json());
 const initialize = () => {
     logger_utils_1.Logger.info("Init Scripts!!");
