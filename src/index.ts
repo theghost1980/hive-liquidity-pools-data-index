@@ -1,40 +1,51 @@
 import dotenv from "dotenv";
-import express, { Request, Response } from "express";
+import express from "express";
 import path from "path";
 import { initScripts } from "./init-scripts/init";
+import { FileUtils } from "./utils/file.utils";
 import { LiquidityPoolUtils } from "./utils/liquidity-pool.utils";
+import { Logger } from "./utils/logger.utils";
+
 const serveIndex = require("serve-index");
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-const publicDirectory = path.join(__dirname, "public");
 
+app.use(express.static(path.join(__dirname, "public"))); // Serve static files from the 'public' directory
 app.use(
-  "/files",
-  express.static(publicDirectory),
-  serveIndex(publicDirectory, { icons: true })
-);
+  "/data",
+  serveIndex(path.join(__dirname, "public", "data"), { icons: true })
+); //// Serve directory listings for the 'downloads' folder
 
 app.use(express.json());
 
 const initialize = () => {
-  console.log("Init Scripts!!");
+  Logger.info("Init Scripts!!");
   initScripts();
 };
 
-app.get("/", async (req: Request, res: Response) => {
-  //testing fetching data
-  const liquidityPoolsDataList = await LiquidityPoolUtils.fetchPoolData();
-  console.log({ liquidityPoolsDataList });
-  res.send("Hello, TypeScript with Express!");
+app.get("/status", async (req, res) => {
+  const mainDir = path.join(__dirname, "public", "data");
+  let mainFolderSize: any;
+  try {
+    mainFolderSize = await FileUtils.getFolderSize(mainDir);
+  } catch (error) {
+    mainFolderSize = 0;
+  } finally {
+    res.send({
+      status: "OK",
+      overall_index: "In Progress!",
+      mainFolderSizeBytes: `${mainFolderSize} Bytes`,
+      mainFolderSizeMB: `${(mainFolderSize / 1024 ** 2).toFixed(3)} MB`,
+      mainFolderSizeGB: `${(mainFolderSize / 1024 ** 3).toFixed(3)} GB`,
+      lastHERPCNodeTested: LiquidityPoolUtils.getLastHERPCNodeChecked(),
+    });
+  }
 });
 
 app.listen(port, () => {
   initialize();
-  console.log(`Server is running at http://localhost:${port}`);
-  console.log(
-    `24h Liquidity Pools Snapshots served at http://localhost:${port}/files`
-  );
+  Logger.info(`Server is running at http://localhost:${port}`);
 });

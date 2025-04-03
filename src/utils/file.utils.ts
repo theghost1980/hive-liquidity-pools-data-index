@@ -1,38 +1,49 @@
+import fastFolderSize from "fast-folder-size";
 import fs from "fs";
 import path from "path";
+import { Logger } from "./logger.utils";
 
 // Function to ensure the data_tracker directory exists
-function ensureDataDirectoryExists(subDirName: string) {
-  const mainDir = path.join(__dirname, "data");
+function ensureDataDirectoryExists(subDirName: string, showLog?: boolean) {
+  const projectRoot = path.join(__dirname, ".."); // Navigate up two levels from the current file to reach the project root
+  const mainDir = path.join(projectRoot, "public", "data");
   const subDir = path.join(mainDir, subDirName);
 
   try {
     if (!fs.existsSync(subDir)) {
       fs.mkdirSync(subDir, { recursive: true });
-      console.log(`Directories created successfully at: ${subDir}`);
+      if (showLog)
+        Logger.info(`Directories created successfully at: ${subDir}`);
     }
   } catch (err: any) {
-    console.error(`Error creating directories: ${err.message}`);
+    Logger.error(`Error creating directories: ${err.message}`);
   }
 }
 
 // Function to write data to a file within the data_tracker directory
-function writeDataToFile(fileName: string, subDir: string, data: any) {
+function writeDataToFile(
+  fileName: string,
+  subDir: string,
+  data: any,
+  showLog?: boolean
+) {
   const fixedSubDirName = subDir.replace(":", "_"); // Ensure the sub folder's name do not contains ":"
   ensureDataDirectoryExists(fixedSubDirName); // Ensure the directory exists
 
-  const dirPath = path.join(__dirname, "data", fixedSubDirName);
+  const projectRoot = path.join(__dirname, "..");
+  const mainDir = path.join(projectRoot, "public", "data");
+  const dirPath = path.join(mainDir, fixedSubDirName);
   const filePath = path.join(dirPath, fileName);
-
-  console.log("About to save into ", { fixedSubDirName, filePath, fileName });
 
   try {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), {
       encoding: "utf8",
     });
-    console.log(`Data written to ${filePath}`);
+    //TODO add a log file result: success_written_data
+    if (showLog) Logger.info(`Data written to ${filePath}`);
   } catch (error) {
-    console.error("Error writing file:", error);
+    //TODO add a log file result: error_saving_data and somehow emit an alert to email
+    Logger.error("Error writing file:", error);
   }
 }
 
@@ -69,9 +80,41 @@ function writeDataToFile(fileName: string, subDir: string, data: any) {
 //   }
 // }
 
+// const getFolderSize = () => {
+//   const projectRoot = path.join(__dirname, ".."); // Navigate up two levels from the current file to reach the project root
+//   const mainDir = path.join(projectRoot, "public", "data");
+//   let size: { bytes: number; err: any } = {
+//     bytes: 0,
+//     err: "",
+//   };
+//   fastFolderSize(mainDir, (err, bytes) => {
+//     if (err) {
+//       size.bytes = 0;
+//       size.err = err;
+//     }
+//     console.log({ bytes }); //TODO REM
+//     size.bytes = bytes!;
+//     size.err = err;
+//   });
+//   return size;
+// };
+
+const getFolderSize = (mainDir: string) => {
+  return new Promise((resolve, reject) => {
+    fastFolderSize(mainDir, (err, bytes) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(bytes);
+      }
+    });
+  });
+};
+
 export const FileUtils = {
   ensureDataDirectoryExists,
   writeDataToFile,
+  getFolderSize,
   //   readDataFromFile,
   //   renameFile,
 };
