@@ -24,7 +24,7 @@ export const initScripts = () => {
                 element
               );
             }
-            Logger.info(`Saved ${liquidityPoolList.length} records!`);
+            Logger.info(`Saved ${liquidityPoolList.length} records YAY!`);
           } else {
             Logger.error("No Pools Fetched! Please Check!");
           }
