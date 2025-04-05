@@ -1,6 +1,6 @@
 import moment from "moment";
 import cron from "node-cron";
-import { SERVERCOUNTSTATUS } from "..";
+import { ControlVarsUtils } from "../utils/control-vars";
 import { FileUtils } from "../utils/file.utils";
 import { LiquidityPoolUtils } from "../utils/liquidity-pool.utils";
 import { Logger } from "../utils/logger.utils";
@@ -13,7 +13,7 @@ export const initScripts = () => {
         "CRON Running each minute! for testing!! //TODO change to 24h"
       );
       //count days since last starting point
-      SERVERCOUNTSTATUS.daysCounted = SERVERCOUNTSTATUS.daysCounted + 1;
+      ControlVarsUtils.addDay();
       LiquidityPoolUtils.fetchPoolData()
         .then((liquidityPoolList) => {
           if (liquidityPoolList) {
@@ -37,7 +37,9 @@ export const initScripts = () => {
         .catch((e) => {
           Logger.error(`Error fecthing Liquidity Pools code: ${e.code} `);
         });
-      Logger.info(`Days Counted: ${SERVERCOUNTSTATUS.daysCounted}`);
+      Logger.info(
+        `Days Counted: ${ControlVarsUtils.SERVERCOUNT.daysCount.toString()}`
+      );
     }
     // {
     //   runOnInit: true,

@@ -3,15 +3,12 @@ import express from "express";
 import path from "path";
 import { initScripts } from "./init-scripts/init";
 import publicRoutes from "./routes/public-routes";
+import { ControlVarsUtils } from "./utils/control-vars";
 import { FileUtils } from "./utils/file.utils";
 import { LiquidityPoolUtils } from "./utils/liquidity-pool.utils";
 import { Logger } from "./utils/logger.utils";
 
 const serveIndex = require("serve-index");
-
-export const SERVERCOUNTSTATUS = {
-  daysCounted: 0,
-};
 
 dotenv.config();
 
@@ -57,7 +54,7 @@ app.get("/status", async (req, res) => {
       mainFolderSizeMB: `${(mainFolderSize / 1024 ** 2).toFixed(3)} MB`,
       mainFolderSizeGB: `${(mainFolderSize / 1024 ** 3).toFixed(3)} GB`,
       lastHERPCNodeTested: LiquidityPoolUtils.getLastHERPCNodeChecked(),
-      count: SERVERCOUNTSTATUS.daysCounted.toString(),
+      count: `${ControlVarsUtils.SERVERCOUNT.daysCount.toString()} days`,
     });
   }
 });
