@@ -57,6 +57,7 @@ app.get("/status", async (req, res) => {
       mainFolderSizeMB: `${(mainFolderSize / 1024 ** 2).toFixed(3)} MB`,
       mainFolderSizeGB: `${(mainFolderSize / 1024 ** 3).toFixed(3)} GB`,
       lastHERPCNodeTested: LiquidityPoolUtils.getLastHERPCNodeChecked(),
+      SERVERCOUNTSTATUS,
     });
   }
 });
