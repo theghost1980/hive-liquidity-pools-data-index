@@ -8,7 +8,16 @@ import { Logger } from "./utils/logger.utils";
 
 const serveIndex = require("serve-index");
 
+export const SERVERCOUNTSTATUS = {
+  daysCounted: 0,
+};
+
 dotenv.config();
+
+//TODO important
+// Ok, well so far I will change to 24 h to keep testing and
+//  - open an Endpoint to get data as the user wants, for example ask for a pair and get all data, etc.
+//  - Also an Endpoint to get the user earnings of a token pair.
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -17,7 +26,7 @@ app.use(express.static(path.join(__dirname, "public"))); // Serve static files f
 app.use(
   "/data",
   serveIndex(path.join(__dirname, "public", "data"), { icons: true })
-); //// Serve directory listings for the 'downloads' folder
+);
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
