@@ -6,12 +6,12 @@ import { LiquidityPoolUtils } from "../utils/liquidity-pool.utils";
 import { Logger } from "../utils/logger.utils";
 
 export const initScripts = () => {
+  //"* * * * *" each minute
+  //"0 0 * * *" each 24h at midnight.
   cron.schedule(
-    "* * * * *",
+    "0 0 * * *",
     () => {
-      Logger.info(
-        "CRON Running each minute! for testing!! //TODO change to 24h"
-      );
+      Logger.info("CRON Running each 24h! testing: IP");
       //count days since last starting point
       ControlVarsUtils.addDay();
       LiquidityPoolUtils.fetchPoolData()

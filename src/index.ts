@@ -13,8 +13,10 @@ const serveIndex = require("serve-index");
 dotenv.config();
 
 //TODO important
-// Ok, well so far I will change to 24 h to keep testing and
-//  - open an Endpoint to get data as the user wants, for example ask for a pair and get all data, etc.
+//  - check results running each 24h
+//  - code the function to calculate 24h earning fees per user
+//  - somehow get the top 10 positions of each pools
+//    -> can open a route to get those 10 positions by pool + fees earned!
 //  - Also an Endpoint to get the user earnings of a token pair.
 
 const app = express();
