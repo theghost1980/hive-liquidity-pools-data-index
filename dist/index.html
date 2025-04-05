@@ -15,6 +15,26 @@
       Each token pair folder contains a 24h snapshot named as:
       ts_[unix_timestamp]
     </p>
+    <h3>About Routes</h3>
+    <ul>
+      <li>
+        <ul>
+          <li>
+            /public/data-pool?tokenPair=[tokenPair] i.e: SWAP.HIVE_SWAP.HBD or
+            SWAP.HIVE:SWAP.HBD
+          </li>
+          <li>
+            It will present all daily snapshots for that tokenPair if exists
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>/public/available-data-pool-token-pair</li>
+          <li>It will present all tokenPairs available until today!</li>
+        </ul>
+      </li>
+    </ul>
     <p>
       <a href="/data"
         >Click here to view available token pairs folders and data!</a

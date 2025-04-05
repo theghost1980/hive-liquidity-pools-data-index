@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import express from "express";
 import path from "path";
 import { initScripts } from "./init-scripts/init";
+import publicRoutes from "./routes/public-routes";
 import { FileUtils } from "./utils/file.utils";
 import { LiquidityPoolUtils } from "./utils/liquidity-pool.utils";
 import { Logger } from "./utils/logger.utils";
@@ -32,6 +33,8 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
+app.use("/public", publicRoutes);
+
 app.use(express.json());
 
 const initialize = () => {
@@ -60,5 +63,5 @@ app.get("/status", async (req, res) => {
 
 app.listen(port, () => {
   initialize();
-  Logger.info(`Server is running at http://localhost:${port}`);
+  Logger.info(`Server is running at PORT:${port}`);
 });

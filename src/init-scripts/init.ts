@@ -6,14 +6,13 @@ import { LiquidityPoolUtils } from "../utils/liquidity-pool.utils";
 import { Logger } from "../utils/logger.utils";
 
 export const initScripts = () => {
-  // Schedule the task to run daily at a specific time, e.g., midnight
   cron.schedule(
     "* * * * *",
     () => {
       Logger.info(
         "CRON Running each minute! for testing!! //TODO change to 24h"
       );
-      //count days since last staring point
+      //count days since last starting point
       SERVERCOUNTSTATUS.daysCounted = SERVERCOUNTSTATUS.daysCounted + 1;
       LiquidityPoolUtils.fetchPoolData()
         .then((liquidityPoolList) => {
@@ -21,10 +20,13 @@ export const initScripts = () => {
             for (let i = 0; i < liquidityPoolList.length; i++) {
               const element = liquidityPoolList[i];
               const currentTimestampInSeconds = moment().unix();
+              const isoDate = moment(
+                currentTimestampInSeconds * 1000
+              ).toISOString();
               FileUtils.writeDataToFile(
                 `ts_${currentTimestampInSeconds}.json`,
                 element.tokenPair,
-                element
+                { ...element, isoDate }
               );
             }
             Logger.info(`Saved ${liquidityPoolList.length} records YAY!`);
@@ -41,6 +43,4 @@ export const initScripts = () => {
     //   runOnInit: true,
     // }
   );
-
-  // console.log("Cron job scheduled to fetch liquidity data daily.");
 };
