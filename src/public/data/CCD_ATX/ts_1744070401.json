@@ -1,0 +1,14 @@
+{
+  "_id": 249,
+  "tokenPair": "CCD:ATX",
+  "baseQuantity": "1375639.62485400",
+  "baseVolume": "6712647.73059755",
+  "basePrice": "0.00171381",
+  "quoteQuantity": "2357.59221860",
+  "quoteVolume": "6607.20429699",
+  "quotePrice": "583.49345319",
+  "totalShares": "56534.72306391093326435534",
+  "precision": 8,
+  "creator": "atexoras",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

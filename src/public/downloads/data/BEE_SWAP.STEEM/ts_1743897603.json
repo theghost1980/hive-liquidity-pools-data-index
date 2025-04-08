@@ -1,0 +1,14 @@
+{
+  "_id": 209,
+  "tokenPair": "BEE:SWAP.STEEM",
+  "baseQuantity": "46708.37261800",
+  "baseVolume": "824041.72882844",
+  "basePrice": "0.72096669",
+  "quoteQuantity": "33675.18093219",
+  "quoteVolume": "404091.94155238",
+  "quotePrice": "1.38702662",
+  "totalShares": "38940.99395200903187647316",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

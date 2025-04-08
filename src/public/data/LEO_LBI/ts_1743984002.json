@@ -1,0 +1,14 @@
+{
+  "_id": 241,
+  "tokenPair": "LEO:LBI",
+  "baseQuantity": "30499.089",
+  "baseVolume": "78201.581",
+  "basePrice": "0.155",
+  "quoteQuantity": "4743.825",
+  "quoteVolume": "21757.802",
+  "quotePrice": "6.429",
+  "totalShares": "11964.20190531892491212822",
+  "precision": 3,
+  "creator": "lbi-pool",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 31,
+  "tokenPair": "BEE:SWAP.DOGE",
+  "baseQuantity": "63314.20524624",
+  "baseVolume": "2484639.66558497",
+  "basePrice": "0.52527154",
+  "quoteQuantity": "33257.15060251",
+  "quoteVolume": "3445699.07326685",
+  "quotePrice": "1.90377720",
+  "totalShares": "43291.40633703059665168966",
+  "precision": 8,
+  "creator": "aggroed",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

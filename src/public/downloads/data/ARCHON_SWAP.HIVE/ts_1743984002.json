@@ -1,0 +1,14 @@
+{
+  "_id": 204,
+  "tokenPair": "ARCHON:SWAP.HIVE",
+  "baseQuantity": "87762.55569537",
+  "baseVolume": "390650.90916946",
+  "basePrice": "0.03787531",
+  "quoteQuantity": "3324.03485420",
+  "quoteVolume": "6525.09957708",
+  "quotePrice": "26.40241740",
+  "totalShares": "16870.26334322357481774639",
+  "precision": 8,
+  "creator": "upfundme",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

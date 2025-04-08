@@ -1,0 +1,14 @@
+{
+  "_id": 270,
+  "tokenPair": "SWAP.BTC:SKULLBITS",
+  "baseQuantity": "0.01183886",
+  "baseVolume": "0.10890084",
+  "basePrice": "2041648186.39405652",
+  "quoteQuantity": "24170787.04797314",
+  "quoteVolume": "257089093.75201384",
+  "quotePrice": "0.00000000",
+  "totalShares": "529.42036296433643232661",
+  "precision": 8,
+  "creator": "skullbitsdistr",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

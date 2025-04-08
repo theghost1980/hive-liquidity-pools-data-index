@@ -1,0 +1,14 @@
+{
+  "_id": 30,
+  "tokenPair": "BEE:SIM",
+  "baseQuantity": "3998.28578785",
+  "baseVolume": "412768.51779797",
+  "basePrice": "4824.76107029",
+  "quoteQuantity": "19290773.61714323",
+  "quoteVolume": "472540780.09278355",
+  "quotePrice": "0.00020726",
+  "totalShares": "268854.41793593728824610168",
+  "precision": 8,
+  "creator": "aggroed",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

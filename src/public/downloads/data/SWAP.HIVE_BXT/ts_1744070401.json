@@ -1,0 +1,14 @@
+{
+  "_id": 49,
+  "tokenPair": "SWAP.HIVE:BXT",
+  "baseQuantity": "32690.55016812",
+  "baseVolume": "810486.79367867",
+  "basePrice": "0.56122099",
+  "quoteQuantity": "18346.62320730",
+  "quoteVolume": "256723.02943662",
+  "quotePrice": "1.78182926",
+  "totalShares": "23876.28020849703536641961",
+  "precision": 8,
+  "creator": "beeswap",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

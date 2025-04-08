@@ -1,0 +1,14 @@
+{
+  "_id": 166,
+  "tokenPair": "SWAP.HIVE:NECTAR",
+  "baseQuantity": "104.28179538",
+  "baseVolume": "2198.97173528",
+  "basePrice": "0.21228725",
+  "quoteQuantity": "22.13769658",
+  "quoteVolume": "182.70635208",
+  "quotePrice": "4.71059827",
+  "totalShares": "46.77676628531747538891",
+  "precision": 8,
+  "creator": "chrisramsook",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

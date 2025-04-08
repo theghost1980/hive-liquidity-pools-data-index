@@ -1,0 +1,14 @@
+{
+  "_id": 219,
+  "tokenPair": "GLX:COLONY",
+  "baseQuantity": "6191801.465",
+  "baseVolume": "49810112.940",
+  "basePrice": "0.928",
+  "quoteQuantity": "5751537.315",
+  "quoteVolume": "80128037.247",
+  "quotePrice": "1.076",
+  "totalShares": "5853196.83455714074872300245",
+  "precision": 3,
+  "creator": "gls.goals",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

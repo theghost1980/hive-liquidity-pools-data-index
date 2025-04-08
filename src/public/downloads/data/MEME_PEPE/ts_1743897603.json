@@ -1,0 +1,14 @@
+{
+  "_id": 235,
+  "tokenPair": "MEME:PEPE",
+  "baseQuantity": "566791.42838110",
+  "baseVolume": "21520404.25330315",
+  "basePrice": "46.25859787",
+  "quoteQuantity": "26218976.76459641",
+  "quoteVolume": "173274885.02333120",
+  "quotePrice": "0.02161760",
+  "totalShares": "3750720.62218176872563918523",
+  "precision": 8,
+  "creator": "memehive",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

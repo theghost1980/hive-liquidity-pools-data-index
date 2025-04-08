@@ -1,0 +1,14 @@
+{
+  "_id": 94,
+  "tokenPair": "SPORTS:AFIT",
+  "baseQuantity": "16962781.19031270",
+  "baseVolume": "574096440.28165896",
+  "basePrice": "0.10095917",
+  "quoteQuantity": "1712548.40454995",
+  "quoteVolume": "26300078.77708632",
+  "quotePrice": "9.90499371",
+  "totalShares": "4891356.57613472182907396422",
+  "precision": 8,
+  "creator": "patrickulrich",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

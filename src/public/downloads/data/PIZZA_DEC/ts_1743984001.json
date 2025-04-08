@@ -1,0 +1,14 @@
+{
+  "_id": 46,
+  "tokenPair": "PIZZA:DEC",
+  "baseQuantity": "10781.968",
+  "baseVolume": "2472501.964",
+  "basePrice": "12.854",
+  "quoteQuantity": "138600.414",
+  "quoteVolume": "40796926.753",
+  "quotePrice": "0.077",
+  "totalShares": "33585.03289980352605469639",
+  "precision": 3,
+  "creator": "pizzaexpress",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

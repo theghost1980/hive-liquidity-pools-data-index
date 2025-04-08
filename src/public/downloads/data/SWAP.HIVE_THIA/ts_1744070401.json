@@ -1,0 +1,14 @@
+{
+  "_id": 143,
+  "tokenPair": "SWAP.HIVE:THIA",
+  "baseQuantity": "41.79283223",
+  "baseVolume": "1189.25095677",
+  "basePrice": "8207.93087001",
+  "quoteQuantity": "343032.67780605",
+  "quoteVolume": "505319.20799372",
+  "quotePrice": "0.00012183",
+  "totalShares": "3760.49760036071788716247",
+  "precision": 8,
+  "creator": "thiagore",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

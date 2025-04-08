@@ -1,0 +1,14 @@
+{
+  "_id": 53,
+  "tokenPair": "PIZZA:STARBITS",
+  "baseQuantity": "4414.16",
+  "baseVolume": "4692979.06",
+  "basePrice": "21529.67",
+  "quoteQuantity": "95035428.45",
+  "quoteVolume": "4750280490.96",
+  "quotePrice": "0.00",
+  "totalShares": "439071.99208990433683212286",
+  "precision": 2,
+  "creator": "pizzaexpress",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

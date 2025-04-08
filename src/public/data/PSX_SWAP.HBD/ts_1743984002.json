@@ -1,0 +1,14 @@
+{
+  "_id": 198,
+  "tokenPair": "PSX:SWAP.HBD",
+  "baseQuantity": "23269.95185590",
+  "baseVolume": "2321061.10103082",
+  "basePrice": "0.00124939",
+  "quoteQuantity": "29.07345435",
+  "quoteVolume": "2192.33077148",
+  "quotePrice": "800.38483132",
+  "totalShares": "808.09945170322776735582",
+  "precision": 8,
+  "creator": "psx-bank",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

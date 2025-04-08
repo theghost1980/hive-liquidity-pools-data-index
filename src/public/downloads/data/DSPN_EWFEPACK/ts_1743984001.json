@@ -1,0 +1,14 @@
+{
+  "_id": 98,
+  "tokenPair": "DSPN:EWFEPACK",
+  "baseQuantity": "21526.55893661",
+  "baseVolume": "36970.64781492",
+  "basePrice": "0.03382418",
+  "quoteQuantity": "728.11828656",
+  "quoteVolume": "2925.88171294",
+  "quotePrice": "29.56464537",
+  "totalShares": "3928.24621486763132962399",
+  "precision": 8,
+  "creator": "elementworldnft",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

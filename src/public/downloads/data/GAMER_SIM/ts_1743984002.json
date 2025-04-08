@@ -1,0 +1,14 @@
+{
+  "_id": 245,
+  "tokenPair": "GAMER:SIM",
+  "baseQuantity": "2649416.5667",
+  "baseVolume": "24855460.1795",
+  "basePrice": "0.2240",
+  "quoteQuantity": "593473.9250",
+  "quoteVolume": "4108763.6799",
+  "quotePrice": "4.4642",
+  "totalShares": "1237917.19085008997576717844",
+  "precision": 4,
+  "creator": "kiemurainen",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

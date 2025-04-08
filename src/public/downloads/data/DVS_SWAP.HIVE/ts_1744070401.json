@@ -1,0 +1,14 @@
+{
+  "_id": 205,
+  "tokenPair": "DVS:SWAP.HIVE",
+  "baseQuantity": "8374.80547788",
+  "baseVolume": "150270.21296259",
+  "basePrice": "0.02043369",
+  "quoteQuantity": "171.12817934",
+  "quoteVolume": "10173.50893291",
+  "quotePrice": "48.93878676",
+  "totalShares": "1147.598981211126537674",
+  "precision": 8,
+  "creator": "dhedge",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 81,
+  "tokenPair": "WINE:WINEX",
+  "baseQuantity": "31743.09116604",
+  "baseVolume": "64075.36301310",
+  "basePrice": "0.53000011",
+  "quoteQuantity": "16823.84199200",
+  "quoteVolume": "32454.71309347",
+  "quotePrice": "1.88679204",
+  "totalShares": "22998.48772098118321973665",
+  "precision": 8,
+  "creator": "wine-cellar",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 65,
+  "tokenPair": "SPS:SWAP.AXS",
+  "baseQuantity": "234391.42530255",
+  "baseVolume": "4985978.60806349",
+  "basePrice": "0.00253239",
+  "quoteQuantity": "593.57219011",
+  "quoteVolume": "12708.98906512",
+  "quotePrice": "394.88276103",
+  "totalShares": "11519.9879501520098908686",
+  "precision": 8,
+  "creator": "spswhale",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

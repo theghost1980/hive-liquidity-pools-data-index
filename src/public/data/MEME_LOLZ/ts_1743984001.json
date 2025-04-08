@@ -1,0 +1,14 @@
+{
+  "_id": 113,
+  "tokenPair": "MEME:LOLZ",
+  "baseQuantity": "4954522.19562567",
+  "baseVolume": "44097606.72723109",
+  "basePrice": "0.04685141",
+  "quoteQuantity": "232126.38771225",
+  "quoteVolume": "1041370.03480453",
+  "quotePrice": "21.34407141",
+  "totalShares": "1050701.15706259801195100262",
+  "precision": 8,
+  "creator": "memehive",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

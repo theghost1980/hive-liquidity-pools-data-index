@@ -1,0 +1,14 @@
+{
+  "_id": 216,
+  "tokenPair": "SWAP.HIVE:COLONY",
+  "baseQuantity": "25051.04118519",
+  "baseVolume": "1193641.94966159",
+  "basePrice": "811.66246551",
+  "quoteQuantity": "20332989.85218582",
+  "quoteVolume": "554099834.54675254",
+  "quotePrice": "0.00123203",
+  "totalShares": "686965.44489507108361804594",
+  "precision": 8,
+  "creator": "gls.goals",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

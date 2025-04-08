@@ -1,0 +1,14 @@
+{
+  "_id": 151,
+  "tokenPair": "SWAP.HIVE:GLX",
+  "baseQuantity": "17645.84914654",
+  "baseVolume": "5247063.28793812",
+  "basePrice": "882.44140099",
+  "quoteQuantity": "15571427.84257188",
+  "quoteVolume": "447017353.57774798",
+  "quotePrice": "0.00113321",
+  "totalShares": "416458.67184059331236851653",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

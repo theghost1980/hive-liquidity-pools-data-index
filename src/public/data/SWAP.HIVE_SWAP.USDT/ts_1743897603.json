@@ -1,0 +1,14 @@
+{
+  "_id": 18,
+  "tokenPair": "SWAP.HIVE:SWAP.USDT",
+  "baseQuantity": "88926.04676645",
+  "baseVolume": "12863827.71743584",
+  "basePrice": "0.21820636",
+  "quoteQuantity": "19404.22937647",
+  "quoteVolume": "6328342.44032935",
+  "quotePrice": "4.58281774",
+  "totalShares": "33097.5486035736911673538",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

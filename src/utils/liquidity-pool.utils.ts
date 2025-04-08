@@ -3,6 +3,7 @@ import moment from "moment";
 import { LiquidityPool } from "../interfaces/liquidity-pool.interface";
 import { Logger } from "./logger.utils";
 
+//TODO cleanup & REM
 let LASTHERPCNODEWORKING = "";
 
 const HERPCAPINODES = [
@@ -65,6 +66,7 @@ const testHIVEAPIEP = (): Promise<{
 };
 
 const fetchPoolData = async (): Promise<LiquidityPool[] | null> => {
+  //TODO below start using the new RpcNodeUtils to get fastest
   const result = await testHIVEAPIEP();
   Logger.info(
     `HERPC nodes tested, lastWorking: ${result.workingHERPCNODEList[0].rpcUrl}, checkedTS: ${result.workingHERPCNODEList[0].lastCheckTSSeconds}`

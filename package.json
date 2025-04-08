@@ -22,18 +22,23 @@
   "homepage": "https://github.com/theghost1980/hive-liquidity-pools-data-index#readme",
   "dependencies": {
     "axios": "^1.8.4",
+    "cron": "^4.1.4",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "fast-folder-size": "^2.4.0",
     "fs": "^0.0.1-security",
     "fs-extra": "^11.3.0",
+    "jsdom": "^26.0.0",
     "moment": "^2.30.1",
     "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
     "serve-index": "^1.9.1",
     "winston": "^3.17.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
+    "@types/fs-extra": "^11.0.4",
+    "@types/jsdom": "^21.1.7",
     "@types/node": "^22.13.16",
     "@types/node-cron": "^3.0.11",
     "nodemon": "^3.1.9",

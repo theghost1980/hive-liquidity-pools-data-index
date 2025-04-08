@@ -1,0 +1,14 @@
+{
+  "_id": 139,
+  "tokenPair": "SPS:GLX",
+  "baseQuantity": "416951.92376507",
+  "baseVolume": "58282726.87473403",
+  "basePrice": "28.00077206",
+  "quoteQuantity": "11674975.78010447",
+  "quoteVolume": "209894367.09475068",
+  "quotePrice": "0.03571330",
+  "totalShares": "1916270.50645615050013146978",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

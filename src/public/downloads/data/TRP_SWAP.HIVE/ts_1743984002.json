@@ -1,0 +1,14 @@
+{
+  "_id": 264,
+  "tokenPair": "TRP:SWAP.HIVE",
+  "baseQuantity": "6159781.56663939",
+  "baseVolume": "667017.75326055",
+  "basePrice": "0.00000385",
+  "quoteQuantity": "23.76212349",
+  "quoteVolume": "2.35312376",
+  "quotePrice": "259226.89818658",
+  "totalShares": "12096.29414446987814644471",
+  "precision": 8,
+  "creator": "morpheus123",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

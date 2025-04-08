@@ -1,0 +1,14 @@
+{
+  "_id": 136,
+  "tokenPair": "BRO:NEOXAG",
+  "baseQuantity": "100.32967120",
+  "baseVolume": "3360.58141273",
+  "basePrice": "3679.22018561",
+  "quoteQuantity": "369134.95149556",
+  "quoteVolume": "20225747.71353979",
+  "quotePrice": "0.00027179",
+  "totalShares": "5847.884959193951232625",
+  "precision": 8,
+  "creator": "neoxian",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

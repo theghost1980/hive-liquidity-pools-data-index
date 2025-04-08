@@ -1,0 +1,14 @@
+{
+  "_id": 193,
+  "tokenPair": "ATX:SWAP.HIVE",
+  "baseQuantity": "16626.04289741",
+  "baseVolume": "40863.97181284",
+  "basePrice": "0.38150695",
+  "quoteQuantity": "6342.95093708",
+  "quoteVolume": "41920.01260512",
+  "quotePrice": "2.62118421",
+  "totalShares": "10152.52257658704694961274",
+  "precision": 8,
+  "creator": "atexoras",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

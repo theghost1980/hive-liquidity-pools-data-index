@@ -1,0 +1,14 @@
+{
+  "_id": 172,
+  "tokenPair": "SWAP.LTC:SWAP.STEEM",
+  "baseQuantity": "0.40078992",
+  "baseVolume": "134.11337715",
+  "basePrice": "641.76175146",
+  "quoteQuantity": "257.21164103",
+  "quoteVolume": "54177.37434942",
+  "quotePrice": "0.00155821",
+  "totalShares": "9.36144086872963715097",
+  "precision": 8,
+  "creator": "mmmmkkkk311",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

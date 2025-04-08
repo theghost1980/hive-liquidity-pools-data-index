@@ -1,0 +1,14 @@
+{
+  "_id": 183,
+  "tokenPair": "SWAP.HIVE:FLUX",
+  "baseQuantity": "1098.62764024",
+  "baseVolume": "212581.33466762",
+  "basePrice": "0.32212970",
+  "quoteQuantity": "353.90060256",
+  "quoteVolume": "103247.87616616",
+  "quotePrice": "3.10433955",
+  "totalShares": "520.48272269786757033066",
+  "precision": 8,
+  "creator": "terracore",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

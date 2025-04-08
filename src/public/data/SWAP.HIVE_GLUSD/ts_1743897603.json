@@ -1,0 +1,14 @@
+{
+  "_id": 170,
+  "tokenPair": "SWAP.HIVE:GLUSD",
+  "baseQuantity": "34016.34097444",
+  "baseVolume": "2205984.00666666",
+  "basePrice": "0.98239039",
+  "quoteQuantity": "33417.32670316",
+  "quoteVolume": "1348533.26219741",
+  "quotePrice": "1.01792526",
+  "totalShares": "32021.60217774756976378784",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

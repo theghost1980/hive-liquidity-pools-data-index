@@ -1,0 +1,14 @@
+{
+  "_id": 236,
+  "tokenPair": "SWAP.HIVE:KOD",
+  "baseQuantity": "401.58080896",
+  "baseVolume": "751.84804806",
+  "basePrice": "406.67771131",
+  "quoteQuantity": "163313.96429573",
+  "quoteVolume": "201732.63570385",
+  "quotePrice": "0.00245894",
+  "totalShares": "8085.5075380526419233925",
+  "precision": 8,
+  "creator": "cityfarm",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

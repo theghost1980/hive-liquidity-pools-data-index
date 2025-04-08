@@ -1,0 +1,14 @@
+{
+  "_id": 68,
+  "tokenPair": "DEC:VOUCHER",
+  "baseQuantity": "418744.495",
+  "baseVolume": "256446672.587",
+  "basePrice": "0.041",
+  "quoteQuantity": "17272.514",
+  "quoteVolume": "3603911.065",
+  "quotePrice": "24.243",
+  "totalShares": "35199.75870520581690942967",
+  "precision": 3,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 242,
+  "tokenPair": "FARM:ZING",
+  "baseQuantity": "14037.11125",
+  "baseVolume": "93259.82376",
+  "basePrice": "67.49772",
+  "quoteQuantity": "947473.01853",
+  "quoteVolume": "3852917.14676",
+  "quotePrice": "0.01481",
+  "totalShares": "114111.5314117289100190292",
+  "precision": 5,
+  "creator": "mebonline",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

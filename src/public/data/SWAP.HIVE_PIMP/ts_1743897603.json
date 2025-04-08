@@ -1,0 +1,14 @@
+{
+  "_id": 119,
+  "tokenPair": "SWAP.HIVE:PIMP",
+  "baseQuantity": "6878.16782342",
+  "baseVolume": "134864.55082025",
+  "basePrice": "77.98273910",
+  "quoteQuantity": "536378.36686395",
+  "quoteVolume": "7509082.13418982",
+  "quotePrice": "0.01282335",
+  "totalShares": "56721.23849698577092963988",
+  "precision": 8,
+  "creator": "tokenpimp",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

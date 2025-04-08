@@ -1,0 +1,14 @@
+{
+  "_id": 178,
+  "tokenPair": "SWAP.HIVE:PART",
+  "baseQuantity": "2310.75330904",
+  "baseVolume": "843607.15631468",
+  "basePrice": "3806.91832372",
+  "quoteQuantity": "8796849.11379985",
+  "quoteVolume": "836053286.32222640",
+  "quotePrice": "0.00026267",
+  "totalShares": "64804.7104207274135612727",
+  "precision": 8,
+  "creator": "newigennity",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

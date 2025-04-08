@@ -1,0 +1,14 @@
+{
+  "_id": 186,
+  "tokenPair": "TEAMPH:SWAP.BTC",
+  "baseQuantity": "209517.52474907",
+  "baseVolume": "4692082.33774702",
+  "basePrice": "0.00000000",
+  "quoteQuantity": "0.00197042",
+  "quoteVolume": "0.12176997",
+  "quotePrice": "106331403.83728849",
+  "totalShares": "19.87040329460976715331",
+  "precision": 8,
+  "creator": "leveluplifeph",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 157,
+  "tokenPair": "SWAP.BLURT:SWAP.BNB",
+  "baseQuantity": "1069327.44998456",
+  "baseVolume": "15149356.70997538",
+  "basePrice": "0.00000326",
+  "quoteQuantity": "3.48935939",
+  "quoteVolume": "79.64716245",
+  "quotePrice": "306453.80153420",
+  "totalShares": "1837.60165025275480379734",
+  "precision": 8,
+  "creator": "mmmmkkkk311",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 33,
+  "tokenPair": "BEE:SPS",
+  "baseQuantity": "259558.90732911",
+  "baseVolume": "23685777.27648543",
+  "basePrice": "12.56241973",
+  "quoteQuantity": "3260687.93892995",
+  "quoteVolume": "80975701.89451452",
+  "quotePrice": "0.07960249",
+  "totalShares": "896265.8658133856002651893",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

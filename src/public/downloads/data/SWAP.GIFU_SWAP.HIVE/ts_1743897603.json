@@ -1,0 +1,14 @@
+{
+  "_id": 250,
+  "tokenPair": "SWAP.GIFU:SWAP.HIVE",
+  "baseQuantity": "84509475.22571974",
+  "baseVolume": "380254255.86880127",
+  "basePrice": "0.00015250",
+  "quoteQuantity": "12888.16728609",
+  "quoteVolume": "79003.77239385",
+  "quotePrice": "6557.13674021",
+  "totalShares": "1036115.55658500217200931237",
+  "precision": 8,
+  "creator": "gifu",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

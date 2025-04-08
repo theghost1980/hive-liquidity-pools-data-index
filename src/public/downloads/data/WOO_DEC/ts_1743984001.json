@@ -1,0 +1,14 @@
+{
+  "_id": 125,
+  "tokenPair": "WOO:DEC",
+  "baseQuantity": "1311515.26599888",
+  "baseVolume": "85810928.52901912",
+  "basePrice": "0.01903741",
+  "quoteQuantity": "24967.85614320",
+  "quoteVolume": "56387063.50578509",
+  "quotePrice": "52.52814893",
+  "totalShares": "153588.60945281435065381937",
+  "precision": 8,
+  "creator": "wrestorgonline",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

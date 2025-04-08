@@ -1,0 +1,14 @@
+{
+  "_id": 202,
+  "tokenPair": "BBH:SWAP.HIVE",
+  "baseQuantity": "77943.20885538",
+  "baseVolume": "14476866.95112604",
+  "basePrice": "0.00193857",
+  "quoteQuantity": "151.09849423",
+  "quoteVolume": "13408.60660234",
+  "quotePrice": "515.84371672",
+  "totalShares": "3121.15928068656017071327",
+  "precision": 8,
+  "creator": "hive-112281",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

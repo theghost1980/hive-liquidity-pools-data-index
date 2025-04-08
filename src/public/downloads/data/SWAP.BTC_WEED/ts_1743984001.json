@@ -1,0 +1,14 @@
+{
+  "_id": 114,
+  "tokenPair": "SWAP.BTC:WEED",
+  "baseQuantity": "0.00240788",
+  "baseVolume": "0.58398213",
+  "basePrice": "466116529.56625745",
+  "quoteQuantity": "1122352.66921200",
+  "quoteVolume": "19519465.44737360",
+  "quotePrice": "0.00000000",
+  "totalShares": "49.91849956158569221521",
+  "precision": 8,
+  "creator": "coffeebuds",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

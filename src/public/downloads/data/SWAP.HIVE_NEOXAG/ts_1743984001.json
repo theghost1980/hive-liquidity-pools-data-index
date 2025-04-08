@@ -1,0 +1,14 @@
+{
+  "_id": 5,
+  "tokenPair": "SWAP.HIVE:NEOXAG",
+  "baseQuantity": "1826.51918688",
+  "baseVolume": "77016.94794639",
+  "basePrice": "989.81741829",
+  "quoteQuantity": "1807920.50602781",
+  "quoteVolume": "64273564.61448777",
+  "quotePrice": "0.00101028",
+  "totalShares": "55074.55090294130992763911",
+  "precision": 8,
+  "creator": "neoxian",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

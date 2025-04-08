@@ -1,0 +1,14 @@
+{
+  "_id": 253,
+  "tokenPair": "BEE:WORKERBEE",
+  "baseQuantity": "136949.04963531",
+  "baseVolume": "145159.85626427",
+  "basePrice": "0.12662206",
+  "quoteQuantity": "17340.77122894",
+  "quoteVolume": "27393.01214871",
+  "quotePrice": "7.89751781",
+  "totalShares": "48640.05795554643437311329",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

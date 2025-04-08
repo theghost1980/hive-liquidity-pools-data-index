@@ -1,0 +1,14 @@
+{
+  "_id": 19,
+  "tokenPair": "SWAP.HIVE:SIM",
+  "baseQuantity": "39003.88190805",
+  "baseVolume": "1782038.01017228",
+  "basePrice": "12169.51004973",
+  "quoteQuantity": "474658132.85870227",
+  "quoteVolume": "4736424521.94808557",
+  "quotePrice": "0.00008217",
+  "totalShares": "4197573.08045499689872482772",
+  "precision": 8,
+  "creator": "dcitygame",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

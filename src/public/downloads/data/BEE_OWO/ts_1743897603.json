@@ -1,0 +1,14 @@
+{
+  "_id": 262,
+  "tokenPair": "BEE:OWO",
+  "baseQuantity": "0.00000000",
+  "baseVolume": 0,
+  "basePrice": "4.00000000",
+  "quoteQuantity": "0.00000000",
+  "quoteVolume": 0,
+  "quotePrice": "0.25000000",
+  "totalShares": "0",
+  "precision": 8,
+  "creator": "iworosglobal",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

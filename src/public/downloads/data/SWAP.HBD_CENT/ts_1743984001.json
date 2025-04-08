@@ -1,0 +1,14 @@
+{
+  "_id": 55,
+  "tokenPair": "SWAP.HBD:CENT",
+  "baseQuantity": "568.60478929",
+  "baseVolume": "50292.58619624",
+  "basePrice": "1732.83038648",
+  "quoteQuantity": "985295.65677990",
+  "quoteVolume": "24237251.04588923",
+  "quotePrice": "0.00057709",
+  "totalShares": "21187.15872544741568095611",
+  "precision": 8,
+  "creator": "anadolu",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

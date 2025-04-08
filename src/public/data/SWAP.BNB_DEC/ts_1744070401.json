@@ -1,0 +1,14 @@
+{
+  "_id": 243,
+  "tokenPair": "SWAP.BNB:DEC",
+  "baseQuantity": "0.00002277",
+  "baseVolume": "1.00017248",
+  "basePrice": "627465.81510759",
+  "quoteQuantity": "14.28739661",
+  "quoteVolume": "625891.12960023",
+  "quotePrice": "0.00000159",
+  "totalShares": "0.01505072540695335894",
+  "precision": 8,
+  "creator": "gotchaback",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

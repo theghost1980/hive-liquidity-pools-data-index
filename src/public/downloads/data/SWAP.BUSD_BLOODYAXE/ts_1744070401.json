@@ -1,0 +1,14 @@
+{
+  "_id": 150,
+  "tokenPair": "SWAP.BUSD:BLOODYAXE",
+  "baseQuantity": "0.07440476",
+  "baseVolume": "87.26746710",
+  "basePrice": "13.44000034",
+  "quoteQuantity": "1.00000000",
+  "quoteVolume": "7.00000000",
+  "quotePrice": "0.07440476",
+  "totalShares": "0.27277235930350421046",
+  "precision": 8,
+  "creator": "bloodyaxe",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

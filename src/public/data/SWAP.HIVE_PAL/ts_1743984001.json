@@ -1,0 +1,14 @@
+{
+  "_id": 6,
+  "tokenPair": "SWAP.HIVE:PAL",
+  "baseQuantity": "1444.50101280",
+  "baseVolume": "347186.00281272",
+  "basePrice": "18880.99091980",
+  "quoteQuantity": "27273610.50632636",
+  "quoteVolume": "279531307.47461936",
+  "quotePrice": "0.00005296",
+  "totalShares": "193983.10682610327719104983",
+  "precision": 8,
+  "creator": "minnowsupport",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

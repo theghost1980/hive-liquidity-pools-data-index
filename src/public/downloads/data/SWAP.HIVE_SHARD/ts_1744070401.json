@@ -1,0 +1,14 @@
+{
+  "_id": 197,
+  "tokenPair": "SWAP.HIVE:SHARD",
+  "baseQuantity": "1644.66188565",
+  "baseVolume": "595670.93585770",
+  "basePrice": "567.98230975",
+  "quoteQuantity": "934138.85657924",
+  "quoteVolume": "47959312.82329123",
+  "quotePrice": "0.00176061",
+  "totalShares": "34175.31928080755215325605",
+  "precision": 8,
+  "creator": "golem.pool",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

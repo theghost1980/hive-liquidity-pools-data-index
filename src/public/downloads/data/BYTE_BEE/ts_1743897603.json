@@ -1,0 +1,14 @@
+{
+  "_id": 227,
+  "tokenPair": "BYTE:BEE",
+  "baseQuantity": "1311779.67688200",
+  "baseVolume": "5890581.32311593",
+  "basePrice": "0.00008734",
+  "quoteQuantity": "114.57609160",
+  "quoteVolume": "1805.35874124",
+  "quotePrice": "11448.98258060",
+  "totalShares": "12176.07760324232067576603",
+  "precision": 8,
+  "creator": "learn2code",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 240,
+  "tokenPair": "BHRT:SWAP.HIVE",
+  "baseQuantity": "2059265.54847444",
+  "baseVolume": "1146189.68500538",
+  "basePrice": "0.00020486",
+  "quoteQuantity": "421.86927357",
+  "quoteVolume": "239.69051269",
+  "quotePrice": "4881.28829826",
+  "totalShares": "29456.16748432760048876804",
+  "precision": 8,
+  "creator": "bhr-pool",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

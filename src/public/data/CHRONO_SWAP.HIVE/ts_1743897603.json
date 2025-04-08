@@ -1,0 +1,14 @@
+{
+  "_id": 263,
+  "tokenPair": "CHRONO:SWAP.HIVE",
+  "baseQuantity": "16.45644502",
+  "baseVolume": "19.29455497",
+  "basePrice": "0.03148323",
+  "quoteQuantity": "0.51810211",
+  "quoteVolume": "0.68514458",
+  "quotePrice": "31.76293765",
+  "totalShares": "2.91926685633540334237",
+  "precision": 8,
+  "creator": "gamersvault",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

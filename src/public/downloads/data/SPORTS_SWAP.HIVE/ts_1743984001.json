@@ -1,0 +1,14 @@
+{
+  "_id": 56,
+  "tokenPair": "SPORTS:SWAP.HIVE",
+  "baseQuantity": "55640499.34205557",
+  "baseVolume": "5678882931.97782880",
+  "basePrice": "0.00003967",
+  "quoteQuantity": "2207.58766403",
+  "quoteVolume": "114583.02714031",
+  "quotePrice": "25204.20830785",
+  "totalShares": "301113.58025898458998082912",
+  "precision": 8,
+  "creator": "patrickulrich",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

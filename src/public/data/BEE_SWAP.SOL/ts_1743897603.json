@@ -1,0 +1,14 @@
+{
+  "_id": 258,
+  "tokenPair": "BEE:SWAP.SOL",
+  "baseQuantity": "80667.86052487",
+  "baseVolume": "671101.57238656",
+  "basePrice": "0.00071780",
+  "quoteQuantity": "57.90370907",
+  "quoteVolume": "398.68177294",
+  "quotePrice": "1393.13805316",
+  "totalShares": "2140.82644009783005925584",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 76,
+  "tokenPair": "SPS:SWAP.STATE",
+  "baseQuantity": "6371.00758331",
+  "baseVolume": "592739.84558898",
+  "basePrice": "155.78245765",
+  "quoteQuantity": "992491.21909141",
+  "quoteVolume": "48002639.82390947",
+  "quotePrice": "0.00641920",
+  "totalShares": "77175.45274265336929562476",
+  "precision": 8,
+  "creator": "gamestate",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

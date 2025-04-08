@@ -1,0 +1,14 @@
+{
+  "_id": 212,
+  "tokenPair": "DVS:DHEDGE",
+  "baseQuantity": "46144.35132384",
+  "baseVolume": "78802.85530291",
+  "basePrice": "1.98546412",
+  "quoteQuantity": "91617.95401151",
+  "quoteVolume": "234462.87217101",
+  "quotePrice": "0.50366057",
+  "totalShares": "64480.33471393338118052769",
+  "precision": 8,
+  "creator": "dhedge",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

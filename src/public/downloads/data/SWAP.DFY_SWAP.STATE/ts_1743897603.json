@@ -1,0 +1,14 @@
+{
+  "_id": 75,
+  "tokenPair": "SWAP.DFY:SWAP.STATE",
+  "baseQuantity": "78079.02069097",
+  "baseVolume": "2033048.81091093",
+  "basePrice": "6.10600581",
+  "quoteQuantity": "476750.95438102",
+  "quoteVolume": "10880914.89665634",
+  "quotePrice": "0.16377318",
+  "totalShares": "191009.10020224558519349653",
+  "precision": 8,
+  "creator": "state-dfy",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

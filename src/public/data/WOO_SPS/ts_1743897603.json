@@ -1,0 +1,14 @@
+{
+  "_id": 121,
+  "tokenPair": "WOO:SPS",
+  "baseQuantity": "1788090.28571418",
+  "baseVolume": "102941375.36000756",
+  "basePrice": "0.00255186",
+  "quoteQuantity": "4562.96394762",
+  "quoteVolume": "1273079.37247993",
+  "quotePrice": "391.87035142",
+  "totalShares": "74117.52128481053267213203",
+  "precision": 8,
+  "creator": "wrestorgonline",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

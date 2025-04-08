@@ -1,0 +1,14 @@
+{
+  "_id": 107,
+  "tokenPair": "CENT:CENTG",
+  "baseQuantity": "198413.72934515",
+  "baseVolume": "23342426.66406882",
+  "basePrice": "0.00286096",
+  "quoteQuantity": "567.65394117",
+  "quoteVolume": "22102.64982599",
+  "quotePrice": "349.53290192",
+  "totalShares": "10103.97723243461606573258",
+  "precision": 8,
+  "creator": "anadolu",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

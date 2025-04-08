@@ -1,0 +1,14 @@
+{
+  "_id": 116,
+  "tokenPair": "SWAP.HIVE:FURY",
+  "baseQuantity": "40.39063575",
+  "baseVolume": "1761.20314600",
+  "basePrice": "23655582.55975679",
+  "quoteQuantity": "955464018.62518950",
+  "quoteVolume": "1692443949.58734920",
+  "quotePrice": "0.00000004",
+  "totalShares": "193618.70687622170565225339",
+  "precision": 8,
+  "creator": "splinterskins",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

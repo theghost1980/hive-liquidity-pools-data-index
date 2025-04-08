@@ -1,0 +1,14 @@
+{
+  "_id": 73,
+  "tokenPair": "PIZZA:ONEUP",
+  "baseQuantity": "19884.10248702",
+  "baseVolume": "1672641.35747778",
+  "basePrice": "43.59746212",
+  "quoteQuantity": "866896.40510777",
+  "quoteVolume": "24483634.84833704",
+  "quotePrice": "0.02293711",
+  "totalShares": "123430.88797402788633782907",
+  "precision": 8,
+  "creator": "pizzaexpress",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

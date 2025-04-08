@@ -1,0 +1,14 @@
+{
+  "_id": 228,
+  "tokenPair": "VOTE:PAY",
+  "baseQuantity": "297887.8186",
+  "baseVolume": "528831.2369",
+  "basePrice": "71.1649",
+  "quoteQuantity": "21199176.1970",
+  "quoteVolume": "20676240.1324",
+  "quotePrice": "0.0140",
+  "totalShares": "2502058.9216512792939272559",
+  "precision": 4,
+  "creator": "politicalhive",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

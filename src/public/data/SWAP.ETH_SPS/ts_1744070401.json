@@ -1,0 +1,14 @@
+{
+  "_id": 40,
+  "tokenPair": "SWAP.ETH:SPS",
+  "baseQuantity": "7.17822965",
+  "baseVolume": "3956.77839767",
+  "basePrice": "244154.97035698",
+  "quoteQuantity": "1752600.44741137",
+  "quoteVolume": "104072776.60954778",
+  "quotePrice": "0.00000409",
+  "totalShares": "3315.25294983923025087342",
+  "precision": 8,
+  "creator": "spswhale",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

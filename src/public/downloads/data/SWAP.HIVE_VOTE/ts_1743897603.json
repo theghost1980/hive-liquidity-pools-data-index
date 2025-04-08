@@ -1,0 +1,14 @@
+{
+  "_id": 229,
+  "tokenPair": "SWAP.HIVE:VOTE",
+  "baseQuantity": "169.85309051",
+  "baseVolume": "774.77639124",
+  "basePrice": "1516.42406074",
+  "quoteQuantity": "257569.31324115",
+  "quoteVolume": "1923158.09725727",
+  "quotePrice": "0.00065944",
+  "totalShares": "6490.84795996338770331114",
+  "precision": 8,
+  "creator": "politicalhive",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

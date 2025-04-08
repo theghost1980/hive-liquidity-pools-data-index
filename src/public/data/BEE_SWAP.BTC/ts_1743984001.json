@@ -1,0 +1,14 @@
+{
+  "_id": 14,
+  "tokenPair": "BEE:SWAP.BTC",
+  "baseQuantity": "570456.76216381",
+  "baseVolume": "9740536.00303735",
+  "basePrice": "0.00000102",
+  "quoteQuantity": "0.58632174",
+  "quoteVolume": "75.89737522",
+  "quotePrice": "972941.51529126",
+  "totalShares": "560.84981471144812302085",
+  "precision": 8,
+  "creator": "diningguide",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 96,
+  "tokenPair": "EXOFUEL:BEE",
+  "baseQuantity": "107.31395666",
+  "baseVolume": "1371.84104160",
+  "basePrice": "3.91382381",
+  "quoteQuantity": "420.00791895",
+  "quoteVolume": "2288.92043207",
+  "quotePrice": "0.25550460",
+  "totalShares": "211.03073979852441355121",
+  "precision": 8,
+  "creator": "steemshadow",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

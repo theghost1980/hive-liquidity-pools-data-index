@@ -1,0 +1,14 @@
+{
+  "_id": 134,
+  "tokenPair": "STARPRO:STARBITS",
+  "baseQuantity": "12.97",
+  "baseVolume": "21949.86",
+  "basePrice": "22602168.09",
+  "quoteQuantity": "293150120.25",
+  "quoteVolume": "37108412364.12",
+  "quotePrice": "0.00",
+  "totalShares": "46205.72556390016846646021",
+  "precision": 2,
+  "creator": "wagginston",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

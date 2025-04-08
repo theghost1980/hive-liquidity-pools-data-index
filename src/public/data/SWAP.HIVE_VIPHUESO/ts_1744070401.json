@@ -1,0 +1,14 @@
+{
+  "_id": 247,
+  "tokenPair": "SWAP.HIVE:VIPHUESO",
+  "baseQuantity": "1092.16424421",
+  "baseVolume": "1208.44101154",
+  "basePrice": "38.48121026",
+  "quoteQuantity": "42027.80193050",
+  "quoteVolume": "47317.51706919",
+  "quotePrice": "0.02598670",
+  "totalShares": "6762.36492998047171004178",
+  "precision": 8,
+  "creator": "nullbone",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

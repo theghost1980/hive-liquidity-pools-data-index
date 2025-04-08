@@ -1,0 +1,14 @@
+{
+  "_id": 37,
+  "tokenPair": "BEE:SWAP.BNB",
+  "baseQuantity": "25067.54934070",
+  "baseVolume": "484446.54848948",
+  "basePrice": "0.00014443",
+  "quoteQuantity": "3.62055626",
+  "quoteVolume": "141.73003183",
+  "quotePrice": "6923.67347461",
+  "totalShares": "285.48515631456802559214",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

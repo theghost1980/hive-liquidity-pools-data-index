@@ -1,0 +1,14 @@
+{
+  "_id": 268,
+  "tokenPair": "PPDLR:PEPE",
+  "baseQuantity": "2588.75099463",
+  "baseVolume": "5.36600524",
+  "basePrice": "375327.36794183",
+  "quoteQuantity": "971629097.07128642",
+  "quoteVolume": "2014446.30814832",
+  "quotePrice": "0.00000266",
+  "totalShares": "1585679.87243735364666143872",
+  "precision": 8,
+  "creator": "pepetoken",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

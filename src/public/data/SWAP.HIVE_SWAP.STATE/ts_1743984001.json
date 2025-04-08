@@ -1,0 +1,14 @@
+{
+  "_id": 87,
+  "tokenPair": "SWAP.HIVE:SWAP.STATE",
+  "baseQuantity": "367.06003167",
+  "baseVolume": "35712.15322405",
+  "basePrice": "4855.55696524",
+  "quoteQuantity": "1782280.89343715",
+  "quoteVolume": "39546662.11187409",
+  "quotePrice": "0.00020594",
+  "totalShares": "24362.06323402679739842489",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 141,
+  "tokenPair": "SWAP.HIVE:POSH",
+  "baseQuantity": "37.99708440",
+  "baseVolume": "29178.01054480",
+  "basePrice": "103.19602511",
+  "quoteQuantity": "3921.14807593",
+  "quoteVolume": "471090.50773373",
+  "quotePrice": "0.00969029",
+  "totalShares": "299.33975082029307508819",
+  "precision": 8,
+  "creator": "ua-promoter",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

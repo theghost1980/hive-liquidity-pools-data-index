@@ -1,0 +1,14 @@
+{
+  "_id": 215,
+  "tokenPair": "SCRIPT:GLUSD",
+  "baseQuantity": "85635.823",
+  "baseVolume": "297083.088",
+  "basePrice": "1.799",
+  "quoteQuantity": "154135.752",
+  "quoteVolume": "394442.895",
+  "quotePrice": "0.555",
+  "totalShares": "114201.70830358133913308275",
+  "precision": 3,
+  "creator": "gls.goals",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

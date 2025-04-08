@@ -1,40 +1,16 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.initScripts = void 0;
-const moment_1 = __importDefault(require("moment"));
-const node_cron_1 = __importDefault(require("node-cron"));
-const file_utils_1 = require("../utils/file.utils");
-const liquidity_pool_utils_1 = require("../utils/liquidity-pool.utils");
-const logger_utils_1 = require("../utils/logger.utils");
+const main_cron_job_1 = require("../cron/main-cron-job");
+//TODO important:
+//  - set the cronJob as an instance so you can declare it as it own module and:
+//    - get next job time.
+//    - get time until next job.
+//  refer to: https://stackoverflow.com/questions/60828411/node-js-get-time-till-next-cron-job
 const initScripts = () => {
-    // Schedule the task to run daily at a specific time, e.g., midnight
-    node_cron_1.default.schedule("* * * * *", () => {
-        logger_utils_1.Logger.info("CRON Running each minute! for testing!! //TODO change to 24h");
-        liquidity_pool_utils_1.LiquidityPoolUtils.fetchPoolData()
-            .then((liquidityPoolList) => {
-            if (liquidityPoolList) {
-                for (let i = 0; i < liquidityPoolList.length; i++) {
-                    const element = liquidityPoolList[i];
-                    const currentTimestampInSeconds = (0, moment_1.default)().unix();
-                    file_utils_1.FileUtils.writeDataToFile(`ts_${currentTimestampInSeconds}.json`, element.tokenPair, element);
-                }
-                logger_utils_1.Logger.info(`Saved ${liquidityPoolList.length} records YAY!`);
-            }
-            else {
-                logger_utils_1.Logger.error("No Pools Fetched! Please Check!");
-            }
-        })
-            .catch((e) => {
-            logger_utils_1.Logger.error(`Error fecthing Liquidity Pools code: ${e.code} `);
-        });
-    }
-    // {
-    //   runOnInit: true,
-    // }
-    );
-    // console.log("Cron job scheduled to fetch liquidity data daily.");
+    //"* * * * *" each minute
+    //"0 0 * * *" each 24h at midnight.
+    //TODO bellow reset to 24h
+    main_cron_job_1.MainCronJob.startJob();
 };
 exports.initScripts = initScripts;

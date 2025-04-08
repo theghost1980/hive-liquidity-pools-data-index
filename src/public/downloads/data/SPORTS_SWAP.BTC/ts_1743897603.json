@@ -1,0 +1,14 @@
+{
+  "_id": 97,
+  "tokenPair": "SPORTS:SWAP.BTC",
+  "baseQuantity": "104574660.35183386",
+  "baseVolume": "1452749923.38411765",
+  "basePrice": "0.00000000",
+  "quoteQuantity": "0.01089925",
+  "quoteVolume": "0.22556864",
+  "quotePrice": "9594665720.28661238",
+  "totalShares": "957.8525376748982903939",
+  "precision": 8,
+  "creator": "patrickulrich",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

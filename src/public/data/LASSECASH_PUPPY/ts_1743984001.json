@@ -1,0 +1,14 @@
+{
+  "_id": 138,
+  "tokenPair": "LASSECASH:PUPPY",
+  "baseQuantity": "127747.62086540",
+  "baseVolume": "3588483.08041110",
+  "basePrice": "217.01202645",
+  "quoteQuantity": "27722770.07886186",
+  "quoteVolume": "70026090.74237233",
+  "quotePrice": "0.00460803",
+  "totalShares": "1843319.94491506419938892676",
+  "precision": 8,
+  "creator": "lasseehlers",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

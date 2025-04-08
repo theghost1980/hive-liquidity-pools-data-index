@@ -1,0 +1,14 @@
+{
+  "_id": 173,
+  "tokenPair": "TEAMPH:SPS",
+  "baseQuantity": "302350.28062135",
+  "baseVolume": "8334471.42283704",
+  "basePrice": "0.11374386",
+  "quoteQuantity": "34390.49045398",
+  "quoteVolume": "670240.86435505",
+  "quotePrice": "8.79168271",
+  "totalShares": "99111.10939622663328009163",
+  "precision": 8,
+  "creator": "locolombia",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

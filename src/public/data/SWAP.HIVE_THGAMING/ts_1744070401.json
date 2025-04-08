@@ -1,0 +1,14 @@
+{
+  "_id": 99,
+  "tokenPair": "SWAP.HIVE:THGAMING",
+  "baseQuantity": "1164.99249098",
+  "baseVolume": "72365.36367570",
+  "basePrice": "13258.80228408",
+  "quoteQuantity": "15446405.10034467",
+  "quoteVolume": "164396628.12530757",
+  "quotePrice": "0.00007542",
+  "totalShares": "129493.44253052195676498898",
+  "precision": 8,
+  "creator": "thgaming",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

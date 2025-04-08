@@ -1,0 +1,14 @@
+{
+  "_id": 185,
+  "tokenPair": "SWAP.HIVE:CENTG",
+  "baseQuantity": "151.63635614",
+  "baseVolume": "80218.57293917",
+  "basePrice": "0.95831471",
+  "quoteQuantity": "145.31535143",
+  "quoteVolume": "12015.77610455",
+  "quotePrice": "1.04349853",
+  "totalShares": "127.45423973989928047893",
+  "precision": 8,
+  "creator": "anadolu",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

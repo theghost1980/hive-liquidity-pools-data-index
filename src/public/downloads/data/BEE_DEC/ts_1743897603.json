@@ -1,0 +1,14 @@
+{
+  "_id": 24,
+  "tokenPair": "BEE:DEC",
+  "baseQuantity": "104229.82055362",
+  "baseVolume": "9205629.78271648",
+  "basePrice": "96.45917205",
+  "quoteQuantity": "10053922.19389943",
+  "quoteVolume": "1145824958.36474040",
+  "quotePrice": "0.01036708",
+  "totalShares": "963548.00973235394329622767",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

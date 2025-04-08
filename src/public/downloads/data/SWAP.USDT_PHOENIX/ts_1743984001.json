@@ -1,0 +1,14 @@
+{
+  "_id": 109,
+  "tokenPair": "SWAP.USDT:PHOENIX",
+  "baseQuantity": "749.83757819",
+  "baseVolume": "5399.47169146",
+  "basePrice": "1.66485090",
+  "quoteQuantity": "1248.36776912",
+  "quoteVolume": "2018.89112631",
+  "quotePrice": "0.60065438",
+  "totalShares": "963.88994760116939142543",
+  "precision": 8,
+  "creator": "grand-phoenix",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 3,
+  "tokenPair": "SWAP.HIVE:WEED",
+  "baseQuantity": "758.65640487",
+  "baseVolume": "68951.75398653",
+  "basePrice": "1188.80410902",
+  "quoteQuantity": "901893.85144552",
+  "quoteVolume": "28429443.82930788",
+  "quotePrice": "0.00084118",
+  "totalShares": "24898.33234354104209545825",
+  "precision": 8,
+  "creator": "coffeebuds",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

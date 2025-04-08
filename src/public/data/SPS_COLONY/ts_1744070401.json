@@ -1,0 +1,14 @@
+{
+  "_id": 218,
+  "tokenPair": "SPS:COLONY",
+  "baseQuantity": "375802.41682534",
+  "baseVolume": "6805328.40722319",
+  "basePrice": "26.36693439",
+  "quoteQuantity": "9908757.67100244",
+  "quoteVolume": "119928454.21396028",
+  "quotePrice": "0.03792628",
+  "totalShares": "1876515.66087243833083922663",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

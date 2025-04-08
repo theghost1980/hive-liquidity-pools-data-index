@@ -1,0 +1,14 @@
+{
+  "_id": 144,
+  "tokenPair": "XBOT:SWAP.HIVE",
+  "baseQuantity": "0.00000000",
+  "baseVolume": 0,
+  "basePrice": "143.70584279",
+  "quoteQuantity": "0.00000000",
+  "quoteVolume": 0,
+  "quotePrice": "0.00695865",
+  "totalShares": "0",
+  "precision": 8,
+  "creator": "crypt0prince",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

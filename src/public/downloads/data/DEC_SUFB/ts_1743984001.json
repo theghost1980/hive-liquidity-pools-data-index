@@ -1,0 +1,14 @@
+{
+  "_id": 42,
+  "tokenPair": "DEC:SUFB",
+  "baseQuantity": "750.277",
+  "baseVolume": "223771.128",
+  "basePrice": "0.016",
+  "quoteQuantity": "12.404",
+  "quoteVolume": "1039.583",
+  "quotePrice": "60.486",
+  "totalShares": "95.93314626784901859232",
+  "precision": 3,
+  "creator": "jpbliberty",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

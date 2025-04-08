@@ -1,0 +1,14 @@
+{
+  "_id": 234,
+  "tokenPair": "SWAP.HIVE:HUESO",
+  "baseQuantity": "1445.37537214",
+  "baseVolume": "4242.30230322",
+  "basePrice": "4290.72843659",
+  "quoteQuantity": "6201713.21079059",
+  "quoteVolume": "16528176.51920829",
+  "quotePrice": "0.00023306",
+  "totalShares": "94281.13720345773022729749",
+  "precision": 8,
+  "creator": "mv-deposito",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

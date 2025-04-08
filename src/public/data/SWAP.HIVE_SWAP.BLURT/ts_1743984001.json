@@ -1,0 +1,14 @@
+{
+  "_id": 78,
+  "tokenPair": "SWAP.HIVE:SWAP.BLURT",
+  "baseQuantity": "27682.55619020",
+  "baseVolume": "1802636.37749328",
+  "basePrice": "109.73210052",
+  "quoteQuantity": "3037665.03869423",
+  "quoteVolume": "173494150.17239629",
+  "quotePrice": "0.00911310",
+  "totalShares": "228922.46802792442961664952",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

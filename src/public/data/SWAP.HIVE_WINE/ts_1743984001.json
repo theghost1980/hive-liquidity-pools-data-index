@@ -1,0 +1,14 @@
+{
+  "_id": 58,
+  "tokenPair": "SWAP.HIVE:WINE",
+  "baseQuantity": "133.47515937",
+  "baseVolume": "9089.71371784",
+  "basePrice": "55.04044299",
+  "quoteQuantity": "7346.53190043",
+  "quoteVolume": "194882.73716986",
+  "quotePrice": "0.01816845",
+  "totalShares": "906.45829368068992807888",
+  "precision": 8,
+  "creator": "wine-token",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

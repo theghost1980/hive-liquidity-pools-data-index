@@ -1,0 +1,14 @@
+{
+  "_id": 266,
+  "tokenPair": "SWAP.USDT:BEED",
+  "baseQuantity": "14.750263",
+  "baseVolume": "14.422582",
+  "basePrice": "1.070202",
+  "quoteQuantity": "15.785767",
+  "quoteVolume": "14.574312",
+  "quotePrice": "0.934402",
+  "totalShares": "15.22619176975123893063",
+  "precision": 6,
+  "creator": "balancerix",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

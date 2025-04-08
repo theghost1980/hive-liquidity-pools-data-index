@@ -1,0 +1,14 @@
+{
+  "_id": 111,
+  "tokenPair": "POB:SWAP.HIVE",
+  "baseQuantity": "22972.33013872",
+  "baseVolume": "8323489.32290199",
+  "basePrice": "0.00921900",
+  "quoteQuantity": "211.78212207",
+  "quoteVolume": "124776.64962779",
+  "quotePrice": "108.47152684",
+  "totalShares": "1365.46342534524719930754",
+  "precision": 8,
+  "creator": "richardcrill",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

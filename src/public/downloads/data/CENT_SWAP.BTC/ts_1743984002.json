@@ -1,0 +1,14 @@
+{
+  "_id": 232,
+  "tokenPair": "CENT:SWAP.BTC",
+  "baseQuantity": "1024678.14054747",
+  "baseVolume": "15411282.98016126",
+  "basePrice": "0.00000000",
+  "quoteQuantity": "0.00761274",
+  "quoteVolume": "0.21180914",
+  "quotePrice": "134600438.28470038",
+  "totalShares": "86.46031663336622332268",
+  "precision": 8,
+  "creator": "centtoken",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

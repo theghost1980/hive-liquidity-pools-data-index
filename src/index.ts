@@ -1,10 +1,12 @@
 import dotenv from "dotenv";
 import express from "express";
 import path from "path";
+import { MainCronJob } from "./cron/main-cron-job";
 import { initScripts } from "./init-scripts/init";
 import publicRoutes from "./routes/public-routes";
 import { ControlVarsUtils } from "./utils/control-vars";
 import { FileUtils } from "./utils/file.utils";
+import { JsonUtils } from "./utils/jsonUtils";
 import { LiquidityPoolUtils } from "./utils/liquidity-pool.utils";
 import { Logger } from "./utils/logger.utils";
 
@@ -22,11 +24,10 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, "public"))); // Serve static files from the 'public' directory
-app.use(
-  "/data",
-  serveIndex(path.join(__dirname, "public", "data"), { icons: true })
-);
+const publicDir = path.join(__dirname, "public");
+const dataDir = path.join(publicDir, "data");
+
+app.use("/data", express.static(dataDir), serveIndex(dataDir, { icons: true }));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
@@ -34,11 +35,28 @@ app.get("/", (req, res) => {
 
 app.use("/public", publicRoutes);
 
-app.use(express.json());
-
 const initialize = () => {
   Logger.info("Init Scripts!!");
   initScripts();
+
+  // //TODO below move to a maintenance route.
+  // //Important while we test, we get the data from the main source which is the backend running in render.com
+  // // const BASE_URL = "https://hive-liquidity-pools-data-index.onrender.com/data/";
+
+  // // const sourceUrl = "http://localhost:3000/data"; // Replace with your source URL
+  // const sourceUrl =
+  //   "https://hive-liquidity-pools-data-index.onrender.com/data/";
+  // const destDir = path.join(__dirname, "public", "downloads", "data"); // Where you want to copy the files to
+
+  // // Call the main function with the source URL and destination directory
+  // downloadFiles(sourceUrl, destDir)
+  //   .then(() => {
+  //     console.log("Download process completed!");
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error during download:", error);
+  //   });
+  // //end testing
 };
 
 app.get("/status", async (req, res) => {
@@ -49,6 +67,11 @@ app.get("/status", async (req, res) => {
   } catch (error) {
     mainFolderSize = 0;
   } finally {
+    const nextSnapshotDate = MainCronJob.getNextDate();
+    const serverData = await JsonUtils.readJsonFile(
+      "/reference-data/server-data.json"
+    );
+
     res.send({
       status: "OK",
       overall_index: "In Progress!",
@@ -57,6 +80,8 @@ app.get("/status", async (req, res) => {
       mainFolderSizeGB: `${(mainFolderSize / 1024 ** 3).toFixed(3)} GB`,
       lastHERPCNodeTested: LiquidityPoolUtils.getLastHERPCNodeChecked(),
       count: `${ControlVarsUtils.SERVERCOUNT.daysCount.toString()} days`,
+      nextSnapshotDate,
+      ...serverData,
     });
   }
 });

@@ -1,0 +1,14 @@
+{
+  "_id": 90,
+  "tokenPair": "BUDS:SWAP.HIVE",
+  "baseQuantity": "74099379.11949353",
+  "baseVolume": "1398028987.95587080",
+  "basePrice": "0.00000484",
+  "quoteQuantity": "359.15235672",
+  "quoteVolume": "255306.95608504",
+  "quotePrice": "206317.39631674",
+  "totalShares": "154710.04085848144460272812",
+  "precision": 8,
+  "creator": "wagginston",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

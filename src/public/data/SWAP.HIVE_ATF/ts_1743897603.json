@@ -1,0 +1,14 @@
+{
+  "_id": 201,
+  "tokenPair": "SWAP.HIVE:ATF",
+  "baseQuantity": "553.76973508",
+  "baseVolume": "1232.21081410",
+  "basePrice": "26.71707823",
+  "quoteQuantity": "14795.10933799",
+  "quoteVolume": "29706.90790785",
+  "quotePrice": "0.03742924",
+  "totalShares": "2844.23590195756152268556",
+  "precision": 8,
+  "creator": "valentin86",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

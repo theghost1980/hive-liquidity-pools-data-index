@@ -1,0 +1,14 @@
+{
+  "_id": 221,
+  "tokenPair": "BYTE:STEM",
+  "baseQuantity": "1326766.699312",
+  "baseVolume": "2812336.300577",
+  "basePrice": "0.022927",
+  "quoteQuantity": "30419.874056",
+  "quoteVolume": "161003.626223",
+  "quotePrice": "43.615127",
+  "totalShares": "199926.31782353716707271812",
+  "precision": 6,
+  "creator": "learn2code",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

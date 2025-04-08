@@ -1,0 +1,14 @@
+{
+  "_id": 213,
+  "tokenPair": "STELLARUM:ONEUP",
+  "baseQuantity": "13757755.48683834",
+  "baseVolume": "38412202.63315304",
+  "basePrice": "0.10238225",
+  "quoteQuantity": "1408549.96424161",
+  "quoteVolume": "16133152.25911297",
+  "quotePrice": "9.76731804",
+  "totalShares": "4350501.21758937508896079804",
+  "precision": 8,
+  "creator": "oneup-cartel",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

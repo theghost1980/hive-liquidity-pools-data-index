@@ -1,0 +1,14 @@
+{
+  "_id": 115,
+  "tokenPair": "SWAP.HIVE:UAP",
+  "baseQuantity": "8744.87777066",
+  "baseVolume": "143242.16564287",
+  "basePrice": "0.13428644",
+  "quoteQuantity": "1174.31854739",
+  "quoteVolume": "15672.78596400",
+  "quotePrice": "7.44676799",
+  "totalShares": "3145.57254887739632704001",
+  "precision": 8,
+  "creator": "ua-promoter",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

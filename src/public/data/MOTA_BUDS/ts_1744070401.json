@@ -1,0 +1,14 @@
+{
+  "_id": 132,
+  "tokenPair": "MOTA:BUDS",
+  "baseQuantity": "33719.00027657",
+  "baseVolume": "179761.09571952",
+  "basePrice": "367.41930946",
+  "quoteQuantity": "12389011.79750695",
+  "quoteVolume": "58191602.86248204",
+  "quotePrice": "0.00272168",
+  "totalShares": "642625.91733769644877043551",
+  "precision": 8,
+  "creator": "wagginston",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

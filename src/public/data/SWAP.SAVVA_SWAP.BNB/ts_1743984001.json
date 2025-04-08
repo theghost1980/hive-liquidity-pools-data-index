@@ -1,0 +1,14 @@
+{
+  "_id": 130,
+  "tokenPair": "SWAP.SAVVA:SWAP.BNB",
+  "baseQuantity": "403320.43680969",
+  "baseVolume": "51519418.70597077",
+  "basePrice": "0.00000009",
+  "quoteQuantity": "0.03836133",
+  "quoteVolume": "13.46256779",
+  "quotePrice": "10513724.02389828",
+  "totalShares": "121.63778863348820310874",
+  "precision": 8,
+  "creator": "lp371",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

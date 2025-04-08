@@ -1,0 +1,14 @@
+{
+  "_id": 104,
+  "tokenPair": "STARPRO:SWAP.HIVE",
+  "baseQuantity": "251.66270621",
+  "baseVolume": "36183.16826493",
+  "basePrice": "52.88242131",
+  "quoteQuantity": "13308.53325794",
+  "quoteVolume": "618733.36287659",
+  "quotePrice": "0.01890987",
+  "totalShares": "1704.91329574235564317983",
+  "precision": 8,
+  "creator": "wagginston",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

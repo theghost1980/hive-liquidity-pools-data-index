@@ -1,0 +1,14 @@
+{
+  "_id": 164,
+  "tokenPair": "SWAP.HIVE:FORGE",
+  "baseQuantity": "1130.94602286",
+  "baseVolume": "688790.24989987",
+  "basePrice": "9745.59820780",
+  "quoteQuantity": "11021745.53350450",
+  "quoteVolume": "2729395756.01527011",
+  "quotePrice": "0.00010261",
+  "totalShares": "92127.04417680437324582827",
+  "precision": 8,
+  "creator": "forgemaster",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

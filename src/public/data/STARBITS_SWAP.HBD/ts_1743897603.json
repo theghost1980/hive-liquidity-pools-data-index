@@ -1,0 +1,14 @@
+{
+  "_id": 225,
+  "tokenPair": "STARBITS:SWAP.HBD",
+  "baseQuantity": "2423133.06630063",
+  "baseVolume": "5484323319.93366398",
+  "basePrice": "0.00000058",
+  "quoteQuantity": "1.41354940",
+  "quoteVolume": "7765.93056004",
+  "quotePrice": "1714218.87788331",
+  "totalShares": "1491.37931987974066929041",
+  "precision": 8,
+  "creator": "traderhive",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

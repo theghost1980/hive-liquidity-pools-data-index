@@ -1,0 +1,14 @@
+{
+  "_id": 147,
+  "tokenPair": "FORGE:DEC",
+  "baseQuantity": "63281243.40861390",
+  "baseVolume": "2016477988.33882395",
+  "basePrice": "0.02382746",
+  "quoteQuantity": "1507831.74966202",
+  "quoteVolume": "296113219.89420895",
+  "quotePrice": "41.96837175",
+  "totalShares": "9261560.27260445555960417463",
+  "precision": 8,
+  "creator": "forgemaster",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

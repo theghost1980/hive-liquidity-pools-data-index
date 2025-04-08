@@ -1,0 +1,14 @@
+{
+  "_id": 82,
+  "tokenPair": "SWAP.HIVE:PLN",
+  "baseQuantity": "3188.38466943",
+  "baseVolume": "144560.79336950",
+  "basePrice": "18.38797884",
+  "quoteQuantity": "58627.94983651",
+  "quoteVolume": "308891.29215620",
+  "quotePrice": "0.05438335",
+  "totalShares": "13521.70479655021065986115",
+  "precision": 8,
+  "creator": "nectar-queen",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

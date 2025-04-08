@@ -1,0 +1,14 @@
+{
+  "_id": 208,
+  "tokenPair": "DEC:GLUSD",
+  "baseQuantity": "3089510.720",
+  "baseVolume": "187806753.767",
+  "basePrice": "0.004",
+  "quoteQuantity": "13020.802",
+  "quoteVolume": "362416.810",
+  "quotePrice": "237.274",
+  "totalShares": "193381.13245733576232182657",
+  "precision": 3,
+  "creator": "gls.dao",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

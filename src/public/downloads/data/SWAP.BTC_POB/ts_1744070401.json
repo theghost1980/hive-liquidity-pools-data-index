@@ -1,0 +1,14 @@
+{
+  "_id": 129,
+  "tokenPair": "SWAP.BTC:POB",
+  "baseQuantity": "0.00296445",
+  "baseVolume": "0.98748914",
+  "basePrice": "42593064.86341479",
+  "quoteQuantity": "126265.01113435",
+  "quoteVolume": "7224799.92896981",
+  "quotePrice": "0.00000002",
+  "totalShares": "18.03682222175869728427",
+  "precision": 8,
+  "creator": "proofofbrainio",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

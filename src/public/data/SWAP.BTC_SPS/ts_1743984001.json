@@ -1,0 +1,14 @@
+{
+  "_id": 54,
+  "tokenPair": "SWAP.BTC:SPS",
+  "baseQuantity": "0.15282976",
+  "baseVolume": "87.83254409",
+  "basePrice": "12070729.38855671",
+  "quoteQuantity": "1844766.67547807",
+  "quoteVolume": "54680829.33379134",
+  "quotePrice": "0.00000008",
+  "totalShares": "488.51008114430367265078",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

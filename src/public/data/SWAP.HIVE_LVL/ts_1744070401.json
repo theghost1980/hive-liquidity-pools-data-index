@@ -1,0 +1,14 @@
+{
+  "_id": 101,
+  "tokenPair": "SWAP.HIVE:LVL",
+  "baseQuantity": "325.10256787",
+  "baseVolume": "1688785.99134284",
+  "basePrice": "59124.01632496",
+  "quoteQuantity": "19221369.53003504",
+  "quoteVolume": "2808732540.35572973",
+  "quotePrice": "0.00001691",
+  "totalShares": "62819.49974476852386173857",
+  "precision": 8,
+  "creator": "psyberx",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 163,
+  "tokenPair": "DOOM:SWAP.HIVE",
+  "baseQuantity": "1179109.53695716",
+  "baseVolume": "2358053.87204041",
+  "basePrice": "0.00231711",
+  "quoteQuantity": "2732.13083125",
+  "quoteVolume": "21580.92518417",
+  "quotePrice": "431.57140334",
+  "totalShares": "56498.42143526567235257864",
+  "precision": 8,
+  "creator": "wagginston",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

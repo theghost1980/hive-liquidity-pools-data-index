@@ -1,0 +1,14 @@
+{
+  "_id": 230,
+  "tokenPair": "SWAP.HIVE:OCLT",
+  "baseQuantity": "2611.60994839",
+  "baseVolume": "3625.56355000",
+  "basePrice": "215.84936824",
+  "quoteQuantity": "563714.35746635",
+  "quoteVolume": "823264.11992270",
+  "quotePrice": "0.00463286",
+  "totalShares": "38153.21598375454199964968",
+  "precision": 8,
+  "creator": "sorin.offchain",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

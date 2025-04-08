@@ -1,0 +1,14 @@
+{
+  "_id": 70,
+  "tokenPair": "SWAP.HBD:SWAP.BUSD",
+  "baseQuantity": "932.42783275",
+  "baseVolume": "1198431.07067859",
+  "basePrice": "1.10314253",
+  "quoteQuantity": "1028.60080480",
+  "quoteVolume": "1192584.04992158",
+  "quotePrice": "0.90650116",
+  "totalShares": "906.86334798794841493243",
+  "precision": 8,
+  "creator": "dalz",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

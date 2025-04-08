@@ -1,0 +1,14 @@
+{
+  "_id": 167,
+  "tokenPair": "SWAP.BTC:SWAP.STEEM",
+  "baseQuantity": "0.00187484",
+  "baseVolume": "0.36076492",
+  "basePrice": "690671.53512299",
+  "quoteQuantity": "1294.89862091",
+  "quoteVolume": "62340.38983968",
+  "quotePrice": "0.00000144",
+  "totalShares": "1.39537295458335814349",
+  "precision": 8,
+  "creator": "mariuszkarowski",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

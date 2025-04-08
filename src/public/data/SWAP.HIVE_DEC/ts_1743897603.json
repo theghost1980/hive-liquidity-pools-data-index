@@ -1,0 +1,14 @@
+{
+  "_id": 2,
+  "tokenPair": "SWAP.HIVE:DEC",
+  "baseQuantity": "352026.95645664",
+  "baseVolume": "256443489.15687577",
+  "basePrice": "241.03328484",
+  "quoteQuantity": "84850213.66914418",
+  "quoteVolume": "80804266179.40110063",
+  "quotePrice": "0.00414880",
+  "totalShares": "3552960.25284073890854161886",
+  "precision": 8,
+  "creator": "sm-usd",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

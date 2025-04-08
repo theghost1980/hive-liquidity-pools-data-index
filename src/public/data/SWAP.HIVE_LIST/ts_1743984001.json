@@ -1,0 +1,14 @@
+{
+  "_id": 59,
+  "tokenPair": "SWAP.HIVE:LIST",
+  "baseQuantity": "1083.15661023",
+  "baseVolume": "17664.79067527",
+  "basePrice": "1643.42605770",
+  "quoteQuantity": "1780087.79783158",
+  "quoteVolume": "5113355.73274971",
+  "quotePrice": "0.00060848",
+  "totalShares": "43604.23337093336997281067",
+  "precision": 8,
+  "creator": "hivelist",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

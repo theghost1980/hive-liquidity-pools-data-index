@@ -1,0 +1,14 @@
+{
+  "_id": 85,
+  "tokenPair": "FLOWER:PLN",
+  "baseQuantity": "40422.88518736",
+  "baseVolume": "67704.76480699",
+  "basePrice": "0.82131345",
+  "quoteQuantity": "33199.85945262",
+  "quoteVolume": "55476.76109203",
+  "quotePrice": "1.21756193",
+  "totalShares": "36436.12015880907922667298",
+  "precision": 8,
+  "creator": "the-forest",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

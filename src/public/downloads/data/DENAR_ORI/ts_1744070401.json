@@ -1,0 +1,14 @@
+{
+  "_id": 267,
+  "tokenPair": "DENAR:ORI",
+  "baseQuantity": "1664473.510210",
+  "baseVolume": "50294748.112282",
+  "basePrice": "0.000014",
+  "quoteQuantity": "23.817009",
+  "quoteVolume": "2096.262436",
+  "quotePrice": "69885.916834",
+  "totalShares": "5959.60786628923572600887",
+  "precision": 6,
+  "creator": "yabapmatt",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

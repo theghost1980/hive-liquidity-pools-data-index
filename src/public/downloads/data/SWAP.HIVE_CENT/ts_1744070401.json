@@ -1,0 +1,14 @@
+{
+  "_id": 20,
+  "tokenPair": "SWAP.HIVE:CENT",
+  "baseQuantity": "7237.41756672",
+  "baseVolume": "577553.40997343",
+  "basePrice": "336.35332208",
+  "quoteQuantity": "2434329.44189734",
+  "quoteVolume": "123872949.22590362",
+  "quotePrice": "0.00297306",
+  "totalShares": "111873.51969621988020549482",
+  "precision": 8,
+  "creator": "anadolu",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

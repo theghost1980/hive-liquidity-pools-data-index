@@ -1,3 +1,4 @@
+//TODO update this as used
 export const config = {
   account: "theghost1980",
   tokenPair: "SWAP.HIVE:BEE",
@@ -11,5 +12,9 @@ export const config = {
     "24h": 24 * 60 * 60 * 1000, // 24 hours in milliseconds
   },
   apiEndpoint: "https://enginerpc.com/contracts",
-  feeRate: 0.002, // 0.2% fee rate
+  feeRate: 0.002, // 0.2% fee rate,
+  jsonServerData: {
+    relativePath: "/reference-data/server-data.json",
+    fileName: "server-data.json",
+  },
 };

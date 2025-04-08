@@ -1,0 +1,14 @@
+{
+  "_id": 206,
+  "tokenPair": "SWAP.HIVE:GLGT",
+  "baseQuantity": "1882.30159858",
+  "baseVolume": "117178.38796792",
+  "basePrice": "599.50408460",
+  "quoteQuantity": "1128447.49680724",
+  "quoteVolume": "5519135.88319045",
+  "quotePrice": "0.00166804",
+  "totalShares": "45612.48614474624354646748",
+  "precision": 8,
+  "creator": "gls.dao",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

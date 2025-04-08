@@ -4,7 +4,7 @@ import path from "path";
 import { Logger } from "./logger.utils";
 
 function ensureDataDirectoryExists(subDirName: string, showLog?: boolean) {
-  const projectRoot = path.join(__dirname, ".."); // Navigate up two levels from the current file to reach the project root
+  const projectRoot = path.join(__dirname, ".."); // Navigate up one level from the current file to reach the project root
   const mainDir = path.join(projectRoot, "public", "data");
   const subDir = path.join(mainDir, subDirName);
 

@@ -1,0 +1,14 @@
+{
+  "_id": 265,
+  "tokenPair": "CENT:SWAP.ETH",
+  "baseQuantity": "467603.86175497",
+  "baseVolume": "855994.83304847",
+  "basePrice": "0.00000035",
+  "quoteQuantity": "0.16373753",
+  "quoteVolume": "0.28635716",
+  "quotePrice": "2855813.58015459",
+  "totalShares": "275.94664069030408041148",
+  "precision": 8,
+  "creator": "centtoken",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

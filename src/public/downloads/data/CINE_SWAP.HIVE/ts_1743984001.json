@@ -1,0 +1,14 @@
+{
+  "_id": 92,
+  "tokenPair": "CINE:SWAP.HIVE",
+  "baseQuantity": "466554.68031500",
+  "baseVolume": "8234786.68876465",
+  "basePrice": "0.00012177",
+  "quoteQuantity": "56.81502805",
+  "quoteVolume": "53010.91361594",
+  "quotePrice": "8211.81818135",
+  "totalShares": "5021.83933624853786561144",
+  "precision": 8,
+  "creator": "raymondspeaks",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 259,
+  "tokenPair": "CCC:MUSIC",
+  "baseQuantity": "352895.118541",
+  "baseVolume": "292832.809980",
+  "basePrice": "0.281089",
+  "quoteQuantity": "99195.227147",
+  "quoteVolume": "114393.204533",
+  "quotePrice": "3.557581",
+  "totalShares": "186673.76549919632558199265",
+  "precision": 6,
+  "creator": "cccf",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

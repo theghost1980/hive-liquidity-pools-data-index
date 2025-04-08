@@ -1,0 +1,14 @@
+{
+  "_id": 131,
+  "tokenPair": "MEME:FUN",
+  "baseQuantity": "1619402.53829923",
+  "baseVolume": "5931224.18757886",
+  "basePrice": "0.07446041",
+  "quoteQuantity": "120581.39243378",
+  "quoteVolume": "229296.21280134",
+  "quotePrice": "13.42995387",
+  "totalShares": "436620.41757290219738668311",
+  "precision": 8,
+  "creator": "memehive",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

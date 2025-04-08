@@ -1,0 +1,14 @@
+{
+  "_id": 86,
+  "tokenPair": "NECTAR:QUEEN",
+  "baseQuantity": "138.23314718",
+  "baseVolume": "240.69704210",
+  "basePrice": "0.46569653",
+  "quoteQuantity": "64.37469781",
+  "quoteVolume": "84.67254334",
+  "quotePrice": "2.14732110",
+  "totalShares": "93.97103289962342442171",
+  "precision": 8,
+  "creator": "queen.system",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 15,
+  "tokenPair": "SWAP.HIVE:LASSECASH",
+  "baseQuantity": "835.21981757",
+  "baseVolume": "59774.39741757",
+  "basePrice": "1521.98144417",
+  "quoteQuantity": "1271189.06414551",
+  "quoteVolume": "70204842.61379071",
+  "quotePrice": "0.00065703",
+  "totalShares": "30598.28757238352119574109",
+  "precision": 8,
+  "creator": "lasseehlers",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

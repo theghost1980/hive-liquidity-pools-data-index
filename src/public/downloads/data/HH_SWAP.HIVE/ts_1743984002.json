@@ -1,0 +1,14 @@
+{
+  "_id": 210,
+  "tokenPair": "HH:SWAP.HIVE",
+  "baseQuantity": "7036441.28965846",
+  "baseVolume": "12886933.24551612",
+  "basePrice": "0.00001266",
+  "quoteQuantity": "89.14813781",
+  "quoteVolume": "322.44847813",
+  "quotePrice": "78929.76188302",
+  "totalShares": "24929.6753499826738614514",
+  "precision": 8,
+  "creator": "hhguild-treasury",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

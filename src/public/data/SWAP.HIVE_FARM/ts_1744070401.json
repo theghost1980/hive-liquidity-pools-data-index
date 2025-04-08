@@ -1,0 +1,14 @@
+{
+  "_id": 47,
+  "tokenPair": "SWAP.HIVE:FARM",
+  "baseQuantity": "6148.67081121",
+  "baseVolume": "81190.25953415",
+  "basePrice": "7.84279173",
+  "quoteQuantity": "48222.74464725",
+  "quoteVolume": "548985.36238065",
+  "quotePrice": "0.12750561",
+  "totalShares": "16988.28549614121608815605",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

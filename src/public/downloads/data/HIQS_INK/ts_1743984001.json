@@ -1,0 +1,14 @@
+{
+  "_id": 145,
+  "tokenPair": "HIQS:INK",
+  "baseQuantity": "2452.34001891",
+  "baseVolume": "41422.90241554",
+  "basePrice": "77.32273899",
+  "quoteQuantity": "189621.64720449",
+  "quoteVolume": "1632169.38375958",
+  "quotePrice": "0.01293280",
+  "totalShares": "21325.40886479045386699367",
+  "precision": 8,
+  "creator": "craftink",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

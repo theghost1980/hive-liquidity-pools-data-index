@@ -1,0 +1,14 @@
+{
+  "_id": 66,
+  "tokenPair": "SWAP.HIVE:VOUCHER",
+  "baseQuantity": "42662.65192251",
+  "baseVolume": "18162460.47827576",
+  "basePrice": "9.44866544",
+  "quoteQuantity": "403105.12508536",
+  "quoteVolume": "54087470.85603239",
+  "quotePrice": "0.10583505",
+  "totalShares": "100607.95199199904246353175",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

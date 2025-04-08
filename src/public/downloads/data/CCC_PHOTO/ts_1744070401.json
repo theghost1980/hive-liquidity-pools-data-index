@@ -1,0 +1,14 @@
+{
+  "_id": 222,
+  "tokenPair": "CCC:PHOTO",
+  "baseQuantity": "988111.55845",
+  "baseVolume": "5449394.51288",
+  "basePrice": "1.83736",
+  "quoteQuantity": "1815522.10319",
+  "quoteVolume": "8811489.80643",
+  "quotePrice": "0.54425",
+  "totalShares": "1325265.19301041041445293854",
+  "precision": 5,
+  "creator": "cccf",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

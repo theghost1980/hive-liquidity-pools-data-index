@@ -1,0 +1,14 @@
+{
+  "_id": 61,
+  "tokenPair": "SWAP.HIVE:ONEUP",
+  "baseQuantity": "911.40892920",
+  "baseVolume": "325034.26286585",
+  "basePrice": "776.05270378",
+  "quoteQuantity": "707301.36375740",
+  "quoteVolume": "71589675.62945881",
+  "quotePrice": "0.00128857",
+  "totalShares": "23141.21943226135958356715",
+  "precision": 8,
+  "creator": "flauwy",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 200,
+  "tokenPair": "SPT:SWAP.HIVE",
+  "baseQuantity": "2851875.83021145",
+  "baseVolume": "66275755.29247460",
+  "basePrice": "0.00009302",
+  "quoteQuantity": "265.28512505",
+  "quoteVolume": "20367.51532111",
+  "quotePrice": "10750.22894583",
+  "totalShares": "21740.64163119785266270485",
+  "precision": 8,
+  "creator": "splinterwalk",
+  "isoDate": "2025-04-07T00:00:02.000Z"
+}

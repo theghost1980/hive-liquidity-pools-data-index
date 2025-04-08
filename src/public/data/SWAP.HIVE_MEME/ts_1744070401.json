@@ -1,0 +1,14 @@
+{
+  "_id": 149,
+  "tokenPair": "SWAP.HIVE:MEME",
+  "baseQuantity": "512.78665016",
+  "baseVolume": "18699.83519202",
+  "basePrice": "3576.36228570",
+  "quoteQuantity": "1833910.83624427",
+  "quoteVolume": "131138726.47352522",
+  "quotePrice": "0.00027961",
+  "totalShares": "26831.86430168554900821737",
+  "precision": 8,
+  "creator": "memehive",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

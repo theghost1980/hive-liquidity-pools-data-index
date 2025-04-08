@@ -1,0 +1,14 @@
+{
+  "_id": 29,
+  "tokenPair": "BEE:PAL",
+  "baseQuantity": "1123.31749788",
+  "baseVolume": "310460.70322442",
+  "basePrice": "7497.01940991",
+  "quoteQuantity": "8421533.08509857",
+  "quoteVolume": "136273121.36684014",
+  "quotePrice": "0.00013338",
+  "totalShares": "94776.37184421640634394584",
+  "precision": 8,
+  "creator": "aggroed",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

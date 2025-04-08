@@ -1,0 +1,14 @@
+{
+  "_id": 95,
+  "tokenPair": "AFIT:SWAP.HIVE",
+  "baseQuantity": "2184732.72947951",
+  "baseVolume": "191762550.83705491",
+  "basePrice": "0.00039023",
+  "quoteQuantity": "852.55508250",
+  "quoteVolume": "105691.13827718",
+  "quotePrice": "2562.57076442",
+  "totalShares": "39052.28377064875565585829",
+  "precision": 8,
+  "creator": "actifit",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

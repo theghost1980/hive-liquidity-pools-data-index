@@ -1,0 +1,14 @@
+{
+  "_id": 182,
+  "tokenPair": "SPORTS:GAMER",
+  "baseQuantity": "14214371.0515",
+  "baseVolume": "728752308.0677",
+  "basePrice": "2.2032",
+  "quoteQuantity": "31317296.3393",
+  "quoteVolume": "274444019.2920",
+  "quotePrice": "0.4538",
+  "totalShares": "20371475.45569381788128452519",
+  "precision": 4,
+  "creator": "ctime",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

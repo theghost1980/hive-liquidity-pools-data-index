@@ -1,0 +1,14 @@
+{
+  "_id": 124,
+  "tokenPair": "WOO:SWAP.HIVE",
+  "baseQuantity": "32516513.07850151",
+  "baseVolume": "623363643.19914472",
+  "basePrice": "0.00009164",
+  "quoteQuantity": "2980.04287061",
+  "quoteVolume": "532033.10525056",
+  "quotePrice": "10911.42459700",
+  "totalShares": "250268.04455702472243278816",
+  "precision": 8,
+  "creator": "wrestorgonline",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 128,
+  "tokenPair": "SWAP.HIVE:PHOTO",
+  "baseQuantity": "147.62584977",
+  "baseVolume": "36602.30888329",
+  "basePrice": "2481.62100115",
+  "quoteQuantity": "366351.40910272",
+  "quoteVolume": "22820950.86087307",
+  "quotePrice": "0.00040296",
+  "totalShares": "6799.64340239596072268824",
+  "precision": 8,
+  "creator": "hivephoto",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

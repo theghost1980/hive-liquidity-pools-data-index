@@ -1,0 +1,14 @@
+{
+  "_id": 142,
+  "tokenPair": "SWAP.HIVE:TEAMPH",
+  "baseQuantity": "1268.53398181",
+  "baseVolume": "73830.16118868",
+  "basePrice": "275.19071231",
+  "quoteQuantity": "349088.77004709",
+  "quoteVolume": "23090052.90952596",
+  "quotePrice": "0.00363384",
+  "totalShares": "20249.50748475657016921036",
+  "precision": 8,
+  "creator": "calbayogslph",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

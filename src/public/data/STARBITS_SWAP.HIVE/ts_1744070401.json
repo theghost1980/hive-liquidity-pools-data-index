@@ -1,0 +1,14 @@
+{
+  "_id": 120,
+  "tokenPair": "STARBITS:SWAP.HIVE",
+  "baseQuantity": "1325592912.61345186",
+  "baseVolume": "94740364746.38621130",
+  "basePrice": "0.00000253",
+  "quoteQuantity": "3363.86743877",
+  "quoteVolume": "750922.21025566",
+  "quotePrice": "394068.11853981",
+  "totalShares": "1010165.9241816067661892434",
+  "precision": 8,
+  "creator": "swearingradio",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

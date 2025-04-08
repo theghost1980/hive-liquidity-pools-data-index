@@ -1,0 +1,14 @@
+{
+  "_id": 137,
+  "tokenPair": "SOULS:SWAP.HIVE",
+  "baseQuantity": "6204.03346789",
+  "baseVolume": "405430.65835815",
+  "basePrice": "0.00019452",
+  "quoteQuantity": "1.20685136",
+  "quoteVolume": "44460.81482210",
+  "quotePrice": "5140.67736385",
+  "totalShares": "81.32102712052883695732",
+  "precision": 8,
+  "creator": "infernalcoliseum",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

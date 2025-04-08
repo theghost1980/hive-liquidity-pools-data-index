@@ -1,0 +1,14 @@
+{
+  "_id": 146,
+  "tokenPair": "LVL:SWAP.ETH",
+  "baseQuantity": "433328.43362167",
+  "baseVolume": "230168126.66014722",
+  "basePrice": "0.00000000",
+  "quoteQuantity": "0.00090024",
+  "quoteVolume": "31.48564872",
+  "quotePrice": "481347677.97661734",
+  "totalShares": "17.49928110765424632976",
+  "precision": 8,
+  "creator": "psybersects",
+  "isoDate": "2025-04-07T00:00:01.000Z"
+}

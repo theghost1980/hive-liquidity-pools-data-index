@@ -1,0 +1,14 @@
+{
+  "_id": 233,
+  "tokenPair": "ATX:BEER",
+  "baseQuantity": "178.81919875",
+  "baseVolume": "293.93553703",
+  "basePrice": "17.37843297",
+  "quoteQuantity": "3107.59746036",
+  "quoteVolume": "10864.59485880",
+  "quotePrice": "0.05754258",
+  "totalShares": "738.21097201934248184074",
+  "precision": 8,
+  "creator": "atexoras",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

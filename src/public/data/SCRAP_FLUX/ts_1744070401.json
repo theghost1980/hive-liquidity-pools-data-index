@@ -1,0 +1,14 @@
+{
+  "_id": 192,
+  "tokenPair": "SCRAP:FLUX",
+  "baseQuantity": "2595724.94509895",
+  "baseVolume": "204151321.36046490",
+  "basePrice": "0.00003295",
+  "quoteQuantity": "85.53022244",
+  "quoteVolume": "43618.48340867",
+  "quotePrice": "30348.62848532",
+  "totalShares": "13086.62314122877922261279",
+  "precision": 8,
+  "creator": "terracore",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}

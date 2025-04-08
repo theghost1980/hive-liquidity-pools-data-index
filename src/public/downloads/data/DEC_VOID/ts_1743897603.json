@@ -1,0 +1,14 @@
+{
+  "_id": 189,
+  "tokenPair": "DEC:VOID",
+  "baseQuantity": "68793.076",
+  "baseVolume": "1085055.259",
+  "basePrice": "15.948",
+  "quoteQuantity": "1097147.178",
+  "quoteVolume": "6210388.093",
+  "quotePrice": "0.062",
+  "totalShares": "272165.03297638988084506434",
+  "precision": 3,
+  "creator": "void.coin",
+  "isoDate": "2025-04-06T00:00:03.000Z"
+}

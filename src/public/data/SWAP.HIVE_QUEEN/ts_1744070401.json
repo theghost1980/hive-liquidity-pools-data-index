@@ -1,0 +1,14 @@
+{
+  "_id": 165,
+  "tokenPair": "SWAP.HIVE:QUEEN",
+  "baseQuantity": "143.01320271",
+  "baseVolume": "2436.45742341",
+  "basePrice": "0.10043200",
+  "quoteQuantity": "14.36310299",
+  "quoteVolume": "97.03189936",
+  "quotePrice": "9.95698511",
+  "totalShares": "44.27904593346273952804",
+  "precision": 8,
+  "creator": "chrisramsook",
+  "isoDate": "2025-04-08T00:00:01.000Z"
+}
