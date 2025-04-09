@@ -1,9 +1,7 @@
 import { CronJob } from "cron";
 import moment from "moment";
-import { config } from "../config/config";
 import { ControlVarsUtils } from "../utils/control-vars";
 import { FileUtils } from "../utils/file.utils";
-import { JsonUtils } from "../utils/jsonUtils";
 import { LiquidityPoolUtils } from "../utils/liquidity-pool.utils";
 import { Logger } from "../utils/logger.utils";
 
@@ -29,23 +27,23 @@ const job = new CronJob("0 0 * * *", async () => {
           );
         }
 
-        JsonUtils.readJsonFile(`.${config.jsonServerData.relativePath}`) //inc day count
-          .then((v) => {
-            if (v && v.snapshots_24h_days_taken) {
-              let count = v.snapshots_24h_days_taken;
-              count++;
-              JsonUtils.writeJsonFile(
-                `.${config.jsonServerData.relativePath}`,
-                {
-                  ...v,
-                  snapshots_24h_days_taken: count,
-                }
-              );
-            }
-          })
-          .catch((e) =>
-            Logger.error(`Error reading Json file server data! ${e.message}`)
-          );
+        // JsonUtils.readJsonFile(`.${config.jsonServerData.relativePath}`) //inc day count
+        //   .then((v) => {
+        //     if (v && v.snapshots_24h_days_taken) {
+        //       let count = v.snapshots_24h_days_taken;
+        //       count++;
+        //       JsonUtils.writeJsonFile(
+        //         `.${config.jsonServerData.relativePath}`,
+        //         {
+        //           ...v,
+        //           snapshots_24h_days_taken: count,
+        //         }
+        //       );
+        //     }
+        //   })
+        //   .catch((e) =>
+        //     Logger.error(`Error reading Json file server data! ${e.message}`)
+        //   );
 
         Logger.info(`Saved ${liquidityPoolList.length} records YAY!`);
       } else {
