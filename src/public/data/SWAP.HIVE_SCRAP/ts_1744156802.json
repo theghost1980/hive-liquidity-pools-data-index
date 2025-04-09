@@ -1,0 +1,14 @@
+{
+  "_id": 180,
+  "tokenPair": "SWAP.HIVE:SCRAP",
+  "baseQuantity": "502.79772344",
+  "baseVolume": "357822.81622140",
+  "basePrice": "9999.34294549",
+  "quoteQuantity": "5027646.86888829",
+  "quoteVolume": "363046018.56600737",
+  "quotePrice": "0.00010000",
+  "totalShares": "35345.31265175858975872282",
+  "precision": 8,
+  "creator": "terracore",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

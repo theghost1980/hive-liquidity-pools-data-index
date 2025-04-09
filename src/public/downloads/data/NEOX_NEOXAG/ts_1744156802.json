@@ -1,0 +1,14 @@
+{
+  "_id": 77,
+  "tokenPair": "NEOX:NEOXAG",
+  "baseQuantity": "34.78658001",
+  "baseVolume": "85.83178195",
+  "basePrice": "31340.93470020",
+  "quoteQuantity": "1090243.93253695",
+  "quoteVolume": "2954142.13106752",
+  "quotePrice": "0.00003190",
+  "totalShares": "6131.45769197802365936859",
+  "precision": 8,
+  "creator": "neoxian",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

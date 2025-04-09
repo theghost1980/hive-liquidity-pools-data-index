@@ -1,0 +1,14 @@
+{
+  "_id": 255,
+  "tokenPair": "CENT:TRIBE",
+  "baseQuantity": "951514.26383121",
+  "baseVolume": "7813229.75940515",
+  "basePrice": "0.00331866",
+  "quoteQuantity": "3157.76089054",
+  "quoteVolume": "30101.32610574",
+  "quotePrice": "301.32562179",
+  "totalShares": "54239.39113882905979087783",
+  "precision": 8,
+  "creator": "hive-173575",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

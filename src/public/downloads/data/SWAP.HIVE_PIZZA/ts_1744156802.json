@@ -1,0 +1,14 @@
+{
+  "_id": 45,
+  "tokenPair": "SWAP.HIVE:PIZZA",
+  "baseQuantity": "5170.31517405",
+  "baseVolume": "750831.26893386",
+  "basePrice": "18.21300887",
+  "quoteQuantity": "94166.99615281",
+  "quoteVolume": "15017130.33354666",
+  "quotePrice": "0.05490580",
+  "totalShares": "18222.5718969598966635501",
+  "precision": 8,
+  "creator": "pizzaexpress",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

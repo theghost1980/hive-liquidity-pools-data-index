@@ -41,8 +41,8 @@ const initialize = () => {
 
   // //TODO below move to a maintenance route.
   // //Important while we test, we get the data from the main source which is the backend running in render.com
-  // // const BASE_URL = "https://hive-liquidity-pools-data-index.onrender.com/data/";
 
+  //Below routine to get new data from the initial testing server.
   // // const sourceUrl = "http://localhost:3000/data"; // Replace with your source URL
   // const sourceUrl =
   //   "https://hive-liquidity-pools-data-index.onrender.com/data/";

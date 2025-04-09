@@ -1,0 +1,14 @@
+{
+  "_id": 169,
+  "tokenPair": "SWAP.HIVE:INCOME",
+  "baseQuantity": "1604.47093984",
+  "baseVolume": "79290.20877622",
+  "basePrice": "0.08047855",
+  "quoteQuantity": "129.12550502",
+  "quoteVolume": "7327.53621061",
+  "quotePrice": "12.42567020",
+  "totalShares": "449.83565908425337127901",
+  "precision": 8,
+  "creator": "locolombia",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

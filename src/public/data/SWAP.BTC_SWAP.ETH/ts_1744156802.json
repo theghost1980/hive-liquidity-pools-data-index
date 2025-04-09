@@ -1,0 +1,14 @@
+{
+  "_id": 71,
+  "tokenPair": "SWAP.BTC:SWAP.ETH",
+  "baseQuantity": "0.33625932",
+  "baseVolume": "30.17143384",
+  "basePrice": "50.95040271",
+  "quoteQuantity": "17.13254777",
+  "quoteVolume": "495.14319293",
+  "quotePrice": "0.01962693",
+  "totalShares": "2.27900432253085094314",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

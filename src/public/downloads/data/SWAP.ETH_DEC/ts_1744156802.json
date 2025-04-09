@@ -1,0 +1,14 @@
+{
+  "_id": 79,
+  "tokenPair": "SWAP.ETH:DEC",
+  "baseQuantity": "2.17656317",
+  "baseVolume": "231.57765356",
+  "basePrice": "1716764.16087178",
+  "quoteQuantity": "3736645.64412948",
+  "quoteVolume": "545893312.78273682",
+  "quotePrice": "0.00000058",
+  "totalShares": "2478.57949058647395643891",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

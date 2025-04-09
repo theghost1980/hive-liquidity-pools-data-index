@@ -3,7 +3,9 @@ import { Request, Response, Router } from "express";
 import { access, readdir, readFile } from "fs/promises";
 import moment from "moment";
 import path from "path";
-import { RpcNodeUtils } from "../utils/rpc-node-utils";
+import { Logger } from "../utils/logger.utils";
+import { PriceUtils } from "../utils/price-utils";
+import { RpcNodeType, RpcNodeUtils } from "../utils/rpc-node-utils";
 
 const router = Router();
 
@@ -80,14 +82,14 @@ router.get("/data-pool", async (req: any, res: any) => {
 
 router.get("/pool-fees", async (req: any, res: any) => {
   const tokenPair = req.query.tokenPair as string | undefined;
-  const timeFrame = req.query.timeFrame as string | undefined;
+  const feePercentageBaseToken = req.query.feePercentageBaseToken as
+    | number
+    | undefined;
+  const feePercentageQuoteToken = req.query.feePercentageQuoteToken as
+    | number
+    | undefined;
+  const timeFrame = req.query.timeFrame as string | undefined; //TODO for the future if needed
 
-  //TODO check in engine chat:
-  //  - what is the server time when saves the trading data daily? GMT-0?
-  //  - see if the tribaldex match what you have when:
-  //    -> you use the last file.json and use as current the real time ask
-
-  //TODO REM testing to get data realtime to check
   const response = await axios.post<any>(
     `${RpcNodeUtils.FASTESTRPCNODE.url}/contracts`,
     {
@@ -108,6 +110,15 @@ router.get("/pool-fees", async (req: any, res: any) => {
 
   if (!tokenPair) {
     return res.status(400).send("No token pair specified.");
+  }
+  const tokenSymbols = tokenPair.split(":");
+
+  if (!feePercentageBaseToken || !feePercentageQuoteToken) {
+    return res
+      .status(400)
+      .send(
+        "Right now there is no source of truth for the fees currently in HIVE, so you must provide them for calculations.<br>Please use query params as:<br>feePercentageBaseToken=0.1 & feePercentageQuoteToken=0.15"
+      );
   }
   //unless specified, returns pool-fees last 24h
   const projectRoot = path.resolve(__dirname, "..");
@@ -161,34 +172,76 @@ router.get("/pool-fees", async (req: any, res: any) => {
       })
     );
 
-    // Calculate fees (0.2% of trading volume)
-    const volumeDelta =
-      parseFloat(jsonData[0].baseVolume) - parseFloat(jsonData[1].baseVolume);
-    const totalFees = volumeDelta * 0.002;
+    const priceTokenList = await PriceUtils.getTokenPriceList(tokenSymbols);
+    const hivePrice = await PriceUtils.getHivePrice();
 
-    //TODO check alternative calculations
-    //Note: volumeDelta2 is correct but fee is not.
-    //  -> keep checking other values
-    const volumeDelta2 =
+    const usdPriceTokenList = priceTokenList.map((p: any) => {
+      const usdPriceToken = Number(hivePrice.hive.usd * p.lastPrice).toFixed(5);
+      return { symbol: p.symbol, usdPriceToken };
+    });
+
+    // Calculate fees acording to user's fee input made on request
+    const volumeDeltaBaseToken =
       parseFloat(response.data.result[0].baseVolume) -
       parseFloat(jsonData[0].baseVolume);
-    const totalFees2 = volumeDelta2 * 0.002;
+    const volumeDeltaQuoteToken =
+      parseFloat(response.data.result[0].quoteVolume) -
+      parseFloat(jsonData[0].quoteVolume);
+    const totalFeesBaseToken =
+      volumeDeltaBaseToken * (feePercentageBaseToken / 100);
+    const totalFeesQuoteToken =
+      volumeDeltaQuoteToken * (feePercentageQuoteToken / 100);
+    const totalFeesBaseTokenUSD =
+      totalFeesBaseToken * parseFloat(usdPriceTokenList[0].usdPriceToken);
+    const totalFeesQuoteTokenUSD =
+      totalFeesQuoteToken * parseFloat(usdPriceTokenList[1].usdPriceToken);
+    const totalFeesUSD = totalFeesBaseTokenUSD + totalFeesQuoteTokenUSD;
 
     res.json({
       tokenPair,
-      volumeDelta,
+      volumeDeltaBaseToken: `${volumeDeltaBaseToken} ${tokenSymbols[0]}`,
+      volumeDeltaQuoteToken: `${volumeDeltaQuoteToken} ${tokenSymbols[1]}`,
+      totalFeesBaseToken: `${totalFeesBaseToken} ${tokenSymbols[0]}`,
+      totalFeesQuoteToken: `${totalFeesQuoteToken} ${tokenSymbols[1]}`,
+      totalFeesBaseTokenUSD: totalFeesBaseTokenUSD.toFixed(5),
+      totalFeesQuoteTokenUSD: totalFeesQuoteTokenUSD.toFixed(5),
+      totalFeesPoolUSD: totalFeesUSD,
+      baseTokenPrice: `${usdPriceTokenList[0].usdPriceToken}$`,
+      quoteTokenPrice: `${usdPriceTokenList[1].usdPriceToken}$`,
+      hivePriceGeckoUSD: `${parseFloat(hivePrice.hive.usd)}$`,
       timeFrameAsTs: `${moment
         .unix(recentFiles[0].timestamp)
         .format("YYYY-MM-DD")} / ${moment
         .unix(recentFiles[1].timestamp)
         .format("YYYY-MM-DD")}`,
-      totalFees,
-      resCurrent: response.data.result,
-      volumeDelta2,
-      totalFees2,
     });
-  } catch (error) {
-    console.error("Error reading JSON files:", error);
+  } catch (error: any) {
+    console.error("Error reading JSON files:", error.message);
+    Logger.error("Error /pool-fees", error.message);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+router.get("/fastest-hive-rpc-node", async (req: any, res: any) => {
+  try {
+    const mode = req.query.mode as RpcNodeType | undefined;
+    if (!mode) {
+      res
+        .status(400)
+        .send(
+          'Must provide mode: "layer-1" | "layer-2"<br>"later-1": accounts, hive db, etc.<br>"layer-2": Hive Engine, tokens, liquidity pools, etc.'
+        );
+    }
+    const fastestNodeChecked = await RpcNodeUtils.getFastestNode(
+      mode as RpcNodeType
+    );
+    res.status(200).send({
+      typeNode: mode,
+      note: mode === "l1" ? "Hive RPC" : "Hive Engine RPC",
+      fastestNodeChecked,
+    });
+  } catch (error: any) {
+    Logger.error("Error /fastest-hive-rpc-node", error.message);
     res.status(500).send("Internal Server Error");
   }
 });

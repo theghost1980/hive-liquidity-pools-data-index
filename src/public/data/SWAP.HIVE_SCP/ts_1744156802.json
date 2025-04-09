@@ -1,0 +1,14 @@
+{
+  "_id": 251,
+  "tokenPair": "SWAP.HIVE:SCP",
+  "baseQuantity": "1.19084793",
+  "baseVolume": "1.76193771",
+  "basePrice": "5522.66060768",
+  "quoteQuantity": "6576.64895276",
+  "quoteVolume": "4098.21349723",
+  "quotePrice": "0.00018107",
+  "totalShares": "88.33999905876064039167",
+  "precision": 8,
+  "creator": "paranormalhive",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

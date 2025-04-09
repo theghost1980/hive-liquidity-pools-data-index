@@ -1,0 +1,14 @@
+{
+  "_id": 88,
+  "tokenPair": "BLOSSOM:BLOOM",
+  "baseQuantity": "7188.80445103",
+  "baseVolume": "1409.79874474",
+  "basePrice": "9.89981680",
+  "quoteQuantity": "71167.84713757",
+  "quoteVolume": "12882.39489894",
+  "quotePrice": "0.10101197",
+  "totalShares": "22595.43179333541379811021",
+  "precision": 8,
+  "creator": "the-forest",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

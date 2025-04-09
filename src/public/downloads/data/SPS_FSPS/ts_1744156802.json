@@ -1,0 +1,14 @@
+{
+  "_id": 127,
+  "tokenPair": "SPS:FSPS",
+  "baseQuantity": "1159.87903164",
+  "baseVolume": "2088.57844712",
+  "basePrice": "1.08976075",
+  "quoteQuantity": "1263.99064729",
+  "quoteVolume": "2116.31778319",
+  "quotePrice": "0.91763260",
+  "totalShares": "1210.48647164010827228034",
+  "precision": 8,
+  "creator": "splinterfi",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

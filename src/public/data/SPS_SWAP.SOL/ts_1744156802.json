@@ -1,0 +1,14 @@
+{
+  "_id": 257,
+  "tokenPair": "SPS:SWAP.SOL",
+  "baseQuantity": "744815.60226661",
+  "baseVolume": "9545503.93992246",
+  "basePrice": "0.00006049",
+  "quoteQuantity": "45.06079278",
+  "quoteVolume": "382.29804778",
+  "quotePrice": "16529.12779193",
+  "totalShares": "5718.00950861373517571865",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

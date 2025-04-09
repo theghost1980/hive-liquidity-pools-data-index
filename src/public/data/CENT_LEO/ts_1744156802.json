@@ -1,0 +1,14 @@
+{
+  "_id": 43,
+  "tokenPair": "CENT:LEO",
+  "baseQuantity": "1265016.27803821",
+  "baseVolume": "22974908.33675680",
+  "basePrice": "0.05160504",
+  "quoteQuantity": "65281.21615140",
+  "quoteVolume": "736559.99678981",
+  "quotePrice": "19.37795207",
+  "totalShares": "258280.19302073255998985383",
+  "precision": 8,
+  "creator": "anadolu",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

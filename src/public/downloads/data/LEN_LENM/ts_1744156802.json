@@ -1,0 +1,14 @@
+{
+  "_id": 83,
+  "tokenPair": "LEN:LENM",
+  "baseQuantity": "30681.346",
+  "baseVolume": "148013.596",
+  "basePrice": "0.028",
+  "quoteQuantity": "877.507",
+  "quoteVolume": "3433.220",
+  "quotePrice": "34.964",
+  "totalShares": "5127.35569553645750051352",
+  "precision": 3,
+  "creator": "liotes.burn",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 108,
+  "tokenPair": "HIQS:BEE",
+  "baseQuantity": "12009.75178451",
+  "baseVolume": "125514.61256809",
+  "basePrice": "0.28177411",
+  "quoteQuantity": "3384.03717848",
+  "quoteVolume": "83252.87814664",
+  "quotePrice": "3.54894203",
+  "totalShares": "6274.63673490940388152591",
+  "precision": 8,
+  "creator": "hiq.shares",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 231,
+  "tokenPair": "SWAP.HIVE:DRIP",
+  "baseQuantity": "29013.64204735",
+  "baseVolume": "292646.99807765",
+  "basePrice": "2.70000785",
+  "quoteQuantity": "78337.06129205",
+  "quoteVolume": "319473.78642221",
+  "quotePrice": "0.37036929",
+  "totalShares": "47163.85204875255090257549",
+  "precision": 8,
+  "creator": "hivedrip",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

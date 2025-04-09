@@ -1,0 +1,14 @@
+{
+  "_id": 48,
+  "tokenPair": "SWAP.HIVE:MYTHICAL",
+  "baseQuantity": "72.75883301",
+  "baseVolume": "7185.97146001",
+  "basePrice": "21647.26270736",
+  "quoteQuantity": "1575029.57244913",
+  "quoteVolume": "6620873.52354603",
+  "quotePrice": "0.00004619",
+  "totalShares": "10521.74859381843927588641",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

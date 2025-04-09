@@ -1,0 +1,14 @@
+{
+  "_id": 153,
+  "tokenPair": "SWAP.BLURT:SWAP.ETH",
+  "baseQuantity": "914494.49700125",
+  "baseVolume": "17406658.78383474",
+  "basePrice": "0.00000117",
+  "quoteQuantity": "1.07361227",
+  "quoteVolume": "17.64729305",
+  "quotePrice": "851792.14373290",
+  "totalShares": "948.66068441437314914942",
+  "precision": 8,
+  "creator": "mmmmkkkk311",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

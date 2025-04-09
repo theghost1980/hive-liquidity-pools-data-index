@@ -1,0 +1,14 @@
+{
+  "_id": 38,
+  "tokenPair": "CENT:POB",
+  "baseQuantity": "668155.94391357",
+  "baseVolume": "19320361.14717002",
+  "basePrice": "0.29326523",
+  "quoteQuantity": "195946.90895560",
+  "quoteVolume": "7709652.36308503",
+  "quotePrice": "3.40988254",
+  "totalShares": "323253.99028289946687038111",
+  "precision": 8,
+  "creator": "anadolu",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

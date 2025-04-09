@@ -1,0 +1,14 @@
+{
+  "_id": 57,
+  "tokenPair": "SWAP.HIVE:SEED",
+  "baseQuantity": "6.08113879",
+  "baseVolume": "26950.80051642",
+  "basePrice": "2.64986145",
+  "quoteQuantity": "16.11417528",
+  "quoteVolume": "17722.63291927",
+  "quotePrice": "0.37737822",
+  "totalShares": "6.17695714246535979936",
+  "precision": 8,
+  "creator": "empoderat",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

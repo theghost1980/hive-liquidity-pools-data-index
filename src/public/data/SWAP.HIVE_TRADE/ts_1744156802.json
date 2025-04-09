@@ -1,0 +1,14 @@
+{
+  "_id": 246,
+  "tokenPair": "SWAP.HIVE:TRADE",
+  "baseQuantity": "3489.87706070",
+  "baseVolume": "32653.53926686",
+  "basePrice": "0.46088504",
+  "quoteQuantity": "1608.43215974",
+  "quoteVolume": "20260.88082297",
+  "quotePrice": "2.16973842",
+  "totalShares": "2326.333592089765004531",
+  "precision": 8,
+  "creator": "centtoken",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

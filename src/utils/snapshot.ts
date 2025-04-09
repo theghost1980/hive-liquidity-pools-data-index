@@ -1,6 +1,8 @@
 import axios from "axios";
 import fs from "fs";
 import path from "path";
+import { config } from "../config/config";
+import { JsonUtils } from "./jsonUtils";
 import { Logger } from "./logger.utils";
 
 const fetchFilesFromServer = async (url: string) => {
@@ -79,6 +81,22 @@ const downloadFiles = async (sourceUrl: string, destDir: string) => {
     Logger.info(`📁 Skipped folders (no new files): ${skippedFolders}`);
     Logger.info(`📄 Skipped files: ${skippedFiles}`);
     Logger.info(`⬇️ Downloaded files: ${downloadedFiles}`);
+    if (downloadedFiles > 0) {
+      JsonUtils.readJsonFile(`.${config.jsonServerData.relativePath}`) //inc day count
+        .then((v) => {
+          if (v && v.snapshots_24h_days_taken) {
+            let count = v.snapshots_24h_days_taken;
+            count++;
+            JsonUtils.writeJsonFile(`.${config.jsonServerData.relativePath}`, {
+              ...v,
+              snapshots_24h_days_taken: count,
+            });
+          }
+        })
+        .catch((e) =>
+          Logger.error(`Error reading Json file server data! ${e.message}`)
+        );
+    }
   } catch (error) {
     Logger.error("❌ Error during file download:", error);
   }

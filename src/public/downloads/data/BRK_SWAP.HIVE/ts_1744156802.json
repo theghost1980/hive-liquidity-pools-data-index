@@ -1,0 +1,14 @@
+{
+  "_id": 181,
+  "tokenPair": "BRK:SWAP.HIVE",
+  "baseQuantity": "70787.22414024",
+  "baseVolume": "1429275.42485568",
+  "basePrice": "0.00000792",
+  "quoteQuantity": "0.56126968",
+  "quoteVolume": "7844.56998159",
+  "quotePrice": "126119.80775487",
+  "totalShares": "181.88044105824139958009",
+  "precision": 8,
+  "creator": "icebreak-r",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

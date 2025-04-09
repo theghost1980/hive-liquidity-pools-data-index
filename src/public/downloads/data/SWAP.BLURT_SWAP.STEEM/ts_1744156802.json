@@ -1,0 +1,14 @@
+{
+  "_id": 152,
+  "tokenPair": "SWAP.BLURT:SWAP.STEEM",
+  "baseQuantity": "928385.18360772",
+  "baseVolume": "13692982.72308563",
+  "basePrice": "0.01594402",
+  "quoteQuantity": "14802.19540760",
+  "quoteVolume": "205467.83777477",
+  "quotePrice": "62.71942492",
+  "totalShares": "109377.28015768763659658205",
+  "precision": 8,
+  "creator": "mmmmkkkk311",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

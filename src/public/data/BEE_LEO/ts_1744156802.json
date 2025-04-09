@@ -1,0 +1,14 @@
+{
+  "_id": 27,
+  "tokenPair": "BEE:LEO",
+  "baseQuantity": "2887.44130577",
+  "baseVolume": "390299.24776788",
+  "basePrice": "6.95996745",
+  "quoteQuantity": "20096.49750559",
+  "quoteVolume": "1026263.69041775",
+  "quotePrice": "0.14367883",
+  "totalShares": "6997.23487831726522114828",
+  "precision": 8,
+  "creator": "aggroed",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

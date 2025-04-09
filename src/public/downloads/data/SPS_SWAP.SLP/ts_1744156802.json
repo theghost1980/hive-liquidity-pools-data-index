@@ -1,0 +1,14 @@
+{
+  "_id": 64,
+  "tokenPair": "SPS:SWAP.SLP",
+  "baseQuantity": "229294.59771904",
+  "baseVolume": "5338499.32187640",
+  "basePrice": "4.85060240",
+  "quoteQuantity": "1112216.92701987",
+  "quoteVolume": "34197039.07295922",
+  "quotePrice": "0.20615996",
+  "totalShares": "490487.77744370145588478856",
+  "precision": 8,
+  "creator": "spswhale",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

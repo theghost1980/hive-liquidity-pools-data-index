@@ -1,0 +1,14 @@
+{
+  "_id": 74,
+  "tokenPair": "SWAP.BTC:SWAP.LTC",
+  "baseQuantity": "0.28307163",
+  "baseVolume": "30.91008630",
+  "basePrice": "1084.82897869",
+  "quoteQuantity": "307.08430727",
+  "quoteVolume": "14200.95843758",
+  "quotePrice": "0.00092180",
+  "totalShares": "8.61067710669089720005",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

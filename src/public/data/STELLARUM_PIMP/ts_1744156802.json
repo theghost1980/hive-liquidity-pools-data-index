@@ -1,0 +1,14 @@
+{
+  "_id": 176,
+  "tokenPair": "STELLARUM:PIMP",
+  "baseQuantity": "2500610.1541",
+  "baseVolume": "54947314.7134",
+  "basePrice": "0.0101",
+  "quoteQuantity": "25445.4213",
+  "quoteVolume": "1010965.3491",
+  "quotePrice": "98.2734",
+  "totalShares": "245311.65654634031517600058",
+  "precision": 4,
+  "creator": "astralrevelation",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

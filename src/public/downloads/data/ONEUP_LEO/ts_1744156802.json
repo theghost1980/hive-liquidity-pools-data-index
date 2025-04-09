@@ -1,0 +1,14 @@
+{
+  "_id": 91,
+  "tokenPair": "ONEUP:LEO",
+  "baseQuantity": "37985.23394284",
+  "baseVolume": "9161361.05208292",
+  "basePrice": "0.02172949",
+  "quoteQuantity": "825.39998612",
+  "quoteVolume": "288192.84998210",
+  "quotePrice": "46.02039566",
+  "totalShares": "4964.78651620015228186264",
+  "precision": 8,
+  "creator": "flauwy",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

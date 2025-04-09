@@ -7,7 +7,7 @@ import { RpcNodeUtils } from "../utils/rpc-node-utils";
 //    - get time until next job.
 //  refer to: https://stackoverflow.com/questions/60828411/node-js-get-time-till-next-cron-job
 
-export const initScripts = () => {
-  RpcNodeUtils.getFastestNode();
+export const initScripts = async () => {
+  RpcNodeUtils.setFastestNode(await RpcNodeUtils.getFastestNode("l2"));
   MainCronJob.startJob();
 };

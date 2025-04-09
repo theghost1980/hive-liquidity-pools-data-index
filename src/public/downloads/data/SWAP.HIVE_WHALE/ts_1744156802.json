@@ -1,0 +1,14 @@
+{
+  "_id": 118,
+  "tokenPair": "SWAP.HIVE:WHALE",
+  "baseQuantity": "63.11410704",
+  "baseVolume": "1982.00176753",
+  "basePrice": "7426628.68947573",
+  "quoteQuantity": "468725038.05390664",
+  "quoteVolume": "1108350217.30811721",
+  "quotePrice": "0.00000013",
+  "totalShares": "170936.87328374088181338842",
+  "precision": 8,
+  "creator": "splinterskins",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

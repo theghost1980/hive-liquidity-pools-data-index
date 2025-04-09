@@ -1,0 +1,14 @@
+{
+  "_id": 156,
+  "tokenPair": "SWAP.BLURT:AFIT",
+  "baseQuantity": "133715.74975286",
+  "baseVolume": "3486810.51209378",
+  "basePrice": "23.25082957",
+  "quoteQuantity": "3109002.10882992",
+  "quoteVolume": "67727368.73980511",
+  "quotePrice": "0.04300921",
+  "totalShares": "622171.43705509091524716361",
+  "precision": 8,
+  "creator": "mmmmkkkk311",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

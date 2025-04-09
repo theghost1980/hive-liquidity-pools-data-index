@@ -1,0 +1,14 @@
+{
+  "_id": 154,
+  "tokenPair": "SWAP.BLURT:SWAP.LTC",
+  "baseQuantity": "610588.53908737",
+  "baseVolume": "30208555.16757254",
+  "basePrice": "0.00002498",
+  "quoteQuantity": "15.25360964",
+  "quoteVolume": "1013.73309842",
+  "quotePrice": "40029.11792669",
+  "totalShares": "2892.17273988901788124859",
+  "precision": 8,
+  "creator": "mmmmkkkk311",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

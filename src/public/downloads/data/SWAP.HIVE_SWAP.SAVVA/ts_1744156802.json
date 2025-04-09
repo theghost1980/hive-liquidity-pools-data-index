@@ -1,0 +1,14 @@
+{
+  "_id": 102,
+  "tokenPair": "SWAP.HIVE:SWAP.SAVVA",
+  "baseQuantity": "47.15182602",
+  "baseVolume": "19244.41226245",
+  "basePrice": "3748.72980054",
+  "quoteQuantity": "176759.45535122",
+  "quoteVolume": "70388218.37863704",
+  "quotePrice": "0.00026675",
+  "totalShares": "2736.47757954617498570596",
+  "precision": 8,
+  "creator": "lp371",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

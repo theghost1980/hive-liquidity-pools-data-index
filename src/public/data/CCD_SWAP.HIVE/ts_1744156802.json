@@ -1,0 +1,14 @@
+{
+  "_id": 162,
+  "tokenPair": "CCD:SWAP.HIVE",
+  "baseQuantity": "2582723.67391369",
+  "baseVolume": "54059139.83115989",
+  "basePrice": "0.00081545",
+  "quoteQuantity": "2106.10295972",
+  "quoteVolume": "33285.78829841",
+  "quotePrice": "1226.30456502",
+  "totalShares": "72520.75227086576549049536",
+  "precision": 8,
+  "creator": "cryptocompany",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

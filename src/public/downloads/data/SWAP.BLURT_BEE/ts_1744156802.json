@@ -1,0 +1,14 @@
+{
+  "_id": 160,
+  "tokenPair": "SWAP.BLURT:BEE",
+  "baseQuantity": "577037.41891059",
+  "baseVolume": "6417379.02527963",
+  "basePrice": "0.02256574",
+  "quoteQuantity": "13021.28202710",
+  "quoteVolume": "152290.55718442",
+  "quotePrice": "44.31494669",
+  "totalShares": "84268.38638609375950031744",
+  "precision": 8,
+  "creator": "ctime",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

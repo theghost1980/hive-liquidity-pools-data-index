@@ -1,0 +1,14 @@
+{
+  "_id": 8,
+  "tokenPair": "SWAP.HIVE:SWAP.BTC",
+  "baseQuantity": "457063.91877230",
+  "baseVolume": "41796960.82099717",
+  "basePrice": "0.00000255",
+  "quoteQuantity": "1.16596816",
+  "quoteVolume": "491.99677607",
+  "quotePrice": "392003.77373280",
+  "totalShares": "587.59803918812837487462",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

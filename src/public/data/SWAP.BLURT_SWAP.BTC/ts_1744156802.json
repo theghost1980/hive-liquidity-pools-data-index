@@ -1,0 +1,14 @@
+{
+  "_id": 158,
+  "tokenPair": "SWAP.BLURT:SWAP.BTC",
+  "baseQuantity": "3071154.91496808",
+  "baseVolume": "48544118.48311169",
+  "basePrice": "0.00000002",
+  "quoteQuantity": "0.07115177",
+  "quoteVolume": "1.74600588",
+  "quotePrice": "43163436.62242105",
+  "totalShares": "398.69690373113209661464",
+  "precision": 8,
+  "creator": "mmmmkkkk311",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

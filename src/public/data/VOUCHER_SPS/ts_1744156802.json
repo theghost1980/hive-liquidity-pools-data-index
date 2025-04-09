@@ -1,0 +1,14 @@
+{
+  "_id": 62,
+  "tokenPair": "VOUCHER:SPS",
+  "baseQuantity": "204844.72055503",
+  "baseVolume": "18344488.74809203",
+  "basePrice": "3.17830979",
+  "quoteQuantity": "651059.98162148",
+  "quoteVolume": "63298079.41226807",
+  "quotePrice": "0.31463263",
+  "totalShares": "306627.26535746732247032414",
+  "precision": 8,
+  "creator": "nealmcspadden",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

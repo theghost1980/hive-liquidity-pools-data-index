@@ -1,0 +1,14 @@
+{
+  "_id": 4,
+  "tokenPair": "SWAP.HIVE:SWAP.HBD",
+  "baseQuantity": "210410.20004045",
+  "baseVolume": "17531269.15859716",
+  "basePrice": "0.19675273",
+  "quoteQuantity": "41398.78253076",
+  "quoteVolume": "8279434.81073762",
+  "quotePrice": "5.08252144",
+  "totalShares": "80237.63456802700758938771",
+  "precision": 8,
+  "creator": "eturnerx",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

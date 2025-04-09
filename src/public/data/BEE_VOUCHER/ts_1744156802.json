@@ -1,0 +1,14 @@
+{
+  "_id": 80,
+  "tokenPair": "BEE:VOUCHER",
+  "baseQuantity": "7385.90387017",
+  "baseVolume": "567480.62983836",
+  "basePrice": "3.76320698",
+  "quoteQuantity": "27794.68506832",
+  "quoteVolume": "898029.31386749",
+  "quotePrice": "0.26573079",
+  "totalShares": "13370.80442520772885201893",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

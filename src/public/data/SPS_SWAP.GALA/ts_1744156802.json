@@ -1,0 +1,14 @@
+{
+  "_id": 110,
+  "tokenPair": "SPS:SWAP.GALA",
+  "baseQuantity": "286.64743395",
+  "baseVolume": "931682.99103883",
+  "basePrice": "1.15533616",
+  "quoteQuantity": "331.17414645",
+  "quoteVolume": "1007985.23896884",
+  "quotePrice": "0.86554894",
+  "totalShares": "305.66412615542703991898",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

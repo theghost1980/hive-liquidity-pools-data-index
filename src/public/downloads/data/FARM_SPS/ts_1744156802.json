@@ -1,0 +1,14 @@
+{
+  "_id": 140,
+  "tokenPair": "FARM:SPS",
+  "baseQuantity": "11745.16174566",
+  "baseVolume": "182547.25732887",
+  "basePrice": "3.78045865",
+  "quoteQuantity": "44402.09836783",
+  "quoteVolume": "602806.77168566",
+  "quotePrice": "0.26451816",
+  "totalShares": "22285.13975348947944149766",
+  "precision": 8,
+  "creator": "seinkalar",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 126,
+  "tokenPair": "PHOTO:MEME",
+  "baseQuantity": "701896.5706",
+  "baseVolume": "9741368.8894",
+  "basePrice": "1.6097",
+  "quoteQuantity": "1129864.5039",
+  "quoteVolume": "83252733.2942",
+  "quotePrice": "0.6212",
+  "totalShares": "856413.70302446921277299515",
+  "precision": 4,
+  "creator": "hivephoto",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

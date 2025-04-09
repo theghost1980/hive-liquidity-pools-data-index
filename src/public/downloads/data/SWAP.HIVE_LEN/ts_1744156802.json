@@ -1,0 +1,14 @@
+{
+  "_id": 184,
+  "tokenPair": "SWAP.HIVE:LEN",
+  "baseQuantity": "3779.51312276",
+  "baseVolume": "22365.26421605",
+  "basePrice": "7.50633986",
+  "quoteQuantity": "28370.31000667",
+  "quoteVolume": "183200.88098634",
+  "quotePrice": "0.13322071",
+  "totalShares": "10254.83921172381603621522",
+  "precision": 8,
+  "creator": "liotes.burn",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 32,
+  "tokenPair": "BEE:SWAP.WAX",
+  "baseQuantity": "47.31791897",
+  "baseVolume": "921252.76784833",
+  "basePrice": "15.01573947",
+  "quoteQuantity": "710.51354396",
+  "quoteVolume": "1921822.45168799",
+  "quotePrice": "0.06659678",
+  "totalShares": "172.95646123767496854821",
+  "precision": 8,
+  "creator": "aggroed",
+  "isoDate": "2025-04-09T00:00:02.000Z"
+}
