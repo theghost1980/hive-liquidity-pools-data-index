@@ -28,7 +28,7 @@ const publicDir = path_1.default.join(__dirname, "public");
 const dataDir = path_1.default.join(publicDir, "data");
 app.use("/data", express_1.default.static(dataDir), serveIndex(dataDir, { icons: true }));
 app.get("/", (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, "/public/index.html"));
+    res.sendFile(path_1.default.join(__dirname, "index.html"));
 });
 app.use("/public", public_routes_1.default);
 const initialize = () => {
