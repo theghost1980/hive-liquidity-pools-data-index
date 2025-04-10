@@ -9,7 +9,7 @@ const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const logger_utils_1 = require("./logger.utils");
 function ensureDataDirectoryExists(subDirName, showLog) {
-    const projectRoot = path_1.default.join(__dirname, ".."); // Navigate up two levels from the current file to reach the project root
+    const projectRoot = path_1.default.join(__dirname, ".."); // Navigate up one level from the current file to reach the project root
     const mainDir = path_1.default.join(projectRoot, "public", "data");
     const subDir = path_1.default.join(mainDir, subDirName);
     try {

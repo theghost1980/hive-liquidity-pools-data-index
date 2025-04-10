@@ -81,12 +81,12 @@ const downloadFiles = async (sourceUrl: string, destDir: string) => {
     Logger.info(`📄 Skipped files: ${skippedFiles}`);
     Logger.info(`⬇️ Downloaded files: ${downloadedFiles}`);
     if (downloadedFiles > 0) {
-      JsonUtils.readJsonFile("./reference-data/server-data.json") //inc day count
+      JsonUtils.readJsonFile("./public/server-data.json") //inc day count
         .then((v) => {
           if (v && v.snapshots_24h_days_taken) {
             let count = v.snapshots_24h_days_taken;
             count++;
-            JsonUtils.writeJsonFile(`./reference-data/server-data.json`, {
+            JsonUtils.writeJsonFile(`./public/server-data.json`, {
               ...v,
               snapshots_24h_days_taken: count,
             });

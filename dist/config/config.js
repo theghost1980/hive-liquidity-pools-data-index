@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.config = void 0;
+//TODO update this as used
 exports.config = {
     account: "theghost1980",
     tokenPair: "SWAP.HIVE:BEE",
@@ -14,5 +15,9 @@ exports.config = {
         "24h": 24 * 60 * 60 * 1000, // 24 hours in milliseconds
     },
     apiEndpoint: "https://enginerpc.com/contracts",
-    feeRate: 0.002, // 0.2% fee rate
+    feeRate: 0.002, // 0.2% fee rate,
+    jsonServerData: {
+        relativePath_: "/reference-data/server-data.json",
+        fileName: "server-data.json",
+    },
 };

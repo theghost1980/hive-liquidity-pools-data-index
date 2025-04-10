@@ -3,70 +3,94 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.main = void 0;
 const axios_1 = __importDefault(require("axios"));
-const fs_extra_1 = __importDefault(require("fs-extra"));
-const http_1 = __importDefault(require("http"));
-const https_1 = __importDefault(require("https"));
+const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
-// Fetch file data from the server
+const jsonUtils_1 = require("./jsonUtils");
+const logger_utils_1 = require("./logger.utils");
 const fetchFilesFromServer = async (url) => {
     try {
         const response = await axios_1.default.get(url);
-        return response.data; // Assuming the server responds with a list of files/folders
+        return response.data;
     }
     catch (error) {
         console.error("Error fetching data from server:", error);
         throw error;
     }
 };
-// Helper function to download a file
-const downloadFile = async (fileUrl, dest) => {
-    const writer = fs_extra_1.default.createWriteStream(dest);
-    const client = fileUrl.startsWith("https") ? https_1.default : http_1.default;
-    client.get(fileUrl, (response) => {
-        response.pipe(writer);
-        writer.on("finish", () => {
-            console.log(`File downloaded: ${dest}`);
-        });
-    });
-};
-// Recursively create folders and download .json files
-const downloadFiles = async (sourceUrl, destDir) => {
+const downloadFile = async (fileUrl, destPath) => {
     try {
-        const data = await fetchFilesFromServer(sourceUrl);
-        // Ensure destination directory exists
-        if (!fs_extra_1.default.existsSync(destDir)) {
-            fs_extra_1.default.mkdirSync(destDir, { recursive: true });
+        const response = await axios_1.default.get(fileUrl, { responseType: "stream" });
+        const writer = fs_1.default.createWriteStream(destPath);
+        response.data.pipe(writer);
+        return new Promise((resolve, reject) => {
+            writer.on("finish", resolve);
+            writer.on("error", reject);
+        });
+    }
+    catch (error) {
+        console.error(`Error downloading ${fileUrl}`, error);
+        throw error;
+    }
+};
+const downloadFiles = async (sourceUrl, destDir) => {
+    let skippedFiles = 0;
+    let downloadedFiles = 0;
+    let skippedFolders = 0;
+    try {
+        const folderNames = await fetchFilesFromServer(sourceUrl);
+        if (!fs_1.default.existsSync(destDir)) {
+            fs_1.default.mkdirSync(destDir, { recursive: true });
         }
-        for (const folder of data.folders) {
-            // Assuming the server returns a list of folders
+        for (const folder of folderNames) {
             const folderUrl = `${sourceUrl}/${folder}`;
             const folderPath = path_1.default.join(destDir, folder);
-            // Ensure the folder exists in the destination
-            if (!fs_extra_1.default.existsSync(folderPath)) {
-                fs_extra_1.default.mkdirSync(folderPath);
+            if (!fs_1.default.existsSync(folderPath)) {
+                fs_1.default.mkdirSync(folderPath);
             }
-            const files = await fetchFilesFromServer(folderUrl); // Fetch files in the folder
-            for (const file of files) {
+            const folderContent = await fetchFilesFromServer(folderUrl);
+            let folderHadNewFiles = false;
+            for (const file of folderContent) {
                 if (file.endsWith(".json")) {
-                    const fileUrl = `${sourceUrl}/${folder}/${file}`;
+                    const fileUrl = `${folderUrl}/${file}`;
                     const destFilePath = path_1.default.join(folderPath, file);
-                    // Download the .json file
-                    await downloadFile(fileUrl, destFilePath);
+                    if (fs_1.default.existsSync(destFilePath)) {
+                        console.log(`⏭️ Skipped file ${file} as present in folder ${folder}`);
+                        skippedFiles++;
+                    }
+                    else {
+                        await downloadFile(fileUrl, destFilePath);
+                        console.log(`✅ Downloaded ${file} to ${folder}`);
+                        downloadedFiles++;
+                        folderHadNewFiles = true;
+                    }
                 }
             }
-            // Recursively handle subfolders if any
-            await downloadFiles(folderUrl, folderPath);
+            if (!folderHadNewFiles) {
+                skippedFolders++;
+            }
+        }
+        logger_utils_1.Logger.info("\n✅ Download completed successfully!");
+        logger_utils_1.Logger.info(`📁 Skipped folders (no new files): ${skippedFolders}`);
+        logger_utils_1.Logger.info(`📄 Skipped files: ${skippedFiles}`);
+        logger_utils_1.Logger.info(`⬇️ Downloaded files: ${downloadedFiles}`);
+        if (downloadedFiles > 0) {
+            jsonUtils_1.JsonUtils.readJsonFile("./reference-data/server-data.json") //inc day count
+                .then((v) => {
+                if (v && v.snapshots_24h_days_taken) {
+                    let count = v.snapshots_24h_days_taken;
+                    count++;
+                    jsonUtils_1.JsonUtils.writeJsonFile(`./reference-data/server-data.json`, {
+                        ...v,
+                        snapshots_24h_days_taken: count,
+                    });
+                }
+            })
+                .catch((e) => logger_utils_1.Logger.error(`Error reading Json file server data! ${e.message}`));
         }
     }
     catch (error) {
-        console.error("Error during file download:", error);
+        logger_utils_1.Logger.error("❌ Error during file download:", error);
     }
 };
-// Export the main function so it can be used from another module
-const main = async (sourceUrl, destDir) => {
-    await downloadFiles(sourceUrl, destDir);
-    console.log("All files have been downloaded successfully!");
-};
-exports.main = main;
+exports.default = downloadFiles;

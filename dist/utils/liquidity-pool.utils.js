@@ -7,6 +7,7 @@ exports.LiquidityPoolUtils = void 0;
 const axios_1 = __importDefault(require("axios"));
 const moment_1 = __importDefault(require("moment"));
 const logger_utils_1 = require("./logger.utils");
+//TODO cleanup & REM
 let LASTHERPCNODEWORKING = "";
 const HERPCAPINODES = [
     "https://enginerpc.com",
@@ -55,6 +56,7 @@ const testHIVEAPIEP = () => {
     });
 };
 const fetchPoolData = async () => {
+    //TODO below start using the new RpcNodeUtils to get fastest
     const result = await testHIVEAPIEP();
     logger_utils_1.Logger.info(`HERPC nodes tested, lastWorking: ${result.workingHERPCNODEList[0].rpcUrl}, checkedTS: ${result.workingHERPCNODEList[0].lastCheckTSSeconds}`);
     LASTHERPCNODEWORKING = result.workingHERPCNODEList[0].rpcUrl;

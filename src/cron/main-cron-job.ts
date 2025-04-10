@@ -29,12 +29,12 @@ const job = cron.schedule(
 
         try {
           const serverData = await JsonUtils.readJsonFile(
-            "/reference-data/server-data.json"
+            "/public/server-data.json"
           );
           if (serverData && serverData.snapshots_24h_days_taken !== undefined) {
             serverData.snapshots_24h_days_taken += 1;
             await JsonUtils.writeJsonFile(
-              "/reference-data/server-data.json",
+              "/public/server-data.json",
               serverData
             );
           }

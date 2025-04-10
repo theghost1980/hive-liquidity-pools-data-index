@@ -69,9 +69,7 @@ app.get("/status", async (req, res) => {
     mainFolderSize = 0;
   } finally {
     const nextSnapshotDate = MainCronJob.getNextDate();
-    const serverData = await JsonUtils.readJsonFile(
-      "/reference-data/server-data.json"
-    );
+    const serverData = await JsonUtils.readJsonFile("/public/server-data.json");
 
     res.send({
       status: "OK",
