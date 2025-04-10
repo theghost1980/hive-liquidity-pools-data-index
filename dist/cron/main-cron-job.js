@@ -22,10 +22,10 @@ const job = node_cron_1.default.schedule("0 0 * * *", async () => {
                 await file_utils_1.FileUtils.writeDataToFile(`ts_${currentTimestampInSeconds}.json`, element.tokenPair, { ...element, isoDate });
             }
             try {
-                const serverData = await jsonUtils_1.JsonUtils.readJsonFile("/reference-data/server-data.json");
+                const serverData = await jsonUtils_1.JsonUtils.readJsonFile("/public/server-data.json");
                 if (serverData && serverData.snapshots_24h_days_taken !== undefined) {
                     serverData.snapshots_24h_days_taken += 1;
-                    await jsonUtils_1.JsonUtils.writeJsonFile("/reference-data/server-data.json", serverData);
+                    await jsonUtils_1.JsonUtils.writeJsonFile("/public/server-data.json", serverData);
                 }
             }
             catch (error) {

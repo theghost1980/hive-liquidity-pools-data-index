@@ -1191,3 +1191,6 @@
 2025-04-09 23:46:25 [[33mwarn[39m]: node-cron no soporta obtener la próxima fecha de ejecución directamente.
 2025-04-10 00:07:07 [[32minfo[39m]: Init Scripts!!
 2025-04-10 00:07:07 [[32minfo[39m]: Server is running at PORT:3000
+2025-04-10 00:11:37 [[32minfo[39m]: Init Scripts!!
+2025-04-10 00:11:37 [[32minfo[39m]: Server is running at PORT:3000
+2025-04-10 00:11:46 [[33mwarn[39m]: node-cron no soporta obtener la próxima fecha de ejecución directamente.

@@ -28,7 +28,7 @@ const publicDir = path_1.default.join(__dirname, "public");
 const dataDir = path_1.default.join(publicDir, "data");
 app.use("/data", express_1.default.static(dataDir), serveIndex(dataDir, { icons: true }));
 app.get("/", (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, "index.html"));
+    res.sendFile(path_1.default.join(__dirname, "/public/index.html"));
 });
 app.use("/public", public_routes_1.default);
 const initialize = () => {
@@ -62,7 +62,7 @@ app.get("/status", async (req, res) => {
     }
     finally {
         const nextSnapshotDate = main_cron_job_1.MainCronJob.getNextDate();
-        const serverData = await jsonUtils_1.JsonUtils.readJsonFile("/reference-data/server-data.json");
+        const serverData = await jsonUtils_1.JsonUtils.readJsonFile("/public/server-data.json");
         res.send({
             status: "OK",
             overall_index: "In Progress!",
