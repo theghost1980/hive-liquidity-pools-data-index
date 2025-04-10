@@ -21,9 +21,7 @@
   },
   "homepage": "https://github.com/theghost1980/hive-liquidity-pools-data-index#readme",
   "dependencies": {
-    "@types/cron": "^2.0.1",
     "axios": "^1.8.4",
-    "cron": "^4.1.4",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "fast-folder-size": "^2.4.0",
