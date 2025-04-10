@@ -1,0 +1,14 @@
+{
+  "_id": 16,
+  "tokenPair": "SWAP.HIVE:LEO",
+  "baseQuantity": "68946.75193189",
+  "baseVolume": "5497176.18725758",
+  "basePrice": "17.78787705",
+  "quoteQuantity": "1226416.34659943",
+  "quoteVolume": "32734120.00925100",
+  "quotePrice": "0.05621806",
+  "totalShares": "261836.45607844703174843489",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-10T00:00:01.000Z"
+}

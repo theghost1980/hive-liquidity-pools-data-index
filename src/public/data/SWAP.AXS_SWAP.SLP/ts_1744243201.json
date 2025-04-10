@@ -1,0 +1,14 @@
+{
+  "_id": 67,
+  "tokenPair": "SWAP.AXS:SWAP.SLP",
+  "baseQuantity": "997.05461180",
+  "baseVolume": "9217.96602643",
+  "basePrice": "1736.19852529",
+  "quoteQuantity": "1731084.74664237",
+  "quoteVolume": "24784298.25334150",
+  "quotePrice": "0.00057597",
+  "totalShares": "40987.38465717998177321251",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-10T00:00:01.000Z"
+}

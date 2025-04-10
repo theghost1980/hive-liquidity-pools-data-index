@@ -1,0 +1,14 @@
+{
+  "_id": 51,
+  "tokenPair": "SWAP.HIVE:SWAP.MATIC",
+  "baseQuantity": "24430.07440448",
+  "baseVolume": "3358634.79565697",
+  "basePrice": "1.15317786",
+  "quoteQuantity": "28172.22093141",
+  "quoteVolume": "1864825.68765255",
+  "quotePrice": "0.86716892",
+  "totalShares": "24109.29529535218749650695",
+  "precision": 8,
+  "creator": "beeswap",
+  "isoDate": "2025-04-10T00:00:01.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 63,
+  "tokenPair": "SWAP.HIVE:WAIV",
+  "baseQuantity": "68189.78046975",
+  "baseVolume": "1073699.50182185",
+  "basePrice": "7.30242681",
+  "quoteQuantity": "497950.88119115",
+  "quoteVolume": "6979331.01066746",
+  "quotePrice": "0.13694077",
+  "totalShares": "181280.59740820789303298968",
+  "precision": 8,
+  "creator": "waiv.defi",
+  "isoDate": "2025-04-10T00:00:01.000Z"
+}

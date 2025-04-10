@@ -43,10 +43,11 @@ const initialize = () => {
   // //Important while we test, we get the data from the main source which is the backend running in render.com
 
   //Below routine to get new data from the initial testing server.
-  // // const sourceUrl = "http://localhost:3000/data"; // Replace with your source URL
+  // const sourceUrl = "http://localhost:3000/data"; // Replace with your source URL
+
   // const sourceUrl =
   //   "https://hive-liquidity-pools-data-index.onrender.com/data/";
-  // const destDir = path.join(__dirname, "public", "downloads", "data"); // Where you want to copy the files to
+  // const destDir = path.join(__dirname, "public", "data"); // Where you want to scan/copy the files to
 
   // // Call the main function with the source URL and destination directory
   // downloadFiles(sourceUrl, destDir)

@@ -1,0 +1,14 @@
+{
+  "_id": 52,
+  "tokenPair": "BEE:SWAP.BUSD",
+  "baseQuantity": "1337.53302923",
+  "baseVolume": "1847619.41778861",
+  "basePrice": "0.08421169",
+  "quoteQuantity": "112.63591970",
+  "quoteVolume": "654473.72286160",
+  "quotePrice": "11.87483560",
+  "totalShares": "362.17156489848622479627",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-10T00:00:01.000Z"
+}

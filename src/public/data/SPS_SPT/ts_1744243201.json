@@ -1,0 +1,14 @@
+{
+  "_id": 39,
+  "tokenPair": "SPS:SPT",
+  "baseQuantity": "48194.59220049",
+  "baseVolume": "3637930.04438487",
+  "basePrice": "451.89600673",
+  "quoteQuantity": "21778943.76145437",
+  "quoteVolume": "321280733.63587236",
+  "quotePrice": "0.00221289",
+  "totalShares": "1003913.44881266845743838341",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-10T00:00:01.000Z"
+}

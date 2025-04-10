@@ -1,0 +1,14 @@
+{
+  "_id": 199,
+  "tokenPair": "ZING:SWAP.HIVE",
+  "baseQuantity": "12266905.56594026",
+  "baseVolume": "146261658.00201714",
+  "basePrice": "0.00182691",
+  "quoteQuantity": "22410.63299446",
+  "quoteVolume": "836322.33590514",
+  "quotePrice": "547.36988325",
+  "totalShares": "507456.41014295136465759504",
+  "precision": 8,
+  "creator": "poshtoken",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

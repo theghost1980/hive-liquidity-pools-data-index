@@ -1,0 +1,14 @@
+{
+  "_id": 179,
+  "tokenPair": "SWAP.HIVE:GAMER",
+  "baseQuantity": "362.73452937",
+  "baseVolume": "44817.44452629",
+  "basePrice": "59736.23493993",
+  "quoteQuantity": "21668395.06727332",
+  "quoteVolume": "984288142.59197391",
+  "quotePrice": "0.00001674",
+  "totalShares": "64993.67127469644902004767",
+  "precision": 8,
+  "creator": "ctime",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

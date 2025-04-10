@@ -1,0 +1,14 @@
+{
+  "_id": 217,
+  "tokenPair": "COLONY:SCRIPT",
+  "baseQuantity": "20343810.870",
+  "baseVolume": "146205280.860",
+  "basePrice": "0.000",
+  "quoteQuantity": "13882.104",
+  "quoteVolume": "198098.470",
+  "quotePrice": "1465.470",
+  "totalShares": "523702.76976428174225808712",
+  "precision": 3,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

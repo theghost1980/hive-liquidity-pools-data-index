@@ -1,0 +1,14 @@
+{
+  "_id": 254,
+  "tokenPair": "CENT:TRADE",
+  "baseQuantity": "1113431.72069869",
+  "baseVolume": "8010980.00425159",
+  "basePrice": "0.00136613",
+  "quoteQuantity": "1521.10012377",
+  "quoteVolume": "15593.51486632",
+  "quotePrice": "731.99107889",
+  "totalShares": "33812.55232361650282957927",
+  "precision": 8,
+  "creator": "centtoken",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

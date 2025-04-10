@@ -1,0 +1,14 @@
+{
+  "_id": 203,
+  "tokenPair": "SHARD:PART",
+  "baseQuantity": "102545.37218006",
+  "baseVolume": "12567957.85774933",
+  "basePrice": "7.98910237",
+  "quoteQuantity": "819245.47644663",
+  "quoteVolume": "172001903.83628587",
+  "quotePrice": "0.12517050",
+  "totalShares": "238607.3949162159539335847",
+  "precision": 8,
+  "creator": "golem.pool",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

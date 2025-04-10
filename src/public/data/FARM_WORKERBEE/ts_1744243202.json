@@ -1,0 +1,14 @@
+{
+  "_id": 211,
+  "tokenPair": "FARM:WORKERBEE",
+  "baseQuantity": "160.75681",
+  "baseVolume": "149754.48423",
+  "basePrice": "0.04039",
+  "quoteQuantity": "6.49356",
+  "quoteVolume": "10526.90151",
+  "quotePrice": "24.75634",
+  "totalShares": "31.9474125618075315951",
+  "precision": 5,
+  "creator": "mebonline",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

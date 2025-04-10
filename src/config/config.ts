@@ -14,7 +14,7 @@ export const config = {
   apiEndpoint: "https://enginerpc.com/contracts",
   feeRate: 0.002, // 0.2% fee rate,
   jsonServerData: {
-    relativePath: "/reference-data/server-data.json",
+    relativePath_: "/reference-data/server-data.json",
     fileName: "server-data.json",
   },
 };

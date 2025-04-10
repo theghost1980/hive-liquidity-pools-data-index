@@ -1,0 +1,14 @@
+{
+  "_id": 93,
+  "tokenPair": "SWAP.ETH:SWAP.USDT",
+  "baseQuantity": "0.26282338",
+  "baseVolume": "826.89724618",
+  "basePrice": "1674.63360850",
+  "quoteQuantity": "440.13286525",
+  "quoteVolume": "1391557.97064356",
+  "quotePrice": "0.00059714",
+  "totalShares": "10.09630505303075333453",
+  "precision": 8,
+  "creator": "sm-usd",
+  "isoDate": "2025-04-10T00:00:01.000Z"
+}

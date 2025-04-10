@@ -1,0 +1,14 @@
+{
+  "_id": 271,
+  "tokenPair": "DENAR:SWAP.HIVE",
+  "baseQuantity": "17662220.16994772",
+  "baseVolume": "106734846.61530472",
+  "basePrice": "0.00005953",
+  "quoteQuantity": "1051.47249163",
+  "quoteVolume": "8217.71832779",
+  "quotePrice": "16797.60555843",
+  "totalShares": "131958.32286228907265138698",
+  "precision": 8,
+  "creator": "mrtats",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 224,
+  "tokenPair": "STARBITS:SWAP.LTC",
+  "baseQuantity": "11318674.71427631",
+  "baseVolume": "7244926223.28566135",
+  "basePrice": "0.00000000",
+  "quoteQuantity": "0.08271941",
+  "quoteVolume": "140.07959676",
+  "quotePrice": "136832149.96669233",
+  "totalShares": "860.85454867451021682085",
+  "precision": 8,
+  "creator": "traderhive",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

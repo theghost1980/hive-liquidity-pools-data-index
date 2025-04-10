@@ -1,0 +1,14 @@
+{
+  "_id": 190,
+  "tokenPair": "SWAP.HBD:PEPE",
+  "baseQuantity": "11.96212184",
+  "baseVolume": "1880.72740991",
+  "basePrice": "626545.41867043",
+  "quoteQuantity": "7494812.63642952",
+  "quoteVolume": "363939736.75288402",
+  "quotePrice": "0.00000159",
+  "totalShares": "8666.81992676051413963364",
+  "precision": 8,
+  "creator": "pepetoken",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

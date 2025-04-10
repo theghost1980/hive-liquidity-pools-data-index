@@ -1,0 +1,14 @@
+{
+  "_id": 269,
+  "tokenPair": "SWAP.HIVE:SKULLBITS",
+  "baseQuantity": "712.10842277",
+  "baseVolume": "21617.29683481",
+  "basePrice": "5246.43797533",
+  "quoteQuantity": "3736032.67177510",
+  "quoteVolume": "158178347.72821623",
+  "quotePrice": "0.00019060",
+  "totalShares": "50351.03846554158622333457",
+  "precision": 8,
+  "creator": "skullbitsdistr",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

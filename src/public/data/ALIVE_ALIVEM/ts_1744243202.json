@@ -1,0 +1,14 @@
+{
+  "_id": 171,
+  "tokenPair": "ALIVE:ALIVEM",
+  "baseQuantity": "31582.7208",
+  "baseVolume": "452102.2679",
+  "basePrice": "0.0037",
+  "quoteQuantity": "118.4892",
+  "quoteVolume": "1190.1837",
+  "quotePrice": "266.5451",
+  "totalShares": "1905.39739487150058596943",
+  "precision": 4,
+  "creator": "aliveandsocial",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

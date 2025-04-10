@@ -1,0 +1,14 @@
+{
+  "_id": 244,
+  "tokenPair": "BEED:SWAP.HBD",
+  "baseQuantity": "104.23730500",
+  "baseVolume": "733.98489159",
+  "basePrice": "1.02199796",
+  "quoteQuantity": "106.53031392",
+  "quoteVolume": "776.33530390",
+  "quotePrice": "0.97847552",
+  "totalShares": "103.79893016651961569018",
+  "precision": 8,
+  "creator": "eturnerx",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

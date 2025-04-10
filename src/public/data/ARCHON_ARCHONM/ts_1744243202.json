@@ -1,0 +1,14 @@
+{
+  "_id": 260,
+  "tokenPair": "ARCHON:ARCHONM",
+  "baseQuantity": "20863.73888177",
+  "baseVolume": "88859.67051206",
+  "basePrice": "0.00200781",
+  "quoteQuantity": "41.89044272",
+  "quoteVolume": "251.49675592",
+  "quotePrice": "498.05486710",
+  "totalShares": "929.03370454757211179627",
+  "precision": 8,
+  "creator": "ecoinstant",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

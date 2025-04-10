@@ -1,0 +1,14 @@
+{
+  "_id": 220,
+  "tokenPair": "DEC:SCRIPT",
+  "baseQuantity": "5392944.561",
+  "baseVolume": "163382900.260",
+  "basePrice": "0.002",
+  "quoteQuantity": "12152.079",
+  "quoteVolume": "290035.502",
+  "quotePrice": "443.787",
+  "totalShares": "247654.25982362633090783426",
+  "precision": 3,
+  "creator": "gls.goals",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

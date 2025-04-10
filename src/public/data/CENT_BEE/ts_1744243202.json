@@ -1,0 +1,14 @@
+{
+  "_id": 223,
+  "tokenPair": "CENT:BEE",
+  "baseQuantity": "1593424.16938534",
+  "baseVolume": "11362750.20181537",
+  "basePrice": "0.00735602",
+  "quoteQuantity": "11721.27460071",
+  "quoteVolume": "105800.53709963",
+  "quotePrice": "135.94290925",
+  "totalShares": "133656.70577275004734267471",
+  "precision": 8,
+  "creator": "centtoken",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

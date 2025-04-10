@@ -1,0 +1,14 @@
+{
+  "_id": 195,
+  "tokenPair": "SWAP.HIVE:PWR",
+  "baseQuantity": "25486.08174508",
+  "baseVolume": "103697.39288542",
+  "basePrice": "0.99265758",
+  "quoteQuantity": "25298.95247900",
+  "quoteVolume": "108631.99951682",
+  "quotePrice": "1.00739671",
+  "totalShares": "25183.92602289279126207632",
+  "precision": 8,
+  "creator": "empo",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

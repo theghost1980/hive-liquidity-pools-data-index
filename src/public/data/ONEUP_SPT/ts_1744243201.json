@@ -1,0 +1,14 @@
+{
+  "_id": 60,
+  "tokenPair": "ONEUP:SPT",
+  "baseQuantity": "21824.15067335",
+  "baseVolume": "10405010.90508584",
+  "basePrice": "15.15004642",
+  "quoteQuantity": "330636.89584603",
+  "quoteVolume": "44989797.80892887",
+  "quotePrice": "0.06600639",
+  "totalShares": "78252.59330736450274773139",
+  "precision": 8,
+  "creator": "flauwy",
+  "isoDate": "2025-04-10T00:00:01.000Z"
+}

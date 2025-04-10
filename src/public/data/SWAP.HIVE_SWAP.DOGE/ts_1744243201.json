@@ -1,0 +1,14 @@
+{
+  "_id": 12,
+  "tokenPair": "SWAP.HIVE:SWAP.DOGE",
+  "baseQuantity": "120655.55336563",
+  "baseVolume": "8343324.68705809",
+  "basePrice": "1.30423110",
+  "quoteQuantity": "157362.72532357",
+  "quoteVolume": "21706836.99436438",
+  "quotePrice": "0.76673528",
+  "totalShares": "119028.28455049684259120232",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-10T00:00:01.000Z"
+}

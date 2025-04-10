@@ -1,0 +1,14 @@
+{
+  "_id": 148,
+  "tokenPair": "SWAP.HIVE:INK",
+  "baseQuantity": "552.46264762",
+  "baseVolume": "21923.82839216",
+  "basePrice": "687.80471886",
+  "quoteQuantity": "379986.41603098",
+  "quoteVolume": "2631591.74341570",
+  "quotePrice": "0.00145390",
+  "totalShares": "14220.44062920724906312289",
+  "precision": 8,
+  "creator": "craftink",
+  "isoDate": "2025-04-10T00:00:01.000Z"
+}

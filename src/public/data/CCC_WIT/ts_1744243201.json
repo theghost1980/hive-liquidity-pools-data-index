@@ -1,0 +1,14 @@
+{
+  "_id": 100,
+  "tokenPair": "CCC:WIT",
+  "baseQuantity": "2282559.48892364",
+  "baseVolume": "4260737.79203745",
+  "basePrice": "1.34433813",
+  "quoteQuantity": "3068531.75700144",
+  "quoteVolume": "15195316.45306838",
+  "quotePrice": "0.74386047",
+  "totalShares": "2614702.29782769674940338584",
+  "precision": 8,
+  "creator": "cccf",
+  "isoDate": "2025-04-10T00:00:01.000Z"
+}

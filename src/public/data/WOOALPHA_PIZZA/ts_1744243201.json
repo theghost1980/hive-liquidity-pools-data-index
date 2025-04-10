@@ -1,0 +1,14 @@
+{
+  "_id": 122,
+  "tokenPair": "WOOALPHA:PIZZA",
+  "baseQuantity": "2.33",
+  "baseVolume": "11.67",
+  "basePrice": "186.07",
+  "quoteQuantity": "433.55",
+  "quoteVolume": "1968.25",
+  "quotePrice": "0.00",
+  "totalShares": "31.64314950865554130805",
+  "precision": 2,
+  "creator": "wrestorgonline",
+  "isoDate": "2025-04-10T00:00:01.000Z"
+}

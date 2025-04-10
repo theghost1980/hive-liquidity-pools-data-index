@@ -1,7 +1,6 @@
 import axios from "axios";
 import fs from "fs";
 import path from "path";
-import { config } from "../config/config";
 import { JsonUtils } from "./jsonUtils";
 import { Logger } from "./logger.utils";
 
@@ -82,12 +81,12 @@ const downloadFiles = async (sourceUrl: string, destDir: string) => {
     Logger.info(`📄 Skipped files: ${skippedFiles}`);
     Logger.info(`⬇️ Downloaded files: ${downloadedFiles}`);
     if (downloadedFiles > 0) {
-      JsonUtils.readJsonFile(`.${config.jsonServerData.relativePath}`) //inc day count
+      JsonUtils.readJsonFile("./reference-data/server-data.json") //inc day count
         .then((v) => {
           if (v && v.snapshots_24h_days_taken) {
             let count = v.snapshots_24h_days_taken;
             count++;
-            JsonUtils.writeJsonFile(`.${config.jsonServerData.relativePath}`, {
+            JsonUtils.writeJsonFile(`./reference-data/server-data.json`, {
               ...v,
               snapshots_24h_days_taken: count,
             });

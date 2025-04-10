@@ -1,0 +1,14 @@
+{
+  "_id": 261,
+  "tokenPair": "CENT:BEED",
+  "baseQuantity": "1410568.46620084",
+  "baseVolume": "6366680.37754992",
+  "basePrice": "0.00061186",
+  "quoteQuantity": "863.07849293",
+  "quoteVolume": "5099.16090084",
+  "quotePrice": "1634.34551753",
+  "totalShares": "34522.45005073056690683008",
+  "precision": 8,
+  "creator": "centtoken",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

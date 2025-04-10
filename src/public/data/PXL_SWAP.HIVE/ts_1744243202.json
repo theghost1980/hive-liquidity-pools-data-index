@@ -1,0 +1,14 @@
+{
+  "_id": 226,
+  "tokenPair": "PXL:SWAP.HIVE",
+  "baseQuantity": "130941.89831277",
+  "baseVolume": "524187.88368497",
+  "basePrice": "0.00672777",
+  "quoteQuantity": "880.94771913",
+  "quoteVolume": "10428.77887367",
+  "quotePrice": "148.63753599",
+  "totalShares": "10642.38621509827362269128",
+  "precision": 8,
+  "creator": "riseofthepixels",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

@@ -1,0 +1,14 @@
+{
+  "_id": 10,
+  "tokenPair": "SWAP.HIVE:SWAP.EOS",
+  "baseQuantity": "311.05438037",
+  "baseVolume": "75772.31720089",
+  "basePrice": "0.43313439",
+  "quoteQuantity": "134.72835088",
+  "quoteVolume": "22699.34035263",
+  "quotePrice": "2.30875222",
+  "totalShares": "189.41395547571382812976",
+  "precision": 8,
+  "creator": "hive-engine",
+  "isoDate": "2025-04-10T00:00:01.000Z"
+}

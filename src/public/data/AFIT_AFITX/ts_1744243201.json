@@ -1,0 +1,14 @@
+{
+  "_id": 112,
+  "tokenPair": "AFIT:AFITX",
+  "baseQuantity": "2607741.27953468",
+  "baseVolume": "41787903.87460025",
+  "basePrice": "0.00052130",
+  "quoteQuantity": "1359.43294101",
+  "quoteVolume": "11687.23635820",
+  "quotePrice": "1918.25665015",
+  "totalShares": "58727.31265509210142249948",
+  "precision": 8,
+  "creator": "actifit",
+  "isoDate": "2025-04-10T00:00:01.000Z"
+}

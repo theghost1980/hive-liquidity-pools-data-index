@@ -1,0 +1,14 @@
+{
+  "_id": 135,
+  "tokenPair": "SWAP.HIVE:CROP",
+  "baseQuantity": "12460.34068421",
+  "baseVolume": "169450.17424136",
+  "basePrice": "380.41540798",
+  "quoteQuantity": "4740105.58506696",
+  "quoteVolume": "33288948.71890899",
+  "quotePrice": "0.00262870",
+  "totalShares": "237464.78795213001501834307",
+  "precision": 8,
+  "creator": "dcrops",
+  "isoDate": "2025-04-10T00:00:01.000Z"
+}

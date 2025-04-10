@@ -1,0 +1,14 @@
+{
+  "_id": 214,
+  "tokenPair": "SWAP.HIVE:SCRIPT",
+  "baseQuantity": "28845.93838214",
+  "baseVolume": "1348893.59023397",
+  "basePrice": "0.54617051",
+  "quoteQuantity": "15754.80105309",
+  "quoteVolume": "942729.72187050",
+  "quotePrice": "1.83093003",
+  "totalShares": "20236.74951905331634473056",
+  "precision": 8,
+  "creator": "gls.goals",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

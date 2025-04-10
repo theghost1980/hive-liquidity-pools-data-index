@@ -1,0 +1,14 @@
+{
+  "_id": 168,
+  "tokenPair": "PIMP:THGAMING",
+  "baseQuantity": "77605.14917",
+  "baseVolume": "1270351.51028",
+  "basePrice": "169.10169",
+  "quoteQuantity": "13123162.49574",
+  "quoteVolume": "82811960.20963",
+  "quotePrice": "0.00591",
+  "totalShares": "984850.33190442646332279692",
+  "precision": 5,
+  "creator": "tokenpimp",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

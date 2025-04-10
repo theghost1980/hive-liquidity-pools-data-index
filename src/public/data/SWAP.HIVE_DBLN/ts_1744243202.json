@@ -1,0 +1,14 @@
+{
+  "_id": 188,
+  "tokenPair": "SWAP.HIVE:DBLN",
+  "baseQuantity": "288.30424354",
+  "baseVolume": "554114.87835731",
+  "basePrice": "599899.39539935",
+  "quoteQuantity": "172953541.39071421",
+  "quoteVolume": "5212370580.60922088",
+  "quotePrice": "0.00000166",
+  "totalShares": "174254.41413819420554451908",
+  "precision": 8,
+  "creator": "klye",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}

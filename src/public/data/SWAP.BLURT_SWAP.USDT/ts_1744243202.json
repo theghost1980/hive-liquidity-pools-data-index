@@ -1,0 +1,14 @@
+{
+  "_id": 159,
+  "tokenPair": "SWAP.BLURT:SWAP.USDT",
+  "baseQuantity": "224109.554860",
+  "baseVolume": "6123250.542210",
+  "basePrice": "0.001928",
+  "quoteQuantity": "432.225548",
+  "quoteVolume": "17622.257743",
+  "quotePrice": "518.501407",
+  "totalShares": "9206.9285487399993815269",
+  "precision": 6,
+  "creator": "ctime",
+  "isoDate": "2025-04-10T00:00:02.000Z"
+}
