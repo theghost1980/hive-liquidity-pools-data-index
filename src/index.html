@@ -34,6 +34,44 @@
           <li>It will present all tokenPairs available until today!</li>
         </ul>
       </li>
+      <li>
+        <ul>
+          <li>/public/fastest-hive-rpc-node?mode=l1</li>
+          <li>It will present the fastest RPC node related to HIVE</li>
+          <li>
+            mode=l1 Will test available RPC HIVE nodes: related with accounts,
+            HIVE Blockchain layer 1, etc.
+          </li>
+          <li>
+            mode=l2 Will test available RPC HIVE Engine nodes: related with Hive
+            engine, tokens, contarcts, layer 2, etc.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            /public/pool-fees?tokenPair=BEE:DEC&feePercentageBaseToken=0.1&feePercentageQuoteToken=0.15
+          </li>
+          <li>
+            In progress & Trying to adjust as in HIVE we much create sources of
+            "truth and data"
+          </li>
+          <li>
+            This route is intented to return the current Fees made by an active
+            Liquidity pool.
+          </li>
+          <li>
+            The issue is that there is no a fixed fee for the quote or base
+            tokens.
+          </li>
+          <li>
+            So for the good performance while I find better ways to "centralize
+            data", you must provide those fees as
+            [feePercentageBaseToken=number] & [feePercentageQuoteToken=number]
+          </li>
+        </ul>
+      </li>
     </ul>
     <p>
       <a href="/data"

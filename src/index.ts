@@ -1,10 +1,9 @@
 import dotenv from "dotenv";
 import express from "express";
+import moment from "moment";
 import path from "path";
-import { MainCronJob } from "./cron/main-cron-job";
 import { initScripts } from "./init-scripts/init";
 import publicRoutes from "./routes/public-routes";
-import { ControlVarsUtils } from "./utils/control-vars";
 import { FileUtils } from "./utils/file.utils";
 import { JsonUtils } from "./utils/jsonUtils";
 import { LiquidityPoolUtils } from "./utils/liquidity-pool.utils";
@@ -36,6 +35,22 @@ app.get("/", (req, res) => {
 app.use("/public", publicRoutes);
 
 const initialize = () => {
+  //Try to write the initial ts when taking snapshots date
+  try {
+    JsonUtils.readJsonFile("/public/server-data.json").then((data: any) => {
+      if (data) {
+        if (data.genesis_up_date_ts === 0) {
+          const newData = { ...data, genesis_up_date_ts: moment().unix() };
+          JsonUtils.writeJsonFile("/public/server-data.json", newData);
+          Logger.info("Initialize server data json!");
+        }
+      }
+    });
+  } catch (error: any) {
+    Logger.error(
+      `Error trying to write first date as genesis ${error.message}`
+    );
+  }
   Logger.info("Init Scripts!!");
   initScripts();
 
@@ -68,7 +83,7 @@ app.get("/status", async (req, res) => {
   } catch (error) {
     mainFolderSize = 0;
   } finally {
-    const nextSnapshotDate = MainCronJob.getNextDate();
+    // const nextSnapshotDate = MainCronJob.getNextDate();
     const serverData = await JsonUtils.readJsonFile("/public/server-data.json");
 
     res.send({
@@ -78,8 +93,8 @@ app.get("/status", async (req, res) => {
       mainFolderSizeMB: `${(mainFolderSize / 1024 ** 2).toFixed(3)} MB`,
       mainFolderSizeGB: `${(mainFolderSize / 1024 ** 3).toFixed(3)} GB`,
       lastHERPCNodeTested: LiquidityPoolUtils.getLastHERPCNodeChecked(),
-      count: `${ControlVarsUtils.SERVERCOUNT.daysCount.toString()} days`,
-      nextSnapshotDate,
+      // count: `${ControlVarsUtils.SERVERCOUNT.daysCount.toString()} days`,
+      // nextSnapshotDate,
       ...serverData,
     });
   }

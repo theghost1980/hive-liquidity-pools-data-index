@@ -229,7 +229,7 @@ router.get("/fastest-hive-rpc-node", async (req: any, res: any) => {
       res
         .status(400)
         .send(
-          'Must provide mode: "layer-1" | "layer-2"<br>"later-1": accounts, hive db, etc.<br>"layer-2": Hive Engine, tokens, liquidity pools, etc.'
+          'Must provide mode: "l1" | "l2"<br>"l1": accounts, hive db, etc.<br>"l2": Hive Engine, tokens, liquidity pools, etc.'
         );
     }
     const fastestNodeChecked = await RpcNodeUtils.getFastestNode(
