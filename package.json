@@ -7,7 +7,7 @@
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "clean": "rimraf dist/",
     "build": "npm run clean && tsc && npm run copy-assets",
-    "copy-assets": "npx copyfiles -u 1 src/public/**/* dist/ && npx copyfiles -u 1 src/index.html dist/",
+    "copy-assets": "npx copyfiles -u 1 \"src/public/**\" \"src/index.html\" dist/",
     "start": "node dist/index.js"
   },
   "repository": {
