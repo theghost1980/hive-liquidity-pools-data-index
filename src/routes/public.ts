@@ -3,14 +3,21 @@ import { Request, Response, Router } from "express";
 import { access, readdir, readFile } from "fs/promises";
 import moment from "moment";
 import path from "path";
+import { FileUtils } from "../utils/file.utils";
+import { JsonUtils } from "../utils/jsonUtils";
+import { LiquidityPoolUtils } from "../utils/liquidity-pool.utils";
 import { Logger } from "../utils/logger.utils";
 import { PriceUtils } from "../utils/price-utils";
-import { RpcNodeType, RpcNodeUtils } from "../utils/rpc-node-utils";
+import {
+  FastestNode,
+  RpcNodeType,
+  RpcNodeUtils,
+} from "../utils/rpc-node-utils";
 
 const router = Router();
 
 router.get(
-  "/available-data-pool-token-pair",
+  "/public/available-data-pool-token-pair",
   async (req: Request, res: Response) => {
     try {
       const projectRoot = path.join(__dirname, "..");
@@ -27,7 +34,7 @@ router.get(
   }
 );
 
-router.get("/data-pool", async (req: any, res: any) => {
+router.get("/public/data-pool", async (req: any, res: any) => {
   const tokenPair = req.query.tokenPair as string | undefined;
 
   if (!tokenPair) {
@@ -80,7 +87,7 @@ router.get("/data-pool", async (req: any, res: any) => {
   }
 });
 
-router.get("/pool-fees", async (req: any, res: any) => {
+router.get("/public/pool-fees", async (req: any, res: any) => {
   const tokenPair = req.query.tokenPair as string | undefined;
   const feePercentageBaseToken = req.query.feePercentageBaseToken as
     | number
@@ -106,7 +113,6 @@ router.get("/pool-fees", async (req: any, res: any) => {
       id: 1,
     }
   );
-  //UNTIL HERE
 
   if (!tokenPair) {
     return res.status(400).send("No token pair specified.");
@@ -222,7 +228,7 @@ router.get("/pool-fees", async (req: any, res: any) => {
   }
 });
 
-router.get("/fastest-hive-rpc-node", async (req: any, res: any) => {
+router.get("/public/fastest-hive-rpc-node", async (req: any, res: any) => {
   try {
     const mode = req.query.mode as RpcNodeType | undefined;
     if (!mode) {
@@ -232,7 +238,7 @@ router.get("/fastest-hive-rpc-node", async (req: any, res: any) => {
           'Must provide mode: "l1" | "l2"<br>"l1": accounts, hive db, etc.<br>"l2": Hive Engine, tokens, liquidity pools, etc.'
         );
     }
-    const fastestNodeChecked = await RpcNodeUtils.getFastestNode(
+    const fastestNodeChecked: FastestNode = await RpcNodeUtils.getFastestNode(
       mode as RpcNodeType
     );
     res.status(200).send({
@@ -243,6 +249,33 @@ router.get("/fastest-hive-rpc-node", async (req: any, res: any) => {
   } catch (error: any) {
     Logger.error("Error /fastest-hive-rpc-node", error.message);
     res.status(500).send("Internal Server Error");
+  }
+});
+
+router.get("/public/status", async (req, res) => {
+  const mainDir = path.join(__dirname, "public", "data");
+  let mainFolderSize: any;
+  try {
+    mainFolderSize = await FileUtils.getFolderSize(mainDir);
+  } catch (error) {
+    mainFolderSize = 0;
+  } finally {
+    // const nextSnapshotDate = MainCronJob.getNextDate();
+    const serverData = await JsonUtils.readJsonFile(
+      "./public/server-data.json"
+    );
+
+    res.status(200).send({
+      status: "OK",
+      overall_index: "In Progress!",
+      mainFolderSizeBytes: `${mainFolderSize} Bytes`,
+      mainFolderSizeMB: `${(mainFolderSize / 1024 ** 2).toFixed(3)} MB`,
+      mainFolderSizeGB: `${(mainFolderSize / 1024 ** 3).toFixed(3)} GB`,
+      lastHERPCNodeTested: LiquidityPoolUtils.getLastHERPCNodeChecked(),
+      // count: `${ControlVarsUtils.SERVERCOUNT.daysCount.toString()} days`,
+      // nextSnapshotDate,
+      ...serverData,
+    });
   }
 });
 

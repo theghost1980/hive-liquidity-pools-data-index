@@ -5,15 +5,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = __importDefault(require("dotenv"));
 const express_1 = __importDefault(require("express"));
+const moment_1 = __importDefault(require("moment"));
 const path_1 = __importDefault(require("path"));
-const main_cron_job_1 = require("./cron/main-cron-job");
 const init_1 = require("./init-scripts/init");
-const public_routes_1 = __importDefault(require("./routes/public-routes"));
-const control_vars_1 = require("./utils/control-vars");
-const file_utils_1 = require("./utils/file.utils");
+const public_1 = __importDefault(require("./routes/public"));
+const swagger_1 = __importDefault(require("./swagger/swagger"));
 const jsonUtils_1 = require("./utils/jsonUtils");
-const liquidity_pool_utils_1 = require("./utils/liquidity-pool.utils");
 const logger_utils_1 = require("./utils/logger.utils");
+//TODO cleanup
 const serveIndex = require("serve-index");
 dotenv_1.default.config();
 //TODO important
@@ -23,15 +22,32 @@ dotenv_1.default.config();
 //    -> can open a route to get those 10 positions by pool + fees earned!
 //  - Also an Endpoint to get the user earnings of a token pair.
 const app = (0, express_1.default)();
-const port = process.env.PORT || 3000;
+const port = (process.env.PORT ? parseFloat(process.env.PORT) : 0) || 3000;
 const publicDir = path_1.default.join(__dirname, "public");
 const dataDir = path_1.default.join(publicDir, "data");
+const favicon = require("serve-favicon");
 app.use("/data", express_1.default.static(dataDir), serveIndex(dataDir, { icons: true }));
+app.use(favicon(path_1.default.join(publicDir, "circle-logo-final.ico")));
 app.get("/", (req, res) => {
     res.sendFile(path_1.default.join(__dirname, "index.html"));
 });
-app.use("/public", public_routes_1.default);
+app.get("/index-es.html", (req, res) => res.sendFile(path_1.default.join(__dirname, "index-es.html")));
+// app.use("/public", publicRoutes);
 const initialize = () => {
+    try {
+        jsonUtils_1.JsonUtils.readJsonFile("/public/server-data.json").then((data) => {
+            if (data) {
+                if (data.genesis_up_date_ts === 0) {
+                    const newData = { ...data, genesis_up_date_ts: (0, moment_1.default)().unix() };
+                    jsonUtils_1.JsonUtils.writeJsonFile("/public/server-data.json", newData);
+                    logger_utils_1.Logger.info("Initialize server data json!");
+                }
+            }
+        });
+    }
+    catch (error) {
+        logger_utils_1.Logger.error(`Error trying to write first date as genesis ${error.message}`);
+    }
     logger_utils_1.Logger.info("Init Scripts!!");
     (0, init_1.initScripts)();
     // //TODO below move to a maintenance route.
@@ -51,32 +67,32 @@ const initialize = () => {
     //   });
     // //end testing
 };
-app.get("/status", async (req, res) => {
-    const mainDir = path_1.default.join(__dirname, "public", "data");
-    let mainFolderSize;
-    try {
-        mainFolderSize = await file_utils_1.FileUtils.getFolderSize(mainDir);
-    }
-    catch (error) {
-        mainFolderSize = 0;
-    }
-    finally {
-        const nextSnapshotDate = main_cron_job_1.MainCronJob.getNextDate();
-        const serverData = await jsonUtils_1.JsonUtils.readJsonFile("/public/server-data.json");
-        res.send({
-            status: "OK",
-            overall_index: "In Progress!",
-            mainFolderSizeBytes: `${mainFolderSize} Bytes`,
-            mainFolderSizeMB: `${(mainFolderSize / 1024 ** 2).toFixed(3)} MB`,
-            mainFolderSizeGB: `${(mainFolderSize / 1024 ** 3).toFixed(3)} GB`,
-            lastHERPCNodeTested: liquidity_pool_utils_1.LiquidityPoolUtils.getLastHERPCNodeChecked(),
-            count: `${control_vars_1.ControlVarsUtils.SERVERCOUNT.daysCount.toString()} days`,
-            nextSnapshotDate,
-            ...serverData,
-        });
-    }
-});
+// app.get("/status", async (req, res) => {
+//   const mainDir = path.join(__dirname, "public", "data");
+//   let mainFolderSize: any;
+//   try {
+//     mainFolderSize = await FileUtils.getFolderSize(mainDir);
+//   } catch (error) {
+//     mainFolderSize = 0;
+//   } finally {
+//     // const nextSnapshotDate = MainCronJob.getNextDate();
+//     const serverData = await JsonUtils.readJsonFile("/public/server-data.json");
+//     res.send({
+//       status: "OK",
+//       overall_index: "In Progress!",
+//       mainFolderSizeBytes: `${mainFolderSize} Bytes`,
+//       mainFolderSizeMB: `${(mainFolderSize / 1024 ** 2).toFixed(3)} MB`,
+//       mainFolderSizeGB: `${(mainFolderSize / 1024 ** 3).toFixed(3)} GB`,
+//       lastHERPCNodeTested: LiquidityPoolUtils.getLastHERPCNodeChecked(),
+//       // count: `${ControlVarsUtils.SERVERCOUNT.daysCount.toString()} days`,
+//       // nextSnapshotDate,
+//       ...serverData,
+//     });
+//   }
+// });
 app.listen(port, () => {
     initialize();
     logger_utils_1.Logger.info(`Server is running at PORT:${port}`);
+    app.use(public_1.default);
+    (0, swagger_1.default)(app);
 });

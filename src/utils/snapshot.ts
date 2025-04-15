@@ -33,6 +33,7 @@ const downloadFiles = async (sourceUrl: string, destDir: string) => {
   let skippedFiles = 0;
   let downloadedFiles = 0;
   let skippedFolders = 0;
+  const newIndices: string[] = [];
 
   try {
     const folderNames = await fetchFilesFromServer(sourceUrl);
@@ -41,12 +42,19 @@ const downloadFiles = async (sourceUrl: string, destDir: string) => {
       fs.mkdirSync(destDir, { recursive: true });
     }
 
+    const existingFolders = fs
+      .readdirSync(destDir, { withFileTypes: true })
+      .filter((entry) => entry.isDirectory())
+      .map((dir) => dir.name);
+
     for (const folder of folderNames) {
       const folderUrl = `${sourceUrl}/${folder}`;
       const folderPath = path.join(destDir, folder);
 
-      if (!fs.existsSync(folderPath)) {
-        fs.mkdirSync(folderPath);
+      const isNewIndex = !existingFolders.includes(folder);
+      if (isNewIndex) {
+        newIndices.push(folder);
+        fs.mkdirSync(folderPath, { recursive: true });
       }
 
       const folderContent = await fetchFilesFromServer(folderUrl);
@@ -71,7 +79,7 @@ const downloadFiles = async (sourceUrl: string, destDir: string) => {
         }
       }
 
-      if (!folderHadNewFiles) {
+      if (!folderHadNewFiles && !isNewIndex) {
         skippedFolders++;
       }
     }
@@ -80,8 +88,13 @@ const downloadFiles = async (sourceUrl: string, destDir: string) => {
     Logger.info(`📁 Skipped folders (no new files): ${skippedFolders}`);
     Logger.info(`📄 Skipped files: ${skippedFiles}`);
     Logger.info(`⬇️ Downloaded files: ${downloadedFiles}`);
+    if (newIndices.length > 0) {
+      //TODO later on find a way to add show, maybe from logs or another files.
+      Logger.info(`🆕 New indices detected: ${newIndices.join(", ")}`);
+    }
+
     if (downloadedFiles > 0) {
-      JsonUtils.readJsonFile("./public/server-data.json") //inc day count
+      JsonUtils.readJsonFile("./public/server-data.json")
         .then((v) => {
           if (v && v.snapshots_24h_days_taken) {
             let count = v.snapshots_24h_days_taken;

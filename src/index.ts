@@ -3,11 +3,13 @@ import express from "express";
 import moment from "moment";
 import path from "path";
 import { initScripts } from "./init-scripts/init";
-import publicRoutes from "./routes/public-routes";
-import { FileUtils } from "./utils/file.utils";
+import router from "./routes/public";
+import swaggerDocs from "./swagger/swagger";
 import { JsonUtils } from "./utils/jsonUtils";
-import { LiquidityPoolUtils } from "./utils/liquidity-pool.utils";
 import { Logger } from "./utils/logger.utils";
+
+//TODO cleanup
+//TODO create a .sh script to automate the process to clear/copy/ check and serve(using pm2) in the VPS.
 
 const serveIndex = require("serve-index");
 
@@ -21,7 +23,7 @@ dotenv.config();
 //  - Also an Endpoint to get the user earnings of a token pair.
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = (process.env.PORT ? parseFloat(process.env.PORT) : 0) || 3000;
 
 const publicDir = path.join(__dirname, "public");
 const dataDir = path.join(publicDir, "data");
@@ -32,10 +34,11 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.use("/public", publicRoutes);
+app.get("/index-es.html", (req, res) =>
+  res.sendFile(path.join(__dirname, "index-es.html"))
+);
 
 const initialize = () => {
-  //Try to write the initial ts when taking snapshots date
   try {
     JsonUtils.readJsonFile("/public/server-data.json").then((data: any) => {
       if (data) {
@@ -54,14 +57,10 @@ const initialize = () => {
   Logger.info("Init Scripts!!");
   initScripts();
 
-  // //TODO below move to a maintenance route.
+  // //TODO below move to a maintenance route + protection method
   // //Important while we test, we get the data from the main source which is the backend running in render.com
 
-  //Below routine to get new data from the initial testing server.
-  // const sourceUrl = "http://localhost:3000/data"; // Replace with your source URL
-
-  // const sourceUrl =
-  //   "https://hive-liquidity-pools-data-index.onrender.com/data/";
+  // const sourceUrl = "https://hivelpindex.sytes.net/data/"; // Last server running getting snapshots.
   // const destDir = path.join(__dirname, "public", "data"); // Where you want to scan/copy the files to
 
   // // Call the main function with the source URL and destination directory
@@ -75,32 +74,34 @@ const initialize = () => {
   // //end testing
 };
 
-app.get("/status", async (req, res) => {
-  const mainDir = path.join(__dirname, "public", "data");
-  let mainFolderSize: any;
-  try {
-    mainFolderSize = await FileUtils.getFolderSize(mainDir);
-  } catch (error) {
-    mainFolderSize = 0;
-  } finally {
-    // const nextSnapshotDate = MainCronJob.getNextDate();
-    const serverData = await JsonUtils.readJsonFile("/public/server-data.json");
+// app.get("/status", async (req, res) => {
+//   const mainDir = path.join(__dirname, "public", "data");
+//   let mainFolderSize: any;
+//   try {
+//     mainFolderSize = await FileUtils.getFolderSize(mainDir);
+//   } catch (error) {
+//     mainFolderSize = 0;
+//   } finally {
+//     // const nextSnapshotDate = MainCronJob.getNextDate();
+//     const serverData = await JsonUtils.readJsonFile("/public/server-data.json");
 
-    res.send({
-      status: "OK",
-      overall_index: "In Progress!",
-      mainFolderSizeBytes: `${mainFolderSize} Bytes`,
-      mainFolderSizeMB: `${(mainFolderSize / 1024 ** 2).toFixed(3)} MB`,
-      mainFolderSizeGB: `${(mainFolderSize / 1024 ** 3).toFixed(3)} GB`,
-      lastHERPCNodeTested: LiquidityPoolUtils.getLastHERPCNodeChecked(),
-      // count: `${ControlVarsUtils.SERVERCOUNT.daysCount.toString()} days`,
-      // nextSnapshotDate,
-      ...serverData,
-    });
-  }
-});
+//     res.send({
+//       status: "OK",
+//       overall_index: "In Progress!",
+//       mainFolderSizeBytes: `${mainFolderSize} Bytes`,
+//       mainFolderSizeMB: `${(mainFolderSize / 1024 ** 2).toFixed(3)} MB`,
+//       mainFolderSizeGB: `${(mainFolderSize / 1024 ** 3).toFixed(3)} GB`,
+//       lastHERPCNodeTested: LiquidityPoolUtils.getLastHERPCNodeChecked(),
+//       // count: `${ControlVarsUtils.SERVERCOUNT.daysCount.toString()} days`,
+//       // nextSnapshotDate,
+//       ...serverData,
+//     });
+//   }
+// });
 
 app.listen(port, () => {
   initialize();
   Logger.info(`Server is running at PORT:${port}`);
+  app.use(router);
+  swaggerDocs(app);
 });

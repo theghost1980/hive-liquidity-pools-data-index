@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hive Liquidity Pools Data</title>
+    <title>Datos de los Pools de Liquidez de Hive</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -96,128 +96,132 @@
   </head>
   <body>
     <div class="lang-switcher">
-      <button disabled>EN</button>
-      <button onclick="window.location.href='/index-es.html'">ES</button>
+      <button onclick="window.location.href='/'">EN</button>
+      <button disabled>ES</button>
     </div>
 
     <div class="banner">
       <img
         src="https://files.peakd.com/file/peakd-hive/theghost1980/23tv6aPTSHt3WVTpVfQGuN1kdt3Qci2pFXt8WzffyrLR9VJgu7c9jjXjhthuVS9T5SakS.jpg"
-        alt="Hive Pool Banner"
+        alt="Banner del Pool Hive"
       />
     </div>
 
-    <h1>Hive Liquidity Pools Snapshots (2025)</h1>
+    <h1>Instantáneas de Pools de Liquidez de Hive (2025)</h1>
 
     <p>
-      Daily snapshots of Hive liquidity pools are available, organized by token
-      pairs. Each folder follows the format: <strong>TOKEN1_TOKEN2</strong>.
-      Inside, you'll find files named as <strong>ts_[unix_timestamp]</strong>,
-      representing 24h snapshots.
+      Se encuentran disponibles instantáneas diarias de los pools de liquidez de
+      Hive, organizadas por pares de tokens. Cada carpeta sigue el formato:
+      <strong>TOKEN1_TOKEN2</strong>. Dentro encontrarás archivos con nombre
+      <strong>ts_[unix_timestamp]</strong>, representando las instantáneas de
+      24h.
     </p>
 
     <p>
-      🐙 Swagger documentation is in progress — view it
-      <a href="/api-docs">here</a>.
+      🐙 La documentación de Swagger está en desarrollo — mírala
+      <a href="/api-docs">aquí</a>.
     </p>
 
-    <h3>🔌 Public API Routes</h3>
+    <h3>🔌 Rutas Públicas de la API</h3>
 
     <table class="api-table">
       <thead>
         <tr>
-          <th>🔗 Route</th>
-          <th>📄 Description</th>
-          <th>🧪 Test Link</th>
+          <th>🔗 Ruta</th>
+          <th>📄 Descripción</th>
+          <th>🧪 Enlace de Prueba</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><code>/public/data-pool</code></td>
           <td>
-            Returns all daily snapshots for a given token pair (e.g.,
+            Devuelve todas las instantáneas diarias de un par de tokens (ej.
             <code>SWAP.HIVE:SWAP.HBD</code>).
           </td>
           <td>
             <a
               href="/public/data-pool?tokenPair=SWAP.HIVE:SWAP.HBD"
               target="_blank"
-              >Try it</a
+              >Probar</a
             >
           </td>
         </tr>
         <tr>
           <td><code>/public/available-data-pool-token-pair</code></td>
-          <td>Lists all available token pairs with data snapshots.</td>
+          <td>Lista todos los pares de tokens disponibles con datos.</td>
           <td>
             <a href="/public/available-data-pool-token-pair" target="_blank"
-              >Try it</a
+              >Probar</a
             >
           </td>
         </tr>
         <tr>
           <td><code>/public/fastest-hive-rpc-node</code></td>
           <td>
-            Returns the fastest RPC node.<br />
-            Use <code>?mode=l1</code> for Hive RPC and <code>?mode=l2</code> for
+            Devuelve el nodo RPC más rápido.<br />
+            Usa <code>?mode=l1</code> para Hive RPC y <code>?mode=l2</code> para
             Hive Engine.
           </td>
           <td>
             <a href="/public/fastest-hive-rpc-node?mode=l1" target="_blank"
-              >Try l1</a
+              >Probar l1</a
             >
             |
             <a href="/public/fastest-hive-rpc-node?mode=l2" target="_blank"
-              >Try l2</a
+              >Probar l2</a
             >
           </td>
         </tr>
         <tr>
           <td><code>/public/pool-fees</code></td>
           <td>
-            Estimates current pool fees. Requires base & quote token fee
-            inputs.<br />
-            Example:
+            Estima las comisiones actuales del pool. Requiere entradas de
+            comisiones para los tokens base y de cotización.<br />
+            Ejemplo:
             <code>feePercentageBaseToken=0.1&feePercentageQuoteToken=0.15</code>
           </td>
           <td>
             <a
               href="/public/pool-fees?tokenPair=BEE:DEC&feePercentageBaseToken=0.1&feePercentageQuoteToken=0.15"
               target="_blank"
-              >Try it</a
+              >Probar</a
             >
           </td>
         </tr>
         <tr>
           <td><code>/public/status</code></td>
           <td>
-            Returns server statistics, disk usage, and metadata such as genesis
-            timestamp.
+            Devuelve estadísticas del servidor, uso de disco y metadatos como la
+            marca de tiempo de génesis.
           </td>
-          <td><a href="/public/status" target="_blank">Try it</a></td>
+          <td><a href="/public/status" target="_blank">Probar</a></td>
         </tr>
       </tbody>
     </table>
 
     <p>
-      <a href="/data">📂 View available token pair folders and raw data here</a>
+      <a href="/data">📂 Ver carpetas de pares de tokens y datos crudos aquí</a>
     </p>
 
     <div class="notice">
-      <h4>📢 Important Notes</h4>
+      <h4>📢 Notas Importantes</h4>
       <ul>
-        <li>🚫 This server is not responsible for misuse of the data.</li>
         <li>
-          📉 Uptime is not guaranteed. Data may be temporarily unavailable.
+          🚫 Este servidor no se hace responsable del mal uso de los datos.
         </li>
         <li>
-          📡 Data is sourced from the
-          <a href="https://hive.io/" target="_blank">Hive Blockchain</a> every
-          24h, monitored via
+          📉 No se garantiza disponibilidad continua. Puede haber
+          interrupciones.
+        </li>
+        <li>
+          📡 Los datos provienen de la
+          <a href="https://hive.io/" target="_blank">Blockchain de Hive</a> cada
+          24h, monitoreados vía
           <a href="https://cron-job.org/" target="_blank">cron-job.org</a>.
         </li>
         <li>
-          📬 Contact us on Hive:
+          📬 Contáctanos en Hive:
           <ul>
             <li>
               <a href="https://peakd.com/@theghost1980" target="_blank"
@@ -232,7 +236,7 @@
           </ul>
         </li>
         <li>
-          🤝 Supported by amazing Hive users and communities:
+          🤝 Apoyado por increíbles usuarios y comunidades de Hive:
           <ul>
             <li>
               <a href="https://www.hivesbi.com/" target="_blank">HIVE SBI</a>
@@ -245,6 +249,6 @@
       </ul>
     </div>
 
-    <div class="footer">Built with ❤️ by the Hive community.</div>
+    <div class="footer">Hecho con ❤️ por la comunidad Hive.</div>
   </body>
 </html>
