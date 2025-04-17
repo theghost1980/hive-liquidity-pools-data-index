@@ -14,10 +14,10 @@ import {
   RpcNodeUtils,
 } from "../utils/rpc-node-utils";
 
-const router = Router();
+const publicRouter = Router();
 
-router.get(
-  "/public/available-data-pool-token-pair",
+publicRouter.get(
+  "/available-data-pool-token-pair",
   async (req: Request, res: Response) => {
     try {
       const projectRoot = path.join(__dirname, "..");
@@ -34,7 +34,7 @@ router.get(
   }
 );
 
-router.get("/public/data-pool", async (req: any, res: any) => {
+publicRouter.get("/data-pool", async (req: any, res: any) => {
   const tokenPair = req.query.tokenPair as string | undefined;
 
   if (!tokenPair) {
@@ -87,7 +87,7 @@ router.get("/public/data-pool", async (req: any, res: any) => {
   }
 });
 
-router.get("/public/pool-fees", async (req: any, res: any) => {
+publicRouter.get("/pool-fees", async (req: any, res: any) => {
   const tokenPair = req.query.tokenPair as string | undefined;
   const feePercentageBaseToken = req.query.feePercentageBaseToken as
     | number
@@ -228,7 +228,7 @@ router.get("/public/pool-fees", async (req: any, res: any) => {
   }
 });
 
-router.get("/public/fastest-hive-rpc-node", async (req: any, res: any) => {
+publicRouter.get("/fastest-hive-rpc-node", async (req: any, res: any) => {
   try {
     const mode = req.query.mode as RpcNodeType | undefined;
     if (!mode) {
@@ -252,7 +252,7 @@ router.get("/public/fastest-hive-rpc-node", async (req: any, res: any) => {
   }
 });
 
-router.get("/public/status", async (req, res) => {
+publicRouter.get("/status", async (req, res) => {
   const mainDir = path.join(__dirname, "public", "data");
   let mainFolderSize: any;
   try {
@@ -279,4 +279,4 @@ router.get("/public/status", async (req, res) => {
   }
 });
 
-export default router;
+export default publicRouter;

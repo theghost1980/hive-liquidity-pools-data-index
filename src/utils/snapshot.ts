@@ -1,8 +1,12 @@
 import axios from "axios";
 import fs from "fs";
 import path from "path";
-import { JsonUtils } from "./jsonUtils";
+import { DownloadStatus } from "../interfaces/snapshots";
 import { Logger } from "./logger.utils";
+
+export const downloadStatus: DownloadStatus = {
+  state: "idle",
+};
 
 const fetchFilesFromServer = async (url: string) => {
   try {
@@ -35,6 +39,13 @@ const downloadFiles = async (sourceUrl: string, destDir: string) => {
   let skippedFolders = 0;
   const newIndices: string[] = [];
 
+  downloadStatus.state = "in_progress";
+  downloadStatus.startedAt = new Date().toISOString();
+  downloadStatus.lastFolderChecked = undefined;
+  downloadStatus.lastFileDownloaded = undefined;
+  downloadStatus.error = undefined;
+  downloadStatus.results = undefined;
+
   try {
     const folderNames = await fetchFilesFromServer(sourceUrl);
 
@@ -48,6 +59,8 @@ const downloadFiles = async (sourceUrl: string, destDir: string) => {
       .map((dir) => dir.name);
 
     for (const folder of folderNames) {
+      downloadStatus.lastFolderChecked = folder;
+
       const folderUrl = `${sourceUrl}/${folder}`;
       const folderPath = path.join(destDir, folder);
 
@@ -75,6 +88,8 @@ const downloadFiles = async (sourceUrl: string, destDir: string) => {
             console.log(`✅ Downloaded ${file} to ${folder}`);
             downloadedFiles++;
             folderHadNewFiles = true;
+
+            downloadStatus.lastFileDownloaded = file;
           }
         }
       }
@@ -89,28 +104,27 @@ const downloadFiles = async (sourceUrl: string, destDir: string) => {
     Logger.info(`📄 Skipped files: ${skippedFiles}`);
     Logger.info(`⬇️ Downloaded files: ${downloadedFiles}`);
     if (newIndices.length > 0) {
-      //TODO later on find a way to add show, maybe from logs or another files.
       Logger.info(`🆕 New indices detected: ${newIndices.join(", ")}`);
     }
 
-    if (downloadedFiles > 0) {
-      JsonUtils.readJsonFile("./public/server-data.json")
-        .then((v) => {
-          if (v && v.snapshots_24h_days_taken) {
-            let count = v.snapshots_24h_days_taken;
-            count++;
-            JsonUtils.writeJsonFile(`./public/server-data.json`, {
-              ...v,
-              snapshots_24h_days_taken: count,
-            });
-          }
-        })
-        .catch((e) =>
-          Logger.error(`Error reading Json file server data! ${e.message}`)
-        );
-    }
-  } catch (error) {
+    downloadStatus.state = "completed";
+    downloadStatus.finishedAt = new Date().toISOString();
+
+    const results = {
+      result: "Download completed successfully!",
+      skippedFolders,
+      skippedFiles,
+      downloadedFiles,
+      newIndices,
+      downloadStatus,
+    };
+
+    return results;
+  } catch (error: any) {
     Logger.error("❌ Error during file download:", error);
+    downloadStatus.state = "failed";
+    downloadStatus.finishedAt = new Date().toISOString();
+    downloadStatus.error = error.message;
   }
 };
 
