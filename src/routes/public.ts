@@ -3,6 +3,7 @@ import { Request, Response, Router } from "express";
 import { access, readdir, readFile } from "fs/promises";
 import moment from "moment";
 import path from "path";
+import { MAINDATADIR } from "..";
 import { FileUtils } from "../utils/file.utils";
 import { JsonUtils } from "../utils/jsonUtils";
 import { LiquidityPoolUtils } from "../utils/liquidity-pool.utils";
@@ -20,9 +21,7 @@ publicRouter.get(
   "/available-data-pool-token-pair",
   async (req: Request, res: Response) => {
     try {
-      const projectRoot = path.join(__dirname, "..");
-      const mainDir = path.join(projectRoot, "public", "data");
-      const entries = await readdir(mainDir, { withFileTypes: true });
+      const entries = await readdir(MAINDATADIR, { withFileTypes: true });
       const folderNames = entries
         .filter((entry) => entry.isDirectory())
         .map((entry) => entry.name.replace("_", ":")); // Filter out directories + replace _ by : to keep HIVE LP formats
@@ -41,11 +40,8 @@ publicRouter.get("/data-pool", async (req: any, res: any) => {
     return res.status(400).send("No token pair specified.");
   }
 
-  const projectRoot = path.resolve(__dirname, "..");
   const tokenPairDir = path.join(
-    projectRoot,
-    "public",
-    "data",
+    MAINDATADIR,
     tokenPair.includes(":") ? tokenPair.replace(":", "_") : tokenPair
   );
 
@@ -95,7 +91,7 @@ publicRouter.get("/pool-fees", async (req: any, res: any) => {
   const feePercentageQuoteToken = req.query.feePercentageQuoteToken as
     | number
     | undefined;
-  const timeFrame = req.query.timeFrame as string | undefined; //TODO for the future if needed
+  const timeFrame = req.query.timeFrame as string | undefined;
 
   const response = await axios.post<any>(
     `${RpcNodeUtils.FASTESTRPCNODE.url}/contracts`,
@@ -127,11 +123,8 @@ publicRouter.get("/pool-fees", async (req: any, res: any) => {
       );
   }
   //unless specified, returns pool-fees last 24h
-  const projectRoot = path.resolve(__dirname, "..");
   const tokenPairDir = path.join(
-    projectRoot,
-    "public",
-    "data",
+    MAINDATADIR,
     tokenPair.includes(":") ? tokenPair.replace(":", "_") : tokenPair
   );
 
@@ -169,7 +162,6 @@ publicRouter.get("/pool-fees", async (req: any, res: any) => {
       .sort((a, b) => b.timestamp - a.timestamp) // Ordenar por timestamp descendente
       .slice(0, 2); // Tomar los dos primeros (más recientes)
 
-    // Leer contenido de los archivos seleccionados
     const jsonData = await Promise.all(
       recentFiles.map(async ({ file }) => {
         const filePath = path.join(tokenPairDir, file);
@@ -253,14 +245,12 @@ publicRouter.get("/fastest-hive-rpc-node", async (req: any, res: any) => {
 });
 
 publicRouter.get("/status", async (req, res) => {
-  const mainDir = path.join(__dirname, "public", "data");
   let mainFolderSize: any;
   try {
-    mainFolderSize = await FileUtils.getFolderSize(mainDir);
+    mainFolderSize = await FileUtils.getFolderSize(MAINDATADIR);
   } catch (error) {
     mainFolderSize = 0;
   } finally {
-    // const nextSnapshotDate = MainCronJob.getNextDate();
     const serverData = await JsonUtils.readJsonFile(
       "./public/server-data.json"
     );
@@ -272,8 +262,6 @@ publicRouter.get("/status", async (req, res) => {
       mainFolderSizeMB: `${(mainFolderSize / 1024 ** 2).toFixed(3)} MB`,
       mainFolderSizeGB: `${(mainFolderSize / 1024 ** 3).toFixed(3)} GB`,
       lastHERPCNodeTested: LiquidityPoolUtils.getLastHERPCNodeChecked(),
-      // count: `${ControlVarsUtils.SERVERCOUNT.daysCount.toString()} days`,
-      // nextSnapshotDate,
       ...serverData,
     });
   }

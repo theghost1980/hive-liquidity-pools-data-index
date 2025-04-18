@@ -20,7 +20,6 @@ const FASTESTRPCNODE: FastestRPCNode = {
   time: 0,
 };
 
-// Lista de nodos RPC que quieres probar
 const herpcNodes = [
   "https://enginerpc.com",
   "https://herpc.dtools.dev",
@@ -46,13 +45,11 @@ const hiverpcNodes = [
 ];
 
 const setFastestNode = (fastestNode: FastestNode) => {
-  // Aquí puedes hacer lo que necesites con el nodo más rápido, por ejemplo guardarlo en una constante
   FASTESTRPCNODE.url = fastestNode.node;
   FASTESTRPCNODE.last_ts_tested = moment().unix();
   FASTESTRPCNODE.time = fastestNode.time;
 };
 
-// Función para hacer una solicitud RPC y medir el tiempo de respuesta
 const testRpcNode = async (url: string, mode: RpcNodeType): Promise<number> => {
   const startTime = performance.now();
   try {
@@ -110,7 +107,6 @@ const findFastestNode = async (nodes: string[], mode: RpcNodeType) => {
   return fastestNode;
 };
 
-// Ejecución
 const getFastestNode = async (toCheck: RpcNodeType) => {
   const fastestNode = await findFastestNode(
     toCheck === "l2" ? herpcNodes : hiverpcNodes,

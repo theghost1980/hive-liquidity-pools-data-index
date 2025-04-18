@@ -1,1 +1,1 @@
-export const admins = ["theghost.tests"];
+export const admins = ["theghost.tests", "theghost1980"];

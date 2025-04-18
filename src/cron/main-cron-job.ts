@@ -64,9 +64,6 @@ const job = cron.schedule(
 const startJob = () => job.start();
 const stopJob = () => job.stop();
 const getNextDate = () => {
-  // TODO bellow using cron-parser
-  // node-cron no proporciona directamente la próxima fecha de ejecución
-  // Se puede calcular manualmente si es necesario
   Logger.warn(
     "node-cron no soporta obtener la próxima fecha de ejecución directamente."
   );

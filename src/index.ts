@@ -18,12 +18,15 @@ dotenv.config();
 const app = express();
 const port = (process.env.PORT ? parseFloat(process.env.PORT) : 0) || 3000;
 
-const publicDir = path.join(__dirname, "public");
-const dataDir = path.join(publicDir, "data");
+export const MAINDATADIR = path.join(__dirname, "../data");
 
 app.use(cors());
 
-app.use("/data", express.static(dataDir), serveIndex(dataDir, { icons: true }));
+app.use(
+  "/data",
+  express.static(MAINDATADIR),
+  serveIndex(MAINDATADIR, { icons: true })
+);
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));

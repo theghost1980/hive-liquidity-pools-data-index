@@ -14,7 +14,7 @@ const swaggerOptions: swaggerJSDoc.Options = {
     },
     servers: [
       {
-        url: "http://localhost:3000", // TODO imporant find a way to select or configure if local or server???
+        url: "http://localhost:3000",
       },
     ],
   },
