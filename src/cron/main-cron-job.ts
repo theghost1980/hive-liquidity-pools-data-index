@@ -1,5 +1,6 @@
 import moment from "moment";
 import cron from "node-cron";
+import { CronSchedule } from "../enum/cron";
 import { ControlVarsUtils } from "../utils/control-vars";
 import { FileUtils } from "../utils/file.utils";
 import { JsonUtils } from "../utils/jsonUtils";
@@ -7,7 +8,7 @@ import { LiquidityPoolUtils } from "../utils/liquidity-pool.utils";
 import { Logger } from "../utils/logger.utils";
 
 const job = cron.schedule(
-  "0 0 * * *",
+  CronSchedule.EVERY_DAY,
   async () => {
     Logger.info("CRON ejecutándose cada 24h - probando: IP");
 
@@ -61,7 +62,9 @@ const job = cron.schedule(
   }
 );
 
-const startJob = () => job.start();
+const startJob = () => {
+  job.start();
+};
 const stopJob = () => job.stop();
 const getNextDate = () => {
   Logger.warn(
