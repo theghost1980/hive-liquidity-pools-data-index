@@ -108,3 +108,10 @@
 2025-04-18 15:26:01 [[32minfo[39m]: Liquidity Pools found: 272
 2025-04-18 15:26:02 [[32minfo[39m]: ¡Guardados 272 registros!
 2025-04-18 15:26:02 [[32minfo[39m]: Días contados: 0
+2025-04-18 18:53:33 [[32minfo[39m]: Init Scripts!!
+2025-04-18 18:53:33 [[32minfo[39m]: Server is running at PORT:3000
+2025-04-18 19:10:11 [[32minfo[39m]: Init Scripts!!
+2025-04-18 19:10:11 [[32minfo[39m]: Server is running at PORT:3000
+2025-04-18 19:26:46 [[32minfo[39m]: ℹ️ Usando puerto de prueba según especificado por APP_LISTEN_PORT_VAR=PORT_TEST
+2025-04-18 19:26:46 [[32minfo[39m]: Init Scripts!!
+2025-04-18 19:26:46 [[32minfo[39m]: Server is running at PORT:3001

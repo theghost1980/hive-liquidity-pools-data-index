@@ -1,9 +1,9 @@
 import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
+import { configServer } from "..";
 
 export function requireAdmin(req: Request, res: Response, next: NextFunction) {
-  const secret = process.env.secret;
-  if (!secret) {
+  if (!configServer.secret) {
     return res
       .status(500)
       .json({ error: "contact admin server data not present" });
@@ -15,7 +15,7 @@ export function requireAdmin(req: Request, res: Response, next: NextFunction) {
     const token = authHeader.split(" ")[1];
 
     try {
-      const decoded = jwt.verify(token, secret) as any;
+      const decoded = jwt.verify(token, configServer.secret) as any;
 
       if (decoded.role !== "admin") {
         return res.status(403).json({ error: "Not authorized" });

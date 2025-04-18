@@ -3,20 +3,24 @@ import dotenv from "dotenv";
 import express from "express";
 import moment from "moment";
 import path from "path";
+import { loadAndValidateConfig } from "./config/config";
 import { initScripts } from "./init-scripts/init";
 import adminRouter from "./routes/admin";
 import authRouter from "./routes/auth";
 import publicRouter from "./routes/public";
-import swaggerDocs from "./swagger/swagger";
+import swagger from "./swagger/swagger";
 import { JsonUtils } from "./utils/jsonUtils";
 import { Logger } from "./utils/logger.utils";
+import { PortUtils } from "./utils/port.utils";
 
 const serveIndex = require("serve-index");
 
 dotenv.config();
 
+export const configServer = loadAndValidateConfig();
+export const portToListenOn = PortUtils.determineListenPort(configServer);
+
 const app = express();
-const port = (process.env.PORT ? parseFloat(process.env.PORT) : 0) || 3000;
 
 export const MAINDATADIR = path.join(__dirname, "../data");
 
@@ -41,7 +45,7 @@ app.use("/auth", authRouter);
 app.use("/public", publicRouter);
 app.use("/admin", adminRouter);
 
-swaggerDocs(app);
+swagger(app, portToListenOn);
 
 const initialize = () => {
   try {
@@ -63,7 +67,7 @@ const initialize = () => {
   initScripts();
 };
 
-app.listen(port, () => {
+app.listen(portToListenOn, () => {
   initialize();
-  Logger.info(`Server is running at PORT:${port}`);
+  Logger.info(`Server is running at PORT:${portToListenOn}`);
 });
