@@ -125,3 +125,30 @@
 2025-04-19 09:06:41 [[32minfo[39m]: Token validated successfully for user: "theghost.tests".
 2025-04-19 09:06:41 [[32minfo[39m]: Received token validation request.
 2025-04-19 09:06:41 [[32minfo[39m]: Token validated successfully for user: "theghost.tests".
+2025-04-19 11:32:19 [[32minfo[39m]: ℹ️ APP_LISTEN_PORT_VAR no definida, por defecto usando puerto principal.
+2025-04-19 11:32:19 [[32minfo[39m]: Init Scripts!!
+2025-04-19 11:32:19 [[32minfo[39m]: Server is running at PORT:3000
+2025-04-19 11:32:41 [[32minfo[39m]: ℹ️ Usando puerto de prueba según especificado por APP_LISTEN_PORT_VAR=PORT_TEST
+2025-04-19 11:32:42 [[32minfo[39m]: Init Scripts!!
+2025-04-19 11:32:42 [[32minfo[39m]: Server is running at PORT:3001
+2025-04-19 11:33:27 [[32minfo[39m]: ℹ️ APP_LISTEN_PORT_VAR no definida, por defecto usando puerto principal.
+2025-04-19 11:33:27 [[32minfo[39m]: Init Scripts!!
+2025-04-19 11:33:27 [[32minfo[39m]: Server is running at PORT:3000
+2025-04-19 11:34:05 [[32minfo[39m]: Iniciando descarga por comando remoto admin. Dest: C:\Users\saturno\Downloads\HIVE-Projects\Hive-Liquidity-pools-index\hive-liquidity-pools-data-index\data
+2025-04-19 11:34:47 [[32minfo[39m]: ℹ️ APP_LISTEN_PORT_VAR no definida, por defecto usando puerto principal.
+2025-04-19 11:34:47 [[32minfo[39m]: Init Scripts!!
+2025-04-19 11:34:47 [[32minfo[39m]: Server is running at PORT:3000
+2025-04-19 11:40:03 [[32minfo[39m]: Received token validation request.
+2025-04-19 11:40:03 [[32minfo[39m]: Token validated successfully for user: "theghost.tests".
+2025-04-19 11:40:03 [[32minfo[39m]: Received token validation request.
+2025-04-19 11:40:03 [[32minfo[39m]: Token validated successfully for user: "theghost.tests".
+2025-04-19 11:40:47 [[32minfo[39m]: Iniciando descarga por comando remoto admin. Dest: C:\Users\saturno\Downloads\HIVE-Projects\Hive-Liquidity-pools-index\hive-liquidity-pools-data-index\data
+2025-04-19 12:50:59 [[32minfo[39m]: ℹ️ APP_LISTEN_PORT_VAR no definida, por defecto usando puerto principal.
+2025-04-19 12:50:59 [[32minfo[39m]: Init Scripts!!
+2025-04-19 12:50:59 [[32minfo[39m]: Server is running at PORT:3000
+2025-04-19 12:51:58 [[32minfo[39m]: ℹ️ Usando puerto de prueba según especificado por APP_LISTEN_PORT_VAR=PORT_TEST
+2025-04-19 12:51:58 [[32minfo[39m]: Init Scripts!!
+2025-04-19 12:51:58 [[32minfo[39m]: Server is running at PORT:3001
+2025-04-19 13:40:05 [[32minfo[39m]: ℹ️ APP_LISTEN_PORT_VAR no definida, por defecto usando puerto principal.
+2025-04-19 13:40:05 [[32minfo[39m]: Init Scripts!!
+2025-04-19 13:40:05 [[32minfo[39m]: Server is running at PORT:3000

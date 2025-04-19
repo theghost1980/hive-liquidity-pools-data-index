@@ -3,7 +3,11 @@ import path from "path";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 
-export default (app: Application, port: number | string) => {
+export default (
+  app: Application,
+  port: number | string,
+  swaggerServerUrl: string
+) => {
   const swaggerOptions: swaggerJSDoc.Options = {
     definition: {
       openapi: "3.0.0",
@@ -15,7 +19,7 @@ export default (app: Application, port: number | string) => {
       },
       servers: [
         {
-          url: `http://localhost:${port}`,
+          url: swaggerServerUrl,
         },
       ],
     },

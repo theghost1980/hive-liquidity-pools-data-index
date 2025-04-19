@@ -45,7 +45,7 @@ app.use("/auth", authRouter);
 app.use("/public", publicRouter);
 app.use("/admin", adminRouter);
 
-swagger(app, portToListenOn);
+swagger(app, portToListenOn, configServer.currentServer.url);
 
 const initialize = () => {
   try {
