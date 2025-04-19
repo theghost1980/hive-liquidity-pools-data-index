@@ -118,3 +118,10 @@
 2025-04-19 09:05:17 [[32minfo[39m]: ℹ️ Usando puerto de prueba según especificado por APP_LISTEN_PORT_VAR=PORT_TEST
 2025-04-19 09:05:17 [[32minfo[39m]: Init Scripts!!
 2025-04-19 09:05:17 [[32minfo[39m]: Server is running at PORT:3001
+2025-04-19 09:06:19 [[32minfo[39m]: ℹ️ Usando puerto principal según especificado por APP_LISTEN_PORT_VAR=PORT
+2025-04-19 09:06:19 [[32minfo[39m]: Init Scripts!!
+2025-04-19 09:06:19 [[32minfo[39m]: Server is running at PORT:3000
+2025-04-19 09:06:41 [[32minfo[39m]: Received token validation request.
+2025-04-19 09:06:41 [[32minfo[39m]: Token validated successfully for user: "theghost.tests".
+2025-04-19 09:06:41 [[32minfo[39m]: Received token validation request.
+2025-04-19 09:06:41 [[32minfo[39m]: Token validated successfully for user: "theghost.tests".
