@@ -11,14 +11,12 @@ import publicRouter from "./routes/public";
 import swagger from "./swagger/swagger";
 import { JsonUtils } from "./utils/jsonUtils";
 import { Logger } from "./utils/logger.utils";
-import { PortUtils } from "./utils/port.utils";
 
 const serveIndex = require("serve-index");
 
 dotenv.config();
 
 export const configServer = loadAndValidateConfig();
-export const portToListenOn = PortUtils.determineListenPort(configServer);
 
 const app = express();
 
@@ -45,7 +43,7 @@ app.use("/auth", authRouter);
 app.use("/public", publicRouter);
 app.use("/admin", adminRouter);
 
-swagger(app, portToListenOn, configServer.currentServer.url);
+swagger(app, configServer.listeningPort, configServer.currentServer.url);
 
 const initialize = () => {
   try {
@@ -67,7 +65,7 @@ const initialize = () => {
   initScripts();
 };
 
-app.listen(portToListenOn, () => {
+app.listen(configServer.listeningPort, () => {
   initialize();
-  Logger.info(`Server is running at PORT:${portToListenOn}`);
+  Logger.info(`Server is running at PORT:${configServer.listeningPort}`);
 });

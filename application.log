@@ -152,3 +152,10 @@
 2025-04-19 13:40:05 [[32minfo[39m]: ℹ️ APP_LISTEN_PORT_VAR no definida, por defecto usando puerto principal.
 2025-04-19 13:40:05 [[32minfo[39m]: Init Scripts!!
 2025-04-19 13:40:05 [[32minfo[39m]: Server is running at PORT:3000
+2025-04-19 13:49:08 [[32minfo[39m]: ℹ️ APP_LISTEN_PORT_VAR no definida, por defecto usando puerto principal.
+2025-04-19 13:49:08 [[32minfo[39m]: Init Scripts!!
+2025-04-19 13:49:08 [[32minfo[39m]: Server is running at PORT:3000
+2025-04-19 13:58:36 [[32minfo[39m]: Init Scripts!!
+2025-04-19 13:58:36 [[32minfo[39m]: Server is running at PORT:3000
+2025-04-19 14:01:22 [[32minfo[39m]: Init Scripts!!
+2025-04-19 14:01:23 [[32minfo[39m]: Server is running at PORT:3000

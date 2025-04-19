@@ -2,133 +2,146 @@
 
 import dotenv from "dotenv";
 import process from "process";
-// No importamos Logger aquí para evitar dependencias circulares o problemas de inicialización temprana.
-// Usaremos console.error para los errores críticos de configuración.
 
 export interface ServerOption {
-  port: number | "local"; // Puerto asociado a este entorno, 'local' para desarrollo
-  url: string; // URL pública (o local) para acceder a este servidor/entorno
-  description: string; // Descripción
+  port: number | "local";
+  url: string;
+  description: string;
 }
 
 export interface ServerOptionsMap {
-  [key: string]: ServerOption; // Mapeo de clave (como 'production', 'test') a ServerOption
+  [key: string]: ServerOption;
   local: ServerOption;
-  production: ServerOption; // Usar 'production' como clave
-  test: ServerOption; // Usar 'test' como clave
+  production: ServerOption;
+  test: ServerOption;
 }
 
-// Mapeo de las opciones de servidor con sus puertos esperados y URLs
 const SERVER_MAPPING: ServerOptionsMap = {
   local: {
-    port: "local", // Indicador de entorno local
-    // La URL local se construirá con el puerto real de .env
-    url: `http://localhost:${process.env.PORT || 3000}`, // Placeholder inicial
-    description: "Local Development Server",
+    port: "local",
+    url: `http://localhost:${process.env.PORT || 3000}`, // Uses PORT from .env or 3000
+    description: "Local Dev Server",
   },
   production: {
-    port: 3000, // Puerto esperado para producción
+    port: 3000,
     url: "https://hivelpindex.sytes.net",
-    description: "Production Server",
+    description: "Prod Server",
   },
   test: {
-    port: 3001, // Puerto esperado para test
+    port: 3001,
     url: "https://testhivelpindex.duckdns.org",
     description: "Test Server",
   },
 };
 
-// Configuración final de la aplicación, validada
 export interface AppConfig {
-  port: number; // Puerto de producción (de .env)
-  portTest: number; // Puerto de test (de .env)
-  secret: string; // Secreto JWT (de .env)
-  serverMapping: ServerOptionsMap; // Mapeo completo de servidores
-  currentServer: ServerOption; // La opción de servidor para ESTA instancia (determinada por RUN_ENV)
+  port: number;
+  portTest: number;
+  secret: string;
+  serverMapping: ServerOptionsMap;
+  currentServer: ServerOption;
+  listeningPort: number; // The actual numeric port to listen on
 }
 
-// Cache interno
 let _validatedConfig: AppConfig | undefined;
 
-// Validar que sea un puerto válido
 function validatePort(
   variableName: string,
   envValue: string | undefined
 ): number {
   if (!envValue) {
-    console.error(
-      `FATAL ERROR: Environment variable ${variableName} is not defined.`
-    );
+    console.error(`FATAL ERROR: Env var ${variableName} not defined.`);
     process.exit(1);
   }
   const parsedPort = parseInt(envValue, 10);
   if (isNaN(parsedPort) || parsedPort <= 0 || parsedPort > 65535) {
     console.error(
-      `FATAL ERROR: Value of ${variableName} "${envValue}" is not a valid port (1-65535).`
+      `FATAL ERROR: Value of ${variableName} "${envValue}" is not a valid port.`
     );
     process.exit(1);
   }
   return parsedPort;
 }
 
-// Validar que no esté vacío
 function validateRequiredString(
   variableName: string,
   envValue: string | undefined
 ): string {
   if (!envValue || envValue.length === 0) {
-    console.error(
-      `FATAL ERROR: Environment variable ${variableName} is not defined or empty.`
-    );
+    console.error(`FATAL ERROR: Env var ${variableName} not defined or empty.`);
     process.exit(1);
   }
   return envValue;
 }
 
-// Cargar, validar y determinar la configuración del servidor actual
+/**
+ * Loads, validates, and determines application configuration based on environment variables.
+ * Exits process on fatal validation errors.
+ * Requires PORT, PORT_TEST, SECRET, and RUN_ENV environment variables.
+ * @returns The validated AppConfig object.
+ */
 export function loadAndValidateConfig(): AppConfig {
   if (_validatedConfig) {
     return _validatedConfig;
   }
 
-  // Cargar .env (no sale si falla, las variables pueden venir del entorno)
-  dotenv.config();
+  dotenv.config(); // Load .env vars into process.env
 
-  // Validar variables requeridas
   const port = validatePort("PORT", process.env.PORT);
   const portTest = validatePort("PORT_TEST", process.env.PORT_TEST);
   const secret = validateRequiredString("SECRET", process.env.SECRET);
-  // Validar la nueva variable que indica el entorno actual
   const runEnvKey = validateRequiredString("RUN_ENV", process.env.RUN_ENV);
 
-  // Determinar la opción de servidor actual usando la clave RUN_ENV
   const currentServer = SERVER_MAPPING[runEnvKey];
 
-  // Validar que RUN_ENV sea una clave válida en nuestro mapeo
   if (!currentServer) {
     console.error(
-      `FATAL ERROR: Environment variable RUN_ENV "${runEnvKey}" does not match any key in the server mapping (${Object.keys(
+      `FATAL ERROR: RUN_ENV "${runEnvKey}" does not match any server key (${Object.keys(
         SERVER_MAPPING
       ).join(", ")}).`
     );
     process.exit(1);
   }
 
-  if (runEnvKey === "local") {
-    SERVER_MAPPING.local.url = `http://localhost:${port}`;
+  let listeningPort: number;
+
+  if (runEnvKey === "production") {
+    listeningPort = port;
+  } else if (runEnvKey === "test") {
+    listeningPort = portTest;
+  } else if (runEnvKey === "local") {
+    listeningPort = port; // Local typically uses PORT
+    SERVER_MAPPING.local.url = `http://localhost:${listeningPort}`; // Adjust local URL
+  } else {
+    // Should not be reached if validation above works
+    console.error(
+      `FATAL ERROR: Unexpected RUN_ENV value "${runEnvKey}" after validation.`
+    );
+    process.exit(1);
   }
 
-  // Construir el objeto de configuración final
+  // Warning if .env port doesn't match mapped port (except 'local')
+  if (
+    runEnvKey !== "local" &&
+    currentServer.port !== "local" &&
+    currentServer.port !== listeningPort
+  ) {
+    console.warn(
+      `⚠️ WARNING: Mapped port (${currentServer.port}) for RUN_ENV="${runEnvKey}" does not match actual listening port from .env (${listeningPort}). Using ${listeningPort}.`
+    );
+  }
+
   _validatedConfig = {
     port: port,
     portTest: portTest,
     secret: secret,
     serverMapping: SERVER_MAPPING,
     currentServer: currentServer,
+    listeningPort: listeningPort,
   };
 
   console.log(
-    `✅ Config loaded for RUN_ENV="${runEnvKey}". Server URL: ${currentServer.url}`
+    `✅ Config loaded. RUN_ENV="${runEnvKey}", Listening Port: ${listeningPort}, Server URL: ${currentServer.url}`
   );
 
   return _validatedConfig;
