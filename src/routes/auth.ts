@@ -2,8 +2,10 @@ import crypto from "crypto";
 import { Request, Response, Router } from "express";
 import * as hiveTx from "hive-tx";
 import jwt from "jsonwebtoken";
+import { configServer } from "..";
 import { admins } from "../config/admin";
 import { generateChallenge } from "../utils/generateChallenge";
+import { Logger } from "../utils/logger.utils";
 
 const authRouter = Router();
 
@@ -76,6 +78,62 @@ authRouter.post("/verify", async (req: Request, res: Response) => {
     console.error(err);
     return res.status(500).json({ error: "Server error", details: err });
   }
+});
+
+authRouter.post("/validate-token", (req: Request, res: Response) => {
+  Logger.info("Received token validation request.");
+
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+
+  if (token == null) {
+    Logger.warn(
+      "Token validation failed: Authorization header missing or malformed."
+    );
+    return res
+      .status(401)
+      .json({ success: false, message: "Authorization token required" });
+  }
+
+  if (!configServer.secret) {
+    Logger.error(
+      "JWT Secret is not configured on the backend! Critical error."
+    );
+    return res
+      .status(500)
+      .json({ success: false, message: "Server configuration error" });
+  }
+
+  jwt.verify(token, configServer.secret, (err: any, decoded: any) => {
+    if (err) {
+      Logger.info("Token validation failed:", {
+        message: err.message,
+        name: err.name,
+      });
+      return res
+        .status(401)
+        .json({ success: false, message: "Invalid or expired token" });
+    }
+
+    const username = decoded.username;
+
+    if (
+      !username ||
+      typeof username !== "string" ||
+      !admins.includes(username)
+    ) {
+      Logger.error(
+        "Token validated, but payload is missing or has invalid username format.",
+        decoded
+      );
+      return res
+        .status(500)
+        .json({ success: false, message: "Token payload invalid" });
+    }
+
+    Logger.info(`Token validated successfully for user: "${username}".`);
+    res.status(200).json({ success: true, username: username });
+  });
 });
 
 export default authRouter;
