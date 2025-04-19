@@ -65,9 +65,8 @@ authRouter.post("/verify", async (req: Request, res: Response) => {
     // Autenticado correctamente
     delete pendingChallenges[username];
 
-    const secret = process.env.secret;
-    if (secret) {
-      const token = jwt.sign({ username, role: "admin" }, secret, {
+    if (configServer.secret) {
+      const token = jwt.sign({ username, role: "admin" }, configServer.secret, {
         expiresIn: "1h",
       });
 
