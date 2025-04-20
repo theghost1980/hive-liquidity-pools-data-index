@@ -3,7 +3,7 @@ node_modules/
 
 # Archivos y carpetas generados por el proceso de build/compilación
 # Excluir la carpeta 'dist' completa
-dist/
+dist/  
 # Si usas alguna otra carpeta de build, como 'build', añádela también:
 # build/
 
