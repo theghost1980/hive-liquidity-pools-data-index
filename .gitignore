@@ -1,5 +1,65 @@
-node_modules
-.env
-env
+# Dependencias del proyecto instaladas por npm/yarn/pnpm
+node_modules/
+
+# Archivos y carpetas generados por el proceso de build/compilación
+# Excluir la carpeta 'dist' completa
 dist/
+# Si usas alguna otra carpeta de build, como 'build', añádela también:
+# build/
+
+# Archivos de configuración de entorno
+# Estos archivos contienen secretos y configuración específica de cada entorno
+# NO deben ser subidos al repositorio.
+.env  
+# Ignorar también posibles variantes como .env.local, .env.development, etc.
+.env.*
+
+# Si tienes archivos llamados 'env' sin el punto al inicio que deban ignorarse:
+# env
+
+# Archivos de datos generados por la aplicación
+# La carpeta donde se guardan los datos principales
 data/
+# La carpeta donde guardas los respaldos
+backups/
+
+# Archivos de log
+# Ignorar archivos .log en la raíz del proyecto
+*.log
+# Ignorar archivos .log en cualquier subdirectorio
+**/*.log
+# Si tus logs están en una carpeta específica de logs, también puedes ignorar la carpeta:
+# /ruta/a/tu/carpeta/de/logs/
+# o solo los .log dentro de ella:
+# /ruta/a/tu/carpeta/de/logs/*.log
+
+
+# Archivos generados por editores/IDE o sistemas operativos
+# Archivos de configuración de VS Code
+#.vscode/
+# Archivos de configuración de JetBrains IDEs (IntelliJ, WebStorm, etc.)
+.idea/
+# Archivos de proyecto de Sublime Text
+*.sublime-project
+*.sublime-workspace
+# Archivos de sistema de macOS
+.DS_Store
+# Archivos temporales de Windows
+Thumbs.db
+# Archivos temporales de editores (vim, nano)
+*~
+# Archivos temporales de Emacs (si aplica)
+#*#
+
+# Reportes de cobertura de tests (si los generas)
+coverage/
+
+# Archivos específicos de gestores de paquetes (a veces útiles, pero a menudo cubiertos por node_modules)
+# Si usas npm, package-lock.json DEBE estar en el repo.
+# package-lock.json
+# Si usas yarn, yarn.lock DEBE estar en el repo.
+# yarn.lock
+# Archivos de debug específicos de npm/yarn
+npm-debug.log*
+yarn-error.log*
+# pnpm-debug.log* # Si usas pnpm

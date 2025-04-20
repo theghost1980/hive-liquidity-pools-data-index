@@ -12,7 +12,6 @@ const FASTESTRPCNODE = {
     last_ts_tested: 0,
     time: 0,
 };
-// Lista de nodos RPC que quieres probar
 const herpcNodes = [
     "https://enginerpc.com",
     "https://herpc.dtools.dev",
@@ -36,12 +35,10 @@ const hiverpcNodes = [
     "https://api.syncad.com",
 ];
 const setFastestNode = (fastestNode) => {
-    // Aquí puedes hacer lo que necesites con el nodo más rápido, por ejemplo guardarlo en una constante
     FASTESTRPCNODE.url = fastestNode.node;
     FASTESTRPCNODE.last_ts_tested = (0, moment_1.default)().unix();
     FASTESTRPCNODE.time = fastestNode.time;
 };
-// Función para hacer una solicitud RPC y medir el tiempo de respuesta
 const testRpcNode = async (url, mode) => {
     const startTime = perf_hooks_1.performance.now();
     try {
@@ -93,7 +90,6 @@ const findFastestNode = async (nodes, mode) => {
     console.log(`El nodo más rápido es: ${fastestNode.node} con un tiempo de respuesta de: ${fastestNode.time}ms`);
     return fastestNode;
 };
-// Ejecución
 const getFastestNode = async (toCheck) => {
     const fastestNode = await findFastestNode(toCheck === "l2" ? herpcNodes : hiverpcNodes, toCheck);
     return fastestNode;

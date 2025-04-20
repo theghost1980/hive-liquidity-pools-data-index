@@ -7,11 +7,10 @@ exports.FileUtils = void 0;
 const fast_folder_size_1 = __importDefault(require("fast-folder-size"));
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
+const __1 = require("..");
 const logger_utils_1 = require("./logger.utils");
 function ensureDataDirectoryExists(subDirName, showLog) {
-    const projectRoot = path_1.default.join(__dirname, ".."); // Navigate up one level from the current file to reach the project root
-    const mainDir = path_1.default.join(projectRoot, "public", "data");
-    const subDir = path_1.default.join(mainDir, subDirName);
+    const subDir = path_1.default.join(__1.MAINDATADIR, subDirName);
     try {
         if (!fs_1.default.existsSync(subDir)) {
             fs_1.default.mkdirSync(subDir, { recursive: true });
@@ -25,10 +24,8 @@ function ensureDataDirectoryExists(subDirName, showLog) {
 }
 function writeDataToFile(fileName, subDir, data, showLog) {
     const fixedSubDirName = subDir.replace(":", "_"); // Ensure the sub folder's name do not contains ":"
-    ensureDataDirectoryExists(fixedSubDirName); // Ensure the directory exists
-    const projectRoot = path_1.default.join(__dirname, "..");
-    const mainDir = path_1.default.join(projectRoot, "public", "data");
-    const dirPath = path_1.default.join(mainDir, fixedSubDirName);
+    ensureDataDirectoryExists(fixedSubDirName);
+    const dirPath = path_1.default.join(__1.MAINDATADIR, fixedSubDirName);
     const filePath = path_1.default.join(dirPath, fileName);
     try {
         fs_1.default.writeFileSync(filePath, JSON.stringify(data, null, 2), {

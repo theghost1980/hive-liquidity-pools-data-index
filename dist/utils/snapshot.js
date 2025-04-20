@@ -3,11 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.downloadStatus = void 0;
 const axios_1 = __importDefault(require("axios"));
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
-const jsonUtils_1 = require("./jsonUtils");
 const logger_utils_1 = require("./logger.utils");
+exports.downloadStatus = {
+    state: "idle",
+};
 const fetchFilesFromServer = async (url) => {
     try {
         const response = await axios_1.default.get(url);
@@ -37,16 +40,30 @@ const downloadFiles = async (sourceUrl, destDir) => {
     let skippedFiles = 0;
     let downloadedFiles = 0;
     let skippedFolders = 0;
+    const newIndices = [];
+    exports.downloadStatus.state = "in_progress";
+    exports.downloadStatus.startedAt = new Date().toISOString();
+    exports.downloadStatus.lastFolderChecked = undefined;
+    exports.downloadStatus.lastFileDownloaded = undefined;
+    exports.downloadStatus.error = undefined;
+    exports.downloadStatus.results = undefined;
     try {
         const folderNames = await fetchFilesFromServer(sourceUrl);
         if (!fs_1.default.existsSync(destDir)) {
             fs_1.default.mkdirSync(destDir, { recursive: true });
         }
+        const existingFolders = fs_1.default
+            .readdirSync(destDir, { withFileTypes: true })
+            .filter((entry) => entry.isDirectory())
+            .map((dir) => dir.name);
         for (const folder of folderNames) {
+            exports.downloadStatus.lastFolderChecked = folder;
             const folderUrl = `${sourceUrl}/${folder}`;
             const folderPath = path_1.default.join(destDir, folder);
-            if (!fs_1.default.existsSync(folderPath)) {
-                fs_1.default.mkdirSync(folderPath);
+            const isNewIndex = !existingFolders.includes(folder);
+            if (isNewIndex) {
+                newIndices.push(folder);
+                fs_1.default.mkdirSync(folderPath, { recursive: true });
             }
             const folderContent = await fetchFilesFromServer(folderUrl);
             let folderHadNewFiles = false;
@@ -63,10 +80,11 @@ const downloadFiles = async (sourceUrl, destDir) => {
                         console.log(`✅ Downloaded ${file} to ${folder}`);
                         downloadedFiles++;
                         folderHadNewFiles = true;
+                        exports.downloadStatus.lastFileDownloaded = file;
                     }
                 }
             }
-            if (!folderHadNewFiles) {
+            if (!folderHadNewFiles && !isNewIndex) {
                 skippedFolders++;
             }
         }
@@ -74,23 +92,26 @@ const downloadFiles = async (sourceUrl, destDir) => {
         logger_utils_1.Logger.info(`📁 Skipped folders (no new files): ${skippedFolders}`);
         logger_utils_1.Logger.info(`📄 Skipped files: ${skippedFiles}`);
         logger_utils_1.Logger.info(`⬇️ Downloaded files: ${downloadedFiles}`);
-        if (downloadedFiles > 0) {
-            jsonUtils_1.JsonUtils.readJsonFile("./public/server-data.json") //inc day count
-                .then((v) => {
-                if (v && v.snapshots_24h_days_taken) {
-                    let count = v.snapshots_24h_days_taken;
-                    count++;
-                    jsonUtils_1.JsonUtils.writeJsonFile(`./public/server-data.json`, {
-                        ...v,
-                        snapshots_24h_days_taken: count,
-                    });
-                }
-            })
-                .catch((e) => logger_utils_1.Logger.error(`Error reading Json file server data! ${e.message}`));
+        if (newIndices.length > 0) {
+            logger_utils_1.Logger.info(`🆕 New indices detected: ${newIndices.join(", ")}`);
         }
+        exports.downloadStatus.state = "completed";
+        exports.downloadStatus.finishedAt = new Date().toISOString();
+        const results = {
+            result: "Download completed successfully!",
+            skippedFolders,
+            skippedFiles,
+            downloadedFiles,
+            newIndices,
+            downloadStatus: exports.downloadStatus,
+        };
+        return results;
     }
     catch (error) {
         logger_utils_1.Logger.error("❌ Error during file download:", error);
+        exports.downloadStatus.state = "failed";
+        exports.downloadStatus.finishedAt = new Date().toISOString();
+        exports.downloadStatus.error = error.message;
     }
 };
 exports.default = downloadFiles;

@@ -1,14 +1,13 @@
 import moment from "moment";
 import cron from "node-cron";
 import { CronSchedule } from "../enum/cron";
-import { ControlVarsUtils } from "../utils/control-vars";
 import { FileUtils } from "../utils/file.utils";
-import { JsonUtils } from "../utils/jsonUtils";
 import { LiquidityPoolUtils } from "../utils/liquidity-pool.utils";
 import { Logger } from "../utils/logger.utils";
+import { ServerStateUtils } from "../utils/server-state-utils";
 
 const job = cron.schedule(
-  CronSchedule.EVERY_DAY,
+  CronSchedule.EVERY_MINUTE,
   async () => {
     Logger.info("CRON ejecutándose cada 24h - probando: IP");
 
@@ -28,34 +27,17 @@ const job = cron.schedule(
           );
         }
 
-        try {
-          const serverData = await JsonUtils.readJsonFile(
-            "/public/server-data.json"
-          );
-          if (serverData && serverData.snapshots_24h_days_taken !== undefined) {
-            serverData.snapshots_24h_days_taken += 1;
-            await JsonUtils.writeJsonFile(
-              "/public/server-data.json",
-              serverData
-            );
-          }
-        } catch (error: any) {
-          Logger.error(
-            `Error al leer el archivo JSON de datos del servidor: ${error.message}`
-          );
-        }
-
-        Logger.info(`¡Guardados ${liquidityPoolList.length} registros!`);
+        const updatedServerData =
+          await ServerStateUtils.tryIncrementServerDataDaysTaken();
+        Logger.info(
+          `¡Guardados ${liquidityPoolList.length} registros!. Days:${updatedServerData.snapshots_24h_days_taken}`
+        );
       } else {
         Logger.error("¡No se recuperaron pools! Por favor, verifica.");
       }
     } catch (error: any) {
       Logger.error(`Error al obtener los pools de liquidez: ${error.code}`);
     }
-
-    Logger.info(
-      `Días contados: ${ControlVarsUtils.SERVERCOUNT.daysCount.toString()}`
-    );
   },
   {
     scheduled: false,
