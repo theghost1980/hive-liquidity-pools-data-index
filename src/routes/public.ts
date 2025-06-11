@@ -85,13 +85,13 @@ publicRouter.get("/data-pool", async (req: any, res: any) => {
 
 publicRouter.get("/pool-fees", async (req: any, res: any) => {
   const tokenPair = req.query.tokenPair as string | undefined;
-  const feePercentageBaseToken = req.query.feePercentageBaseToken as
+  let feePercentageBaseToken = req.query.feePercentageBaseToken as
     | number
     | undefined;
-  const feePercentageQuoteToken = req.query.feePercentageQuoteToken as
+  let feePercentageQuoteToken = req.query.feePercentageQuoteToken as
     | number
     | undefined;
-  const timeFrame = req.query.timeFrame as string | undefined;
+  const timeFrameDaysStr = req.query.timeFrameDays as string | undefined;
 
   const response = await axios.post<any>(
     `${RpcNodeUtils.FASTESTRPCNODE.url}/contracts`,
@@ -115,14 +115,16 @@ publicRouter.get("/pool-fees", async (req: any, res: any) => {
   }
   const tokenSymbols = tokenPair.split(":");
 
+  let feeSourceMessage = "Fees provided by user.";
   if (!feePercentageBaseToken || !feePercentageQuoteToken) {
-    return res
-      .status(400)
-      .send(
-        "Right now there is no source of truth for the fees currently in HIVE, so you must provide them for calculations.<br>Please use query params as:<br>feePercentageBaseToken=0.1 & feePercentageQuoteToken=0.15"
-      );
+    Logger.info(
+      "Fee percentages not provided by user, using default 0.125% for both."
+    );
+    feePercentageBaseToken = 0.125;
+    feePercentageQuoteToken = 0.125;
+    feeSourceMessage = "Default fees (0.125%) used as none were provided.";
   }
-  //unless specified, returns pool-fees last 24h
+
   const tokenPairDir = path.join(
     MAINDATADIR,
     tokenPair.includes(":") ? tokenPair.replace(":", "_") : tokenPair
@@ -140,18 +142,11 @@ publicRouter.get("/pool-fees", async (req: any, res: any) => {
       (file) => path.extname(file).toLowerCase() === ".json"
     );
 
-    if (jsonFiles.length === 0) {
-      return res
-        .status(404)
-        .send("No JSON files found in the specified token pair directory.");
-    }
-
-    const recentFiles = jsonFiles
+    const allFilesWithTimestamps = jsonFiles
       .map((file) => {
-        // Extraemos el timestamp del nombre del archivo, que tiene la forma ts_[timestamp].json
         const match = file.match(/^ts_(\d+)\.json$/);
         if (match) {
-          const timestamp = parseInt(match[1], 10); // Convertir el timestamp a número
+          const timestamp = parseInt(match[1], 10);
           return { file, timestamp };
         }
         return null;
@@ -159,40 +154,165 @@ publicRouter.get("/pool-fees", async (req: any, res: any) => {
       .filter(
         (item): item is { file: string; timestamp: number } => item !== null
       )
-      .sort((a, b) => b.timestamp - a.timestamp) // Ordenar por timestamp descendente
-      .slice(0, 2); // Tomar los dos primeros (más recientes)
+      .sort((a, b) => b.timestamp - a.timestamp); // Ordenar por timestamp descendente
 
-    const jsonData = await Promise.all(
-      recentFiles.map(async ({ file }) => {
-        const filePath = path.join(tokenPairDir, file);
-        const content = await readFile(filePath, "utf-8");
-        return JSON.parse(content);
-      })
+    if (allFilesWithTimestamps.length === 0) {
+      return res
+        .status(404)
+        .send("No historical snapshot data found for this token pair.");
+    }
+
+    let snapshotToCompareWithRpcData: any;
+    let snapshotTimestamp: number;
+    let effectiveTimeFrameMessage: string;
+
+    let daysToUse = 1; // Default
+    const maxDays = 7;
+
+    if (timeFrameDaysStr) {
+      const parsedDays = parseInt(timeFrameDaysStr, 10);
+      if (isNaN(parsedDays) || parsedDays <= 0) {
+        return res
+          .status(400)
+          .send("Invalid timeFrameDays parameter. Must be a positive integer.");
+      }
+      daysToUse = Math.min(parsedDays, maxDays);
+    }
+
+    let chosenSnapshotFileMeta: { file: string; timestamp: number } | null =
+      null;
+
+    if (daysToUse === 1) {
+      chosenSnapshotFileMeta = allFilesWithTimestamps[0]; // Use the most recent snapshot
+    } else {
+      const targetPastTimestamp = moment().unix() - daysToUse * 24 * 60 * 60;
+      for (const fileMeta of allFilesWithTimestamps) {
+        if (fileMeta.timestamp <= targetPastTimestamp) {
+          chosenSnapshotFileMeta = fileMeta; // This is the most recent snapshot that is old enough
+          break;
+        }
+      }
+      if (!chosenSnapshotFileMeta && allFilesWithTimestamps.length > 0) {
+        chosenSnapshotFileMeta =
+          allFilesWithTimestamps[allFilesWithTimestamps.length - 1]; // Fallback to oldest
+        Logger.warn(
+          `Could not find a snapshot for ${daysToUse} days ago for ${tokenPair}. Using the oldest available snapshot: ${chosenSnapshotFileMeta.file}`
+        );
+      }
+    }
+
+    if (!chosenSnapshotFileMeta) {
+      Logger.error(
+        `No snapshot could be chosen for ${tokenPair} with daysToUse: ${daysToUse}. This should not happen if allFilesWithTimestamps is not empty.`
+      );
+      return res
+        .status(500)
+        .send(
+          "Internal error selecting snapshot data. No snapshots available or logic error."
+        );
+    }
+
+    snapshotToCompareWithRpcData = JSON.parse(
+      await readFile(
+        path.join(tokenPairDir, chosenSnapshotFileMeta.file),
+        "utf-8"
+      )
     );
+    snapshotTimestamp = chosenSnapshotFileMeta.timestamp;
 
-    const priceTokenList = await PriceUtils.getTokenPriceList(tokenSymbols);
-    const hivePrice = await PriceUtils.getHivePrice();
+    const actualSecondsDifference = moment().unix() - snapshotTimestamp;
+    effectiveTimeFrameMessage = `Fees since ${moment
+      .unix(snapshotTimestamp)
+      .format("YYYY-MM-DD HH:mm:ss")} (approx. ${moment
+      .duration(actualSecondsDifference, "seconds")
+      .humanize()} ago). Target period: ${daysToUse} day(s).`;
 
-    const usdPriceTokenList = priceTokenList.map((p: any) => {
-      const usdPriceToken = Number(hivePrice.hive.usd * p.lastPrice).toFixed(5);
-      return { symbol: p.symbol, usdPriceToken };
-    });
+    const hivePriceData = await PriceUtils.getHivePrice();
+    if (!hivePriceData?.hive?.usd) {
+      Logger.error("Could not fetch HIVE price from CoinGecko.");
+      return res.status(500).send("Error fetching HIVE price.");
+    }
+    const hivePriceInUsd = hivePriceData.hive.usd;
+
+    const tokenPricesUsd: { [key: string]: number } = {};
+
+    // Define tokens que tienen un método especial para obtener su precio en USD
+    const specialPriceHandlers: {
+      [symbol: string]: () => Promise<number> | number;
+    } = {
+      "SWAP.HIVE": () => hivePriceInUsd,
+      "SWAP.HBD": () => 1.0, // Asumimos 1 USD para SWAP.HBD por ahora
+      // Puedes añadir más tokens aquí, ej:
+      // "SOME.TOKEN": async () => (await SomeApi.getPrice("SOME.TOKEN")).usd,
+    };
+
+    const tokensToFetchFromMarket: string[] = [];
+
+    for (const symbol of tokenSymbols) {
+      if (specialPriceHandlers[symbol]) {
+        const priceOrPromise = specialPriceHandlers[symbol]();
+        tokenPricesUsd[symbol] =
+          typeof priceOrPromise === "number"
+            ? priceOrPromise
+            : await priceOrPromise;
+      } else {
+        tokensToFetchFromMarket.push(symbol);
+      }
+    }
+
+    if (tokensToFetchFromMarket.length > 0) {
+      const marketPriceList = await PriceUtils.getTokenPriceList(
+        tokensToFetchFromMarket
+      );
+      if (marketPriceList) {
+        for (const marketTokenData of marketPriceList) {
+          // Asumimos que lastPrice es el precio del token en SWAP.HIVE
+          if (marketTokenData.lastPrice) {
+            // Check if lastPrice is not null
+            tokenPricesUsd[marketTokenData.symbol] =
+              parseFloat(marketTokenData.lastPrice) * hivePriceInUsd;
+          } else {
+            Logger.warn(
+              `lastPrice for ${marketTokenData.symbol} is null. Cannot calculate USD price.`
+            );
+          }
+        }
+      }
+    }
+
+    // Validar que se obtuvieron los precios para ambos tokens
+    if (
+      tokenPricesUsd[tokenSymbols[0]] === undefined ||
+      tokenPricesUsd[tokenSymbols[1]] === undefined
+    ) {
+      const missing = tokenSymbols.filter(
+        (ts) => tokenPricesUsd[ts] === undefined
+      );
+      Logger.error(
+        `Could not determine USD price for: ${missing.join(
+          " and "
+        )} in pair ${tokenPair}`
+      );
+      return res
+        .status(500)
+        .send(`Could not determine USD price for: ${missing.join(" and ")}.`);
+    }
 
     // Calculate fees acording to user's fee input made on request
     const volumeDeltaBaseToken =
       parseFloat(response.data.result[0].baseVolume) -
-      parseFloat(jsonData[0].baseVolume);
+      parseFloat(snapshotToCompareWithRpcData.baseVolume);
     const volumeDeltaQuoteToken =
       parseFloat(response.data.result[0].quoteVolume) -
-      parseFloat(jsonData[0].quoteVolume);
+      parseFloat(snapshotToCompareWithRpcData.quoteVolume);
     const totalFeesBaseToken =
       volumeDeltaBaseToken * (feePercentageBaseToken / 100);
     const totalFeesQuoteToken =
       volumeDeltaQuoteToken * (feePercentageQuoteToken / 100);
     const totalFeesBaseTokenUSD =
-      totalFeesBaseToken * parseFloat(usdPriceTokenList[0].usdPriceToken);
+      totalFeesBaseToken * tokenPricesUsd[tokenSymbols[0]];
     const totalFeesQuoteTokenUSD =
-      totalFeesQuoteToken * parseFloat(usdPriceTokenList[1].usdPriceToken);
+      totalFeesQuoteToken * tokenPricesUsd[tokenSymbols[1]];
     const totalFeesUSD = totalFeesBaseTokenUSD + totalFeesQuoteTokenUSD;
 
     res.json({
@@ -204,14 +324,13 @@ publicRouter.get("/pool-fees", async (req: any, res: any) => {
       totalFeesBaseTokenUSD: totalFeesBaseTokenUSD.toFixed(5),
       totalFeesQuoteTokenUSD: totalFeesQuoteTokenUSD.toFixed(5),
       totalFeesPoolUSD: totalFeesUSD,
-      baseTokenPrice: `${usdPriceTokenList[0].usdPriceToken}$`,
-      quoteTokenPrice: `${usdPriceTokenList[1].usdPriceToken}$`,
-      hivePriceGeckoUSD: `${parseFloat(hivePrice.hive.usd)}$`,
-      timeFrameAsTs: `${moment
-        .unix(recentFiles[0].timestamp)
-        .format("YYYY-MM-DD")} / ${moment
-        .unix(recentFiles[1].timestamp)
-        .format("YYYY-MM-DD")}`,
+      feePercentageBaseTokenUsed: feePercentageBaseToken,
+      feePercentageQuoteTokenUsed: feePercentageQuoteToken,
+      feeSourceMessage: feeSourceMessage,
+      baseTokenPrice: `${tokenPricesUsd[tokenSymbols[0]].toFixed(5)}$`,
+      quoteTokenPrice: `${tokenPricesUsd[tokenSymbols[1]].toFixed(5)}$`,
+      hivePriceGeckoUSD: `${hivePriceInUsd.toFixed(5)}$`,
+      calculationPeriodMessage: effectiveTimeFrameMessage,
     });
   } catch (error: any) {
     console.error("Error reading JSON files:", error.message);

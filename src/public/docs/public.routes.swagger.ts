@@ -98,13 +98,11 @@
  * @swagger
  * /public/pool-fees:
  *   get:
- *     summary: Calcula las comisiones estimadas del pool basadas en las diferencias de volumen y los porcentajes de fee provistos.
+ *     summary: Calcula las comisiones estimadas del pool.
  *     description: >
- *       ⚠️ **Nota importante:**
- *       Como actualmente no tenemos fuente única de datos para las comisiones que se están manejando con respecto a las piscinas de liquidez,
- *       ya que en una documentación aparece como 0.02%, pero si miramos la data actual en [tribaldex.com](https://tribaldex.com),
- *       veremos que esos valores a veces alcanzan hasta 0.14% o 0.1%.
- *       Por lo tanto, **para usar esta ruta DEBES proveer los porcentajes de comisión para cada token** mediante los parámetros `feePercentageBaseToken` y `feePercentageQuoteToken`.
+ *       Calcula las comisiones estimadas del pool basadas en las diferencias de volumen.
+ *       Los porcentajes de comisión (`feePercentageBaseToken` y `feePercentageQuoteToken`) son opcionales.
+ *       Si no se proveen, se utilizará un valor por defecto de 0.125% para ambos tokens.
  *     tags:
  *       - Public
  *     parameters:
@@ -119,21 +117,23 @@
  *         schema:
  *           type: number
  *           format: float
- *         required: true
- *         description: "Porcentaje de comisión aplicado al token base (ej: '0.1')"
+ *         required: false
+ *         description: "Porcentaje de comisión aplicado al token base (ej: '0.1'). Si no se provee, se usa 0.125."
  *       - in: query
  *         name: feePercentageQuoteToken
  *         schema:
  *           type: number
  *           format: float
- *         required: true
- *         description: "Porcentaje de comisión aplicado al token de referencia (ej: '0.15')"
- *       - in: query
- *         name: timeFrame
- *         schema:
- *           type: string
  *         required: false
- *         description: "Marco temporal personalizado (a futuro)"
+ *         description: "Porcentaje de comisión aplicado al token de referencia (ej: '0.15'). Si no se provee, se usa 0.125."
+ *       - in: query
+ *         name: timeFrameDays
+ *         schema:
+ *           type: integer
+ *           minimum: 1
+ *           maximum: 7
+ *         required: false
+ *         description: "Número de días para el cálculo de comisiones (ej: 1 para ~24h, 7 para ~7 días). Máximo 7. Si no se provee, se usa 1."
  *     responses:
  *       200:
  *         description: Comisiones calculadas exitosamente.
@@ -166,18 +166,29 @@
  *                 totalFeesPoolUSD:
  *                   type: number
  *                   example: 1.6655
+ *                 feePercentageBaseTokenUsed:
+ *                   type: number
+ *                   format: float
+ *                   example: 0.125
+ *                 feePercentageQuoteTokenUsed:
+ *                   type: number
+ *                   format: float
+ *                   example: 0.125
+ *                 feeSourceMessage:
+ *                   type: string
+ *                   example: "Default fees (0.125%) used as none were provided."
  *                 baseTokenPrice:
  *                   type: string
  *                   example: "0.52340$"
  *                 quoteTokenPrice:
  *                   type: string
  *                   example: "63.45000$"
+ *                 calculationPeriodMessage:
+ *                   type: string
+ *                   example: "Fees since 2025-06-10 12:00:00 (approx. 24 hours ago). Target period: 1 day(s)."
  *                 hivePriceGeckoUSD:
  *                   type: string
  *                   example: "0.2945$"
- *                 timeFrameAsTs:
- *                   type: string
- *                   example: "2025-04-13 / 2025-04-14"
  *       400:
  *         description: Parámetros requeridos faltantes (tokenPair, fees).
  *       404:

@@ -18,7 +18,7 @@ export const configServer = loadAndValidateConfig();
 
 const app = express();
 
-export const MAINDATADIR = path.join(__dirname, "../data");
+export const MAINDATADIR = path.join(__dirname, "../../BD-central/data");
 
 app.use(cors());
 
